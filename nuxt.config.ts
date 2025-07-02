@@ -6,9 +6,17 @@ export default defineNuxtConfig({
 		"@nuxt/icon",
 		"@nuxt/image",
 		"@nuxtjs/seo",
+		"@nuxtjs/tailwindcss",
+		"@nuxtjs/tailwindcss",
 	],
+	tailwindcss: {
+		cssPath: [`~assets/css/tailwind.css`, { injectPosition: "first" }],
+		config: {},
+		viewer: true,
+		exposeConfig: false,
+	},
 	devtools: { enabled: true },
-	css: ["@picocss/pico"],
+	css: [],
 	compatibilityDate: "2025-05-15",
 	eslint: {
 		config: {
