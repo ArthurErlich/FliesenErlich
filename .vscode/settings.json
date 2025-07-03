@@ -1,7 +1,11 @@
 {
     "prettier.enable": false,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
+    },
+    "files.associations": {
+        "*.css": "tailwindcss",
+        "*vue": "tailwindcss",
     }
 }

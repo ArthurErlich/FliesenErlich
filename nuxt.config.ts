@@ -6,9 +6,20 @@ export default defineNuxtConfig({
 		"@nuxt/icon",
 		"@nuxt/image",
 		"@nuxtjs/seo",
+		"@nuxtjs/tailwindcss",
+		"@nuxtjs/tailwindcss",
 	],
 	devtools: { enabled: true },
-	css: ["@picocss/pico"],
+	app: {
+		head: {
+			link: [
+				{ rel: "icon", type: "image/png", href: "/favicon/erlich-fliesen-favicon-64.png" },
+				{ rel: "icon", type: "image/png", href: "/favicon/erlich-fliesen-favicon.png" },
+			],
+		},
+		pageTransition: { name: "page", mode: "out-in" },
+	},
+	css: ["assets/main.css"],
 	compatibilityDate: "2025-05-15",
 	eslint: {
 		config: {
@@ -19,5 +30,11 @@ export default defineNuxtConfig({
 				indent: "tab",
 			},
 		},
+	},
+	tailwindcss: {
+		cssPath: [`~assets/css/tailwind.css`, { injectPosition: "first" }],
+		config: {},
+		viewer: true,
+		exposeConfig: false,
 	},
 });
