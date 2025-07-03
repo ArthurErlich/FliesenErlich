@@ -1,5 +1,5 @@
 <template>
-	<div class=" pt-2 pb-2 border-1">
+	<div class="footer-container pt-2 pb-2">
 		<footer class="container mx-auto">
 			<ul class="list-none flex gap-2">
 				<li>

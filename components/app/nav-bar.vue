@@ -1,5 +1,5 @@
 <template>
-	<header class="pt-2 pb-2 border-1">
+	<header class="pt-2 pb-2">
 		<nav class="flex justify-between container mx-auto">
 			<ul class="list-none flex gap-2  items-center">
 				<li>
