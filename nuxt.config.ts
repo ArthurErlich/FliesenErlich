@@ -9,14 +9,17 @@ export default defineNuxtConfig({
 		"@nuxtjs/tailwindcss",
 		"@nuxtjs/tailwindcss",
 	],
-	tailwindcss: {
-		cssPath: [`~assets/css/tailwind.css`, { injectPosition: "first" }],
-		config: {},
-		viewer: true,
-		exposeConfig: false,
-	},
 	devtools: { enabled: true },
-	css: [],
+	app: {
+		head: {
+			link: [
+				{ rel: "icon", type: "image/png", href: "/favicon/erlich-fliesen-favicon-64.png" },
+				{ rel: "icon", type: "image/png", href: "/favicon/erlich-fliesen-favicon.png" },
+			],
+		},
+		pageTransition: { name: "page", mode: "out-in" },
+	},
+	css: ["assets/main.css"],
 	compatibilityDate: "2025-05-15",
 	eslint: {
 		config: {
@@ -27,5 +30,11 @@ export default defineNuxtConfig({
 				indent: "tab",
 			},
 		},
+	},
+	tailwindcss: {
+		cssPath: [`~assets/css/tailwind.css`, { injectPosition: "first" }],
+		config: {},
+		viewer: true,
+		exposeConfig: false,
 	},
 });

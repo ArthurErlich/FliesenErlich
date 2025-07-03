@@ -1,10 +1,25 @@
 <template>
-	<header class="container">
-		<nav>
-			<ul>
-				<li><strong>Erlich Fliesen</strong></li>
+	<header class="pt-2 pb-2 border-1">
+		<nav class="flex justify-between container mx-auto">
+			<ul class="list-none flex gap-2  items-center">
+				<li>
+					<NuxtLink :to="{ name: 'index' }">
+						<NuxtImg
+							src="/logo/logo-erlich.png"
+							alt="Erlich Fliesen Logo"
+							preload
+							fit="inside"
+							class="h-10"
+						/>
+					</NuxtLink>
+				</li>
 			</ul>
-			<ul>
+			<ul class="flex items-center">
+				<li class="font-bold">
+					Erlich Fliesen
+				</li>
+			</ul>
+			<ul class="list-none flex gap-2 items-center">
 				<li>
 					<NuxtLink :to="{ name: 'index' }">Startseite</NuxtLink>
 				</li>
