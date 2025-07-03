@@ -9,7 +9,7 @@ export default defineNuxtConfig({
 		"@nuxtjs/tailwindcss",
 		"@nuxtjs/tailwindcss",
 	],
-	devtools: { enabled: true },
+	devtools: { enabled: false },
 	app: {
 		head: {
 			link: [
