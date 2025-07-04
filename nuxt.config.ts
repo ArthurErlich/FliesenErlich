@@ -7,7 +7,6 @@ export default defineNuxtConfig({
 		"@nuxt/image",
 		"@nuxtjs/seo",
 		"@nuxtjs/tailwindcss",
-		"@nuxtjs/tailwindcss",
 	],
 	devtools: { enabled: false },
 	app: {
@@ -19,7 +18,7 @@ export default defineNuxtConfig({
 		},
 		pageTransition: { name: "page", mode: "out-in" },
 	},
-	css: ["assets/main.css"],
+	css: ["~/assets/css/main.css"],
 	compatibilityDate: "2025-05-15",
 	eslint: {
 		config: {

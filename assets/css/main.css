@@ -5,9 +5,6 @@
   font-style: normal;
   font-display: swap;
 } */
-:root{
-    --gray-color: #9b9b9b;
-}
 
 h1 {
     font-size: 2em;
@@ -32,7 +29,7 @@ p {
     margin-bottom: 5px;
 }
 
-del {
+/* del {
     color: red;
 }
 
@@ -49,4 +46,4 @@ header{
 .footer-container{
      background-color: var(--gray-color);
      color: white;
-}
+} */

@@ -4,6 +4,14 @@
 	</NuxtLayout>
 </template>
 
+<script setup lang="ts">
+useHead({
+	bodyAttrs: {
+		class: "bg-erlich",
+	},
+});
+</script>
+
 <style>
 .page-enter-active,
 .page-leave-active {
