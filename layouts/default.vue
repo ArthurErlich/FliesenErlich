@@ -1,11 +1,11 @@
 <template>
-	<div>
-		<AppNavBar />
-		<main class="container mx-auto">
+
+		<AppNavbar />
+		<main class="container mx-auto ">
 			<slot />
 		</main>
 		<AppFooter />
-	</div>
+
 </template>
 
 <style></style>

@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 		"@nuxtjs/seo",
 		"@nuxtjs/tailwindcss",
 	],
-	devtools: { enabled: false },
+	devtools: { enabled: true },
 	app: {
 		head: {
 			link: [
@@ -31,9 +31,11 @@ export default defineNuxtConfig({
 		},
 	},
 	tailwindcss: {
-		cssPath: [`~assets/css/tailwind.css`, { injectPosition: "first" }],
+		cssPath: [`assets/css/tailwind.css`, { injectPosition: "first" }],
+		editorSupport: true,
+		configPath: "tailwind.config.js",
 		config: {},
 		viewer: true,
-		exposeConfig: false,
+		exposeConfig: true,
 	},
 });

@@ -1,10 +1,6 @@
-/* @font-face {
-  font-family: 'FarAwayGalaxy';
-  src: url('/fonts/FarAwayGalaxy.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 h1 {
     font-size: 2em;
@@ -28,22 +24,3 @@ p {
     margin-top: 5px;
     margin-bottom: 5px;
 }
-
-/* del {
-    color: red;
-}
-
-body{
-    background-color: #e2e2e2;
-}
-
-header{
-    background-color: var(--gray-color);
-    color: white;
-    position: sticky;
-    top: 0px
-}
-.footer-container{
-     background-color: var(--gray-color);
-     color: white;
-} */
