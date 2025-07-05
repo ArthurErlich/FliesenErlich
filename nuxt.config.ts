@@ -38,4 +38,8 @@ export default defineNuxtConfig({
 		viewer: true,
 		exposeConfig: true,
 	},
+	sourcemap: {
+		server: true,
+		client: true
+	},
 });
