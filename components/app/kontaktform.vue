@@ -4,19 +4,13 @@
 		@submit.prevent="onValidate"
 	>
 		<div class="flex justify-between">
-			<div>
-				<label for="anrede">Anrede</label>
-				<span
-					aria-hidden="true"
-				>*</span>
-			</div>
-			<input
+			<AppFormInput
 				id="anrede"
 				v-model="form.anrede"
-				type="text"
+				label="Anrede"
 				name="anrede"
 				required
-			>
+			/>
 		</div>
 		<div class="flex justify-between">
 			<label for="firma">Firma</label>
@@ -30,9 +24,7 @@
 		<div class="flex justify-between">
 			<div>
 				<label for="vorname">Vorname</label>
-				<span
-					aria-hidden="true"
-				>*</span>
+				<span aria-hidden="true">*</span>
 			</div>
 			<input
 				id="vorname"
@@ -43,9 +35,7 @@
 			>
 			<div>
 				<label for="nachname">Nachname</label>
-				<span
-					aria-hidden="true"
-				>*</span>
+				<span aria-hidden="true">*</span>
 			</div>
 			<input
 				id="nachname"
@@ -58,9 +48,7 @@
 		<div class="flex justify-between">
 			<div>
 				<label for="e-mail">E-Mail</label>
-				<span
-					aria-hidden="true"
-				>*</span>
+				<span aria-hidden="true">*</span>
 			</div>
 			<input
 				id="e-mail"
@@ -84,8 +72,11 @@
 				id="dsvgo"
 				type="checkbox"
 				name="dsvgo"
+				required
 			>
-			<label for="dsvgo">Wir verwenden Ihre Angaben zur Beantwortung Ihrer Anfrage. Weitere Informationen finden Sie in unseren <NuxtLink :to="{ name: 'footer-datensschutz', hash: '#10_kontaktformulare' }"> Datenschutzhinweisen</NuxtLink>.</label>
+			<label for="dsvgo">Wir verwenden Ihre Angaben zur Beantwortung Ihrer Anfrage. Weitere Informationen finden
+				Sie in unseren <NuxtLink :to="{ name: 'footer-datensschutz', hash: '#10_kontaktformulare' }">
+					Datenschutzhinweisen</NuxtLink>.</label>
 		</div>
 		<div class="flex justify-center">
 			<button
@@ -108,6 +99,7 @@ interface FormData {
 	nachname: string;
 	email: string;
 	password: string;
+	dsvgo: boolean;
 }
 
 const form = reactive<FormData>({
@@ -117,13 +109,17 @@ const form = reactive<FormData>({
 	nachname: "",
 	email: "",
 	password: "",
+	dsvgo: false,
 });
 
 function onValidate() {
-	console.log("Form values:", form);
-	// You can now use form.anrede, form.firma, etc.
+	if (form.password == null || form.password == "") {
+		console.log("Form values:", form);
+	}
+	else {
+		console.log("Honypot");
+	}
 }
 </script>
 
-<style>
-</style>
+<style></style>
