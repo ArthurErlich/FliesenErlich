@@ -1,15 +1,17 @@
 <template>
-	<div>
-		<label :for="id">{{ label }}</label>
-		<span
-			v-if="required"
-			aria-hidden="true"
-		>*</span>
+	<div class="flex justify-between">
+		<div>
+			<label :for="id">{{ label }}</label>
+			<span
+				v-if="required"
+				aria-hidden="true"
+			>*</span>
+		</div>
 		<input
 			:id="id"
 			:v-model="modelValue"
 			:type="type"
-			:name="name"
+			:name="id"
 			:required="required"
 			@input="$emit('update:modelValue', $event.target.value)"
 		>
@@ -36,14 +38,15 @@ export default {
 			type: String,
 			default: "text",
 		},
-		name: {
-			type: String,
-			required: true,
-		},
+		// name: {
+		// 	type: String,
+		// 	required: true,
+		// },
 		required: {
 			type: Boolean,
 			default: false,
 		},
 	},
+	emits: ["update:modelValue"],
 };
 </script>
