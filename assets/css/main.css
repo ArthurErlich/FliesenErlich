@@ -1,7 +1,5 @@
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
-
+/* Needs to be moved to custom config */
 h1 {
     font-size: 2em;
     font-weight: bold;

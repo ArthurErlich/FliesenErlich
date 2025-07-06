@@ -1,5 +1,5 @@
 <template>
-	<header class="pt-2 pb-2 bg-erlich">
+	<header class="pt-2 pb-2 bg-erlich sticky top-0 left-0">
 		<nav class="flex justify-between container mx-auto ">
 			<ul class="list-none flex gap-2  items-center">
 				<li>
@@ -25,7 +25,7 @@
 				<li>
 					<NuxtLink :to="{ name: 'blog' }">Blog</NuxtLink>
 				</li>
-								<li>
+				<li>
 					<NuxtLink :to="{ name: 'kontakt' }">Kontakt</NuxtLink>
 				</li>
 			</ul>

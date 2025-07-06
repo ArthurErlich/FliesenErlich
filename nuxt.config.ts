@@ -7,6 +7,7 @@ export default defineNuxtConfig({
 		"@nuxt/image",
 		"@nuxtjs/seo",
 		"@nuxtjs/tailwindcss",
+		"@nuxt/content",
 	],
 	devtools: { enabled: true },
 	app: {
@@ -19,7 +20,14 @@ export default defineNuxtConfig({
 		pageTransition: { name: "page", mode: "out-in" },
 	},
 	css: ["~/assets/css/main.css"],
+	sourcemap: {
+		server: true,
+		client: true,
+	},
 	compatibilityDate: "2025-05-15",
+	typescript: {
+		typeCheck: true,
+	},
 	eslint: {
 		config: {
 			stylistic: {
@@ -37,9 +45,5 @@ export default defineNuxtConfig({
 		config: {},
 		viewer: true,
 		exposeConfig: true,
-	},
-	sourcemap: {
-		server: true,
-		client: true
 	},
 });

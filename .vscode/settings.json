@@ -7,6 +7,6 @@
     "files.associations": {
         "*.css": "tailwindcss",
         "*.vue": "tailwindcss",
-        "*.vue": "html",
+        "*.vue": "vue",
     }
 }
