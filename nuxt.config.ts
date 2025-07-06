@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 		"@nuxt/image",
 		"@nuxtjs/seo",
 		"@nuxtjs/tailwindcss",
-		"@nuxtjs/tailwindcss",
+		"@nuxt/content",
 	],
 	devtools: { enabled: true },
 	app: {
@@ -19,8 +19,15 @@ export default defineNuxtConfig({
 		},
 		pageTransition: { name: "page", mode: "out-in" },
 	},
-	css: ["assets/main.css"],
+	css: ["~/assets/css/main.css"],
+	sourcemap: {
+		server: true,
+		client: true,
+	},
 	compatibilityDate: "2025-05-15",
+	typescript: {
+		typeCheck: true,
+	},
 	eslint: {
 		config: {
 			stylistic: {
@@ -32,9 +39,11 @@ export default defineNuxtConfig({
 		},
 	},
 	tailwindcss: {
-		cssPath: [`~assets/css/tailwind.css`, { injectPosition: "first" }],
+		cssPath: [`assets/css/tailwind.css`, { injectPosition: "first" }],
+		editorSupport: true,
+		configPath: "tailwind.config.js",
 		config: {},
 		viewer: true,
-		exposeConfig: false,
+		exposeConfig: true,
 	},
 });

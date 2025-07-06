@@ -6,6 +6,7 @@
     },
     "files.associations": {
         "*.css": "tailwindcss",
-        "*vue": "tailwindcss",
+        "*.vue": "tailwindcss",
+        "*.vue": "vue",
     }
 }

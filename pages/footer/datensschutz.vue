@@ -270,7 +270,15 @@
 		Mehr Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Google:
 		https://www.google.de/intl/de/policies/privacy/.
 
-		10. Kontakt
+		<secttion id="10_kontaktformulare">
+			<h2>
+				10. Kontaktformulare
+			</h2>
+			<p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert und verarbeitet. Ihre Daten werden ausschließlich zweckgebunden zur Beantwortung und Bearbeitung Ihrer Frage genutzt. Die Datenverarbeitung erfolgt hier nach Art. 6 Abs. S. 1 lit. f DSGVO auf Grundlage des berechtigten Interesses.</p>
+			<p>Für den Fall der Betrugserkennung oder zur Erkennung von Missbrauch, etwa zum Aufdecken von Hackerangriffen, behalten wir uns das Recht vor, Ihre Netzwerkdaten für einen kurzen Zeitraum und nur zu diesem Zweck zu speichern, der 30 Tage nicht überschreitet, außer ein Anlass rechtfertigt eine längere Aufbewahrung.</p>
+		</secttion>
+
+		11. Kontakt
 		Waldemar Erlich Obere Blatt 17 78253 Eigeltingen Deutschland fliesenerlich@hotmail.com
 
 		Ihre Betroffenenrechte
