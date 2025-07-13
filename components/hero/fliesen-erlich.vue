@@ -1,6 +1,6 @@
 <template>
-	<div class="h-[80vh] bg-gray-200 flex justify-center items-center">
-		<div class="pr-[20%]">
+	<div class="container">
+		<div class="text">
 			<h2 class="px-0 mx-0">
 				Fliesen Erlich
 			</h2>
@@ -13,4 +13,18 @@
 
 <script lang="ts" />
 
-<style />
+<style scoped>
+	.container{
+		padding:0;
+		margin: 0;
+		height: 80vh;
+		background-color: gray;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.text{
+		padding-right: 20%;
+	}
+</style>

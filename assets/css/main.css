@@ -1,24 +1,16 @@
-@tailwind utilities;
-/* Needs to be moved to custom config */
-h1 {
-    font-size: 2em;
-    font-weight: bold;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
+:root{
+    --erlich-default:#822C2A;  /* Hauptrot */
+    --erlich-light:#A13A35; /* Hoverrot*/
+    --erlich-pale:#E6E6E6; /* Hellgrau */
+    --erlich-white:#F2F2F2;/* leicht getöntes Weiß */
+    --erlich-black:#000000;/* Standardtext */
+    --erlich-accent:#B08C6B; /* Kupfer-Gold Akzent */
+    --erlich-accent-hover:#C7A481;/* Hover für Akzent */
 }
 
-h2 {
-    font-size: 1.5em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em; 
-    font-weight: bold;
+body{
+    color: var(--erlich-black);
+    padding: 0;
+    margin: 0;
 }
 
-h3 {
-    font-size: medium;
-}
-
-p {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
