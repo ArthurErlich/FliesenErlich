@@ -1,7 +1,24 @@
 <template>
-	<div>
+	<div class="container">
 		<h2>Unsere Philosophie</h2>
 		<h2>Das Fliesen Erlich Team</h2>
+		<div class="employees">
+			<AppEmployee
+				src="/media/employees/waldemar-erlich.jpg"
+				name="Waldemar Erlich"
+				moto="Leidenschaftlicher Angler und der richtige Ansprechpartner wenne es um Fliesen geht."
+			/>
+			<AppEmployee
+				src="/media/employees/waldemar-erlich.jpg"
+				name="Waldemar Erlich"
+				moto="Leidenschaftlicher Angler und der richtige Ansprechpartner wenne es um Fliesen geht."
+			/>
+			<AppEmployee
+				src="/media/employees/waldemar-erlich.jpg"
+				name="Waldemar Erlich"
+				moto="Leidenschaftlicher Angler und der richtige Ansprechpartner wenne es um Fliesen geht."
+			/>
+		</div>
 	</div>
 </template>
 
@@ -10,5 +27,10 @@
 </script>
 
 <style>
-
+.employees{
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
 </style>

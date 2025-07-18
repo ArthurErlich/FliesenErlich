@@ -58,7 +58,7 @@
 			class="w-[100%]"
 			name="nachricht"
 		/>
-		<div class="hidden">
+		<div class="isHuman">
 			<label for="password">Password</label>
 			<input
 				id="password"
@@ -67,7 +67,7 @@
 				name="password"
 			>
 		</div>
-		<div class="hidden">
+		<div class="isHuman">
 			<label for="e-mail-confirm">Confirm E-Mail</label>
 			<input
 				id="e-mail-confirm"
@@ -84,7 +84,7 @@
 				required
 			>
 			<label for="dsvgo">Wir verwenden Ihre Angaben zur Beantwortung Ihrer Anfrage. Weitere Informationen finden
-				Sie in unseren <NuxtLink :to="{ name: 'footer-datensschutz', hash: '#10_kontaktformulare' }">
+				Sie in unseren <NuxtLink :to="{ name: 'footer-datenschutz', hash: '#10_kontaktformulare' }">
 					Datenschutzhinweisen</NuxtLink>.</label>
 		</div>
 		<div class="flex justify-center">

@@ -7,10 +7,20 @@
     --erlich-accent:#B08C6B; /* Kupfer-Gold Akzent */
     --erlich-accent-hover:#C7A481;/* Hover für Akzent */
 }
-
+/* Add font */
 body{
     color: var(--erlich-black);
     padding: 0;
     margin: 0;
+}
+
+/* TODO: add medie querry breake points for container */
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+.isHuman{
+    display: none;
 }
 

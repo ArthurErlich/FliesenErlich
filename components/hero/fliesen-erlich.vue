@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div class="hero-container">
 		<div class="text">
 			<h2 class="px-0 mx-0">
 				Fliesen Erlich
@@ -14,7 +14,7 @@
 <script lang="ts" />
 
 <style scoped>
-	.container{
+	.hero-container{
 		padding:0;
 		margin: 0;
 		height: 80vh;

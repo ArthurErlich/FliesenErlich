@@ -15,7 +15,7 @@
 					</NuxtLink>
 				</li>
 			</ul>
-			<ul class="">
+			<ul class="nav-links">
 				<li>
 					<NuxtLink :to="{ name: 'index' }">Startseite</NuxtLink>
 				</li>
@@ -34,33 +34,50 @@
 </template>
 
 <style scoped>
-	header{
-		padding-top: 5px;
-		padding-bottom: 5px;
-		position:sticky;
-		top: 0;
-		left: 0;
-		background-color: var(--erlich-accent);
-	}
-	nav{
-		display: flex;
-		justify-content: space-between;
-		margin: auto;
-	}
-	ul{
-		/* list-none flex gap-2  items-center */
-		list-style: none;
-		align-items: center;
-		gap: 5px;
-		display: flex;
-		margin: 0;
-		padding: 0;
-	}
-	li{
-		display: inline;
-		margin: 0;
-	}
-	.logo{
-		height: 25pt;
-	}
+header {
+	padding: 5px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	background-color: var(--erlich-white);
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+}
+.nav-links{
+	width: 450px;
+	justify-content: space-evenly;
+}
+
+a {
+	color: var(--erlich-black);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--erlich-black);
+
+}
+
+ul {
+	/* list-none flex gap-2  items-center */
+	list-style: none;
+	align-items: center;
+	gap: 5px;
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	display: inline;
+	margin: 0;
+}
+
+.logo {
+	height: 25pt;
+}
 </style>

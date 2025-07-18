@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Rubik Medium";
+    src: local("Rubik Medium"),
+     url(~assets/fonts/rubik/Rubik-Medium.ttf) format("truetype");
+}
+html{
+    font-family: "Rubik Medium";
+}
+/* Needs to be changed later. It dose not look correkt */

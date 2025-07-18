@@ -19,7 +19,10 @@ export default defineNuxtConfig({
 		},
 		pageTransition: { name: "page", mode: "out-in" },
 	},
-	css: ["~/assets/css/main.css"],
+	css: [
+		"~/assets/css/main.css",
+		"~/layouts/global.css",
+	],
 	sourcemap: {
 		server: true,
 		client: true,
