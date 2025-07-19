@@ -1,7 +1,7 @@
 <template>
-	<header class="pt-2 pb-2 bg-erlich sticky top-0 left-0">
-		<nav class="flex justify-between container mx-auto ">
-			<ul class="list-none flex gap-2  items-center">
+	<header class="">
+		<nav class="">
+			<ul class="">
 				<li>
 					<NuxtLink :to="{ name: 'index' }">
 						<NuxtImg
@@ -10,12 +10,12 @@
 							alt="Erlich Fliesen Logo"
 							preload
 							fit="inside"
-							class="h-10"
+							class="logo"
 						/>
 					</NuxtLink>
 				</li>
 			</ul>
-			<ul class="list-none flex gap-2 items-center">
+			<ul class="nav-links">
 				<li>
 					<NuxtLink :to="{ name: 'index' }">Startseite</NuxtLink>
 				</li>
@@ -32,3 +32,52 @@
 		</nav>
 	</header>
 </template>
+
+<style scoped>
+header {
+	padding: 5px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	background-color: var(--erlich-white);
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+}
+.nav-links{
+	width: 450px;
+	justify-content: space-evenly;
+}
+
+a {
+	color: var(--erlich-black);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--erlich-black);
+
+}
+
+ul {
+	/* list-none flex gap-2  items-center */
+	list-style: none;
+	align-items: center;
+	gap: 5px;
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	display: inline;
+	margin: 0;
+}
+
+.logo {
+	height: 25pt;
+}
+</style>
