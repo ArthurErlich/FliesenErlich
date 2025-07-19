@@ -36,6 +36,7 @@ export default {
 <style scoped>
 img{
   border-radius: 100%;
+  width: 150px;
 }
 .emploee{
   max-width: 250px;

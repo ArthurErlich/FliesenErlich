@@ -1,5 +1,8 @@
 <template>
-	<div class="hero-container">
+	<div
+		ref="hero"
+		class="hero-container"
+	>
 		<div class="wrapper">
 			<div class="text">
 				<h2 class="px-0 mx-0">
@@ -13,13 +16,33 @@
 	</div>
 </template>
 
-<script lang="ts" />
+<script setup lang="ts">
+import { onMounted, ref } from "vue";
+
+const hero = ref<HTMLElement | null>(null);
+
+let calcHeight = 0;
+// const navElement: HTMLElement | null = document.getElementsByTagName("nav")[0];
+// calcHeight = screen.height - (navElement.scrollHeight + footerElement.scrollHeight);
+
+// heroRef.value?.style.height = calcHeight + "px";
+onMounted(() => {
+	// Access the DOM element after it mounts
+
+	// calc height of window - navelement height
+	// nav is a component
+	calcHeight = window.innerHeight - 47.33; // actual navbar heigt.
+	if (hero.value) {
+		hero.value.style.height = calcHeight + "px";
+	}
+});
+</script>
 
 <style scoped>
 .hero-container {
 	padding: 0;
 	margin: 0;
-	height: 80vh;
+	height: 100vh;
 	background-color: gray;
 	background-image: url(/hero/15.41.26_ad8dc9dc.jpg);
 	background-size: cover;
@@ -32,12 +55,15 @@
 
 .text {
 	border-radius: 2px;
-	background-color: var(--erlich-white);
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
 .wrapper {
-	padding-right: 20%;
+	padding-right: 50%;
+	background-color: var(--erlich-white);
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 </style>

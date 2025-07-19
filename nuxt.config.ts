@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
 	modules: [
 		"@nuxt/eslint",
-		"@nuxt/fonts",
 		"@nuxt/icon",
 		"@nuxt/image",
 		"@nuxtjs/seo",
@@ -15,14 +14,24 @@ export default defineNuxtConfig({
 			link: [
 				{ rel: "icon", type: "image/png", href: "/favicon/erlich-fliesen-favicon-64.png" },
 				{ rel: "icon", type: "image/png", href: "/favicon/erlich-fliesen-favicon.png" },
+				{ rel: "preload" },
 			],
+			htmlAttrs: {
+				lang: "de",
+			},
 		},
 		pageTransition: { name: "page", mode: "out-in" },
 	},
 	css: [
 		"~/assets/css/main.css",
-		"~/layouts/global.css",
 	],
+	vue: {
+		compilerOptions: {
+			isCustomElement: (tag) => {
+				return ["section"].includes(tag);
+			},
+		},
+	},
 	sourcemap: {
 		server: true,
 		client: true,

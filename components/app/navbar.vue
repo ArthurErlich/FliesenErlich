@@ -1,6 +1,9 @@
 <template>
-	<header class="">
-		<nav class="">
+	<header
+		ref="root"
+		class=""
+	>
+		<nav class="desk-nav">
 			<ul class="">
 				<li>
 					<NuxtLink :to="{ name: 'index' }">
@@ -30,8 +33,22 @@
 				</li>
 			</ul>
 		</nav>
+		<nav class="mob-nav">
+			MOBILE NAVBAR --> Hamburger Menue
+		</nav>
 	</header>
 </template>
+
+<script lang="ts" setup>
+import { ref } from "vue";
+
+const root = ref<HTMLElement | null>(null);
+
+// This makes the DOM ref accessible to the parent
+defineExpose({
+	el: root,
+});
+</script>
 
 <style scoped>
 header {
@@ -46,8 +63,10 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	margin: auto;
+	height: 37.33px;
 }
-.nav-links{
+
+.nav-links {
 	width: 450px;
 	justify-content: space-evenly;
 }
@@ -79,5 +98,20 @@ li {
 
 .logo {
 	height: 25pt;
+}
+
+/* do this in javascript, better for screen reader e.g accessibility */
+.mob-nav {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.desk-nav {
+		display: none;
+	}
+
+	.mob-nav {
+		display: block;
+	}
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<h2>Unsere Philosophie</h2>
+		<h1>Unsere Philosophie</h1>
 		<h2>Das Fliesen Erlich Team</h2>
 		<div class="employees">
 			<AppEmployee
@@ -32,5 +32,8 @@
 	align-items: baseline;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
+}
+h1{
+	margin-top: 0;
 }
 </style>
