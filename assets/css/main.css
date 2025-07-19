@@ -70,7 +70,9 @@ body {
 html{
     font-family: "Arial";
 }
-/* Needs to be changed later. It dose not look correkt */
+/* Needs to be changed later. It dose not look correkt 
+fixes a bug that the margine moves the element down but dose not so with the parent element
+*/
 h1{
     margin-top: 0;
     padding-top: 0.67em;
