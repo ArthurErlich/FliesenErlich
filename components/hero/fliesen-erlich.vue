@@ -61,9 +61,12 @@ onMounted(() => {
 
 .wrapper {
 	padding-right: 50%;
-	background-color: var(--erlich-white);
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	height: 200px;
+	background-color: rgba(255, 255, 255, 0.419);
+	/* opacity: 0.2; */
 }
 </style>
