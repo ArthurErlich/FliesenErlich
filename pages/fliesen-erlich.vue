@@ -33,7 +33,4 @@
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
-h1{
-	margin-top: 0;
-}
 </style>
