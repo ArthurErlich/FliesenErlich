@@ -1,11 +1,14 @@
 <template>
-	<header class="">
-		<nav class="">
+	<header
+		ref="root"
+		class=""
+	>
+		<nav class="desk-nav">
 			<ul class="">
 				<li>
 					<NuxtLink :to="{ name: 'index' }">
 						<NuxtImg
-							src="/logo/logo-erlich.png"
+							src="/media/logo/logo-erlich.png"
 							format="png"
 							alt="Erlich Fliesen Logo"
 							preload
@@ -30,10 +33,24 @@
 				</li>
 			</ul>
 		</nav>
+		<nav class="mob-nav">
+			MOBILE NAVBAR --> Hamburger Menue
+		</nav>
 	</header>
 </template>
 
-<style scoped>
+<script lang="ts" setup>
+import { ref } from "vue";
+
+const root = ref<HTMLElement | null>(null);
+
+// This makes the DOM ref accessible to the parent
+defineExpose({
+	el: root,
+});
+</script>
+
+<style>
 header {
 	padding: 5px;
 	position: sticky;
@@ -42,27 +59,44 @@ header {
 	background-color: var(--erlich-white);
 }
 
-nav {
+header>nav {
 	display: flex;
 	justify-content: space-between;
 	margin: auto;
+	height: 37.33px;
 }
-.nav-links{
+
+/* .nav-links {
 	width: 450px;
 	justify-content: space-evenly;
+} */
+
+.nav-links a:hover {
+	background-color: var(--erlich-light);
+	border-radius: 1px;
+	color: var(--erlich-white);
+
 }
 
-a {
+.nav-links>li {
+	height: 100%;
+}
+
+.nav-links a {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding-left: 5px;
+	padding-right: 5px;
 	color: var(--erlich-black);
 	text-decoration: none;
+
+	transition: color 0.1s ease-in-out;
+	transition: background-color 0.1s ease-in-out;
+
 }
 
-a:hover {
-	color: var(--erlich-black);
-
-}
-
-ul {
+header ul {
 	/* list-none flex gap-2  items-center */
 	list-style: none;
 	align-items: center;
@@ -72,12 +106,27 @@ ul {
 	padding: 0;
 }
 
-li {
+header li {
 	display: inline;
 	margin: 0;
 }
 
 .logo {
 	height: 25pt;
+}
+
+/* do this in javascript, better for screen reader e.g accessibility */
+.mob-nav {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.desk-nav {
+		display: none;
+	}
+
+	.mob-nav {
+		display: block;
+	}
 }
 </style>

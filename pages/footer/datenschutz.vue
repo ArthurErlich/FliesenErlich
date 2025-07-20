@@ -1,5 +1,5 @@
 <template>
-	<section>
+	<section class="container">
 		<h1>Datenschutzerklärung</h1>
 		<p>
 			Wir freuen uns über Ihr Interesse an unserer Website. Der Schutz Ihrer personenbezogenen Daten bei der Erhebung,

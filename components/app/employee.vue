@@ -4,17 +4,14 @@
 			:src="src"
 			:alt="name"
 			preload
+			class="faceshoot"
 		/>
-		<h3
-			v-text="name"
-		/>
-		<p
-			v-text="moto"
-		/>
+		<h3 v-text="name" />
+		<p v-text="moto" />
 	</div>
 </template>
 
-<script  lang="ts">
+<script lang="ts">
 export default {
 	props: {
 		src: {
@@ -34,12 +31,17 @@ export default {
 </script>
 
 <style scoped>
-img{
-  border-radius: 100%;
+.emploee {
+	max-width: 250px;
+	text-align: center;
+	word-break: keep-all;
 }
-.emploee{
-  max-width: 250px;
-  text-align: center;
-  word-break:keep-all;
+
+.faceshoot {
+	background-color: gray;
+	border-radius: 100%;
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
 }
 </style>

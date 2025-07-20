@@ -1,26 +1,79 @@
-:root{
-    --erlich-default:#822C2A;  /* Hauptrot */
-    --erlich-light:#A13A35; /* Hoverrot*/
-    --erlich-pale:#E6E6E6; /* Hellgrau */
-    --erlich-white:#F2F2F2;/* leicht getöntes Weiß */
-    --erlich-black:#000000;/* Standardtext */
-    --erlich-accent:#B08C6B; /* Kupfer-Gold Akzent */
-    --erlich-accent-hover:#C7A481;/* Hover für Akzent */
+:root {
+    /* Hauptrot */
+    --erlich-default: #822C2A;
+    /* Hoverrot*/
+    --erlich-light: #A13A35;
+    /* Hellgrau */
+    --erlich-pale: #E6E6E6;
+    /* leicht getöntes Weiß */
+    --erlich-white: #F2F2F2;
+    /* Standardtext */
+    --erlich-black: #000000;
+    /* Kupfer-Gold Akzent */
+    --erlich-accent: #B08C6B;
+    /* Hover für Akzent */
+    --erlich-accent-hover: #C7A481;
 }
+
 /* Add font */
-body{
+body {
     color: var(--erlich-black);
     padding: 0;
     margin: 0;
 }
 
 /* TODO: add medie querry breake points for container */
-.container{
+.container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 800px;
+
 }
-.isHuman{
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 576px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 700px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 800px;
+    }
+}
+
+.isHuman {
     display: none;
 }
 
+@font-face {
+    font-family: "Rubik Medium";
+    src: url(/fonts/rubik/Rubik-Medium.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Amble Regular";
+    src:  url(/fonts/amble/Amble-Regular) format("truetype");
+}
+html{
+    font-family: "Arial";
+}
+/* Needs to be changed later. It dose not look correkt 
+fixes a bug that the margine moves the element down but dose not so with the parent element
+*/
+h1{
+    margin-top: 0;
+    padding-top: 0.67em;
+}

@@ -1,20 +1,23 @@
 <template>
-	<div class="flex justify-between">
-		<div>
-			<label :for="id">{{ label }}</label>
-			<span
-				v-if="required"
-				aria-hidden="true"
-			>*</span>
+	<div>
+		<div class="flex justify-between">
+			<div>
+				<label :for="id">{{ label }}</label>
+				<span
+					v-if="required"
+					aria-hidden="true"
+				>*</span>
+			</div>
+			<input
+				:id="id"
+				:v-model="modelValue"
+				:type="type"
+				:name="id"
+				:required="required"
+				class="input-element"
+				@input="$emit('update:modelValue', $event.target.value)"
+			>
 		</div>
-		<input
-			:id="id"
-			:v-model="modelValue"
-			:type="type"
-			:name="id"
-			:required="required"
-			@input="$emit('update:modelValue', $event.target.value)"
-		>
 	</div>
 </template>
 

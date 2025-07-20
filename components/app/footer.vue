@@ -1,6 +1,9 @@
 <template>
-	<div class="footer-wrapper">
-		<footer class="container">
+	<footer
+		ref="root"
+		class=""
+	>
+		<div class="container footer-wraper">
 			<ul class="list-none flex gap-4">
 				<li>
 					<NuxtLink :to="{ name: 'kontakt' }">Kontakt</NuxtLink>
@@ -15,12 +18,19 @@
 					<NuxtLink :to="{ name: 'footer-cookies' }">Cookies</NuxtLink>
 				</li>
 			</ul>
-		</footer>
-	</div>
+		</div>
+	</footer>
 </template>
 
 <script lang="ts" setup>
+import { ref } from "vue";
 
+const root = ref<HTMLElement | null>(null);
+
+// This makes the DOM ref accessible to the parent
+defineExpose({
+	el: root,
+});
 </script>
 
 <style scoped>
@@ -29,14 +39,14 @@
 }
 
 .footer-wrapper {
-	background-color: var(--erlich-default);
-}
-
-footer {
 	height: 50px;
 	display: flex;
 	justify-content: baseline;
 	margin: auto;
+}
+
+footer {
+	background-color: var(--erlich-default);
 }
 
 ul {
