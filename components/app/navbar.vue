@@ -8,7 +8,7 @@
 				<li>
 					<NuxtLink :to="{ name: 'index' }">
 						<NuxtImg
-							src="/logo/logo-erlich.png"
+							src="/media/logo/logo-erlich.png"
 							format="png"
 							alt="Erlich Fliesen Logo"
 							preload
@@ -50,7 +50,7 @@ defineExpose({
 });
 </script>
 
-<style scoped>
+<style>
 header {
 	padding: 5px;
 	position: sticky;
@@ -59,29 +59,44 @@ header {
 	background-color: var(--erlich-white);
 }
 
-nav {
+header>nav {
 	display: flex;
 	justify-content: space-between;
 	margin: auto;
 	height: 37.33px;
 }
 
-.nav-links {
+/* .nav-links {
 	width: 450px;
 	justify-content: space-evenly;
+} */
+
+.nav-links a:hover {
+	background-color: var(--erlich-light);
+	border-radius: 1px;
+	color: var(--erlich-white);
+
 }
 
-a {
+.nav-links>li {
+	height: 100%;
+}
+
+.nav-links a {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding-left: 5px;
+	padding-right: 5px;
 	color: var(--erlich-black);
 	text-decoration: none;
+
+	transition: color 0.1s ease-in-out;
+	transition: background-color 0.1s ease-in-out;
+
 }
 
-a:hover {
-	color: var(--erlich-black);
-
-}
-
-ul {
+header ul {
 	/* list-none flex gap-2  items-center */
 	list-style: none;
 	align-items: center;
@@ -91,7 +106,7 @@ ul {
 	padding: 0;
 }
 
-li {
+header li {
 	display: inline;
 	margin: 0;
 }

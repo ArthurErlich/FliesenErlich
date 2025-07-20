@@ -1,101 +1,101 @@
 <template>
-	<form
-		class=" m-2 p-2"
-		@submit.prevent="onValidate"
-	>
-		<div class="flex justify-around">
-			<AppFormInput
-				id="anrede"
-				v-model="form.anrede"
-				class="w-[300px]"
-				label="Anrede"
-				name="anrede"
-				type="input"
-				required
-			/>
-			<AppFormInput
-				id="firma"
-				v-model="form.firma"
-				class="w-[300px]"
-				label="Firma"
-				type="input"
-			/>
-		</div>
-		<div class="flex justify-around">
-			<AppFormInput
-				id="vorname"
-				v-model="form.vorname"
-				class="w-[300px]"
-				label="Vorname"
-				type="input"
-				required
-			/>
-			<AppFormInput
-				id="nachname"
+	<div>
+		<h1>Kontakt</h1>
+		<form
+			class="contact"
+			@submit.prevent="onValidate"
+		>
+			<div class="input-pair">
+				<AppFormInput
+					id="anrede"
+					v-model="form.anrede"
+					label="Anrede"
+					name="anrede"
+					type="input"
+					required
+				/>
+				<AppFormInput
+					id="firma"
+					v-model="form.firma"
+					label="Firma"
+					type="input"
+				/>
+			</div>
+			<div class="input-pair">
+				<AppFormInput
+					id="vorname"
+					v-model="form.vorname"
+					label="Vorname"
+					type="input"
+					required
+				/>
+				<AppFormInput
+					id="nachname"
+					v-model="form.nachname"
+					label="Nachname"
+					type="input"
+					required
+				/>
+			</div>
+			<div class="input-pair">
+				<AppFormInput
+					id="email"
+					v-model="form.email"
+					label="E-Mail"
+					type="email"
+					required
+				/>
+				<div class="input-form" />
+			</div>
+			<hr class="line">
+			<label for="nachricht">Nachricht</label>
+			<textarea
+				id="nachricht"
 				v-model="form.nachname"
-				class="w-[300px]"
-				label="Nachname"
-				type="input"
-				required
+				class="textarea"
+				name="nachricht"
+				maxlength="10000"
 			/>
-		</div>
-		<div class="flex justify-around">
-			<AppFormInput
-				id="email"
-				v-model="form.email"
-				class="w-[300px]"
-				label="E-Mail"
-				type="email"
-				required
-			/>
-			<div class="w-[300px]" />
-		</div>
-		<hr class="mb-2 mt-2 border-1 border-red-900">
-		<label for="nachricht">Nachricht</label>
-		<textarea
-			id="nachricht"
-			v-model="form.nachname"
-			class="w-[100%]"
-			name="nachricht"
-		/>
-		<div class="isHuman">
-			<label for="password">Password</label>
-			<input
-				id="password"
-				v-model="form.password"
-				type="text"
-				name="password"
-			>
-		</div>
-		<div class="isHuman">
-			<label for="e-mail-confirm">Confirm E-Mail</label>
-			<input
-				id="e-mail-confirm"
-				v-model="form.email_confirm"
-				type="email"
-				name="e-mail-confirm"
-			>
-		</div>
-		<div>
-			<input
-				id="dsvgo"
-				type="checkbox"
-				name="dsvgo"
-				required
-			>
-			<label for="dsvgo">Wir verwenden Ihre Angaben zur Beantwortung Ihrer Anfrage. Weitere Informationen finden
-				Sie in unseren <NuxtLink :to="{ name: 'footer-datenschutz', hash: '#10_kontaktformulare' }">
-					Datenschutzhinweisen</NuxtLink>.</label>
-		</div>
-		<div class="flex justify-center">
-			<button
-				type="submit"
-				class="rounded-md bg-erlich hover:bg-erlich-light"
-			>
-				Anfrage Senden
-			</button>
-		</div>
-	</form>
+			<div class="isHuman">
+				<label for="password">Password</label>
+				<input
+					id="password"
+					v-model="form.password"
+					type="text"
+					name="password"
+				>
+			</div>
+			<div class="isHuman">
+				<label for="e-mail-confirm">Confirm E-Mail</label>
+				<input
+					id="e-mail-confirm"
+					v-model="form.email_confirm"
+					type="email"
+					name="e-mail-confirm"
+				>
+			</div>
+			<div class="dsvgo-check">
+				<input
+					id="dsvgo"
+					type="checkbox"
+					name="dsvgo"
+					required
+				>
+				<label for="dsvgo">Wir verwenden Ihre Angaben zur Beantwortung Ihrer Anfrage. Weitere Informationen
+					finden
+					Sie in unseren <NuxtLink :to="{ name: 'footer-datenschutz', hash: '#10_kontaktformulare' }">
+						Datenschutzhinweisen</NuxtLink>.</label>
+			</div>
+			<div class="submit-wrapper">
+				<button
+					type="submit"
+					class="submit-button"
+				>
+					Anfrage Senden
+				</button>
+			</div>
+		</form>
+	</div>
 </template>
 
 <script lang="ts" setup>
@@ -136,7 +136,50 @@ function onValidate() {
 </script>
 
 <style>
-input,textarea{
-	background-color: rgb(201, 201, 201);
-	}
+.contact {
+	margin: 5px;
+	padding: 5px;
+}
+
+textarea {
+	width: 100%;
+	min-height: 200px;
+	resize: none;
+	outline: none;
+	border-radius:  1px;
+	border: 1px solid black;
+}
+
+.input-pair {
+	display: flex;
+	justify-content: space-between;
+}
+.dsvgo-check{
+	display: flex;
+}
+.input-element {
+	width: 300px;
+	outline: none;
+	border-radius:  1px;
+	border: 1px solid black;
+}
+
+.submit-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.submit-button {
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 1px;
+	background-color: var(--erlich-default);
+	color: var(--erlich-white);
+	/* rounded-md bg-erlich hover:bg-erlich-light */
+}
+.submit-button:hover{
+	background-color: var(--erlich-light);
+
+}
 </style>

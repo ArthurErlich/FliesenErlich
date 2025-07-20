@@ -28,7 +28,8 @@ onMounted(() => {
 </script>
 
 <style>
-main{
-	min-height: 0px;
+main {
+	min-height: 80vh;
+	transition: min-height 0.1s ease-in-out;
 }
 </style>

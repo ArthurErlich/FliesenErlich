@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+	appId: "Fliesen-Erlich",
 	modules: [
 		"@nuxt/eslint",
 		"@nuxt/icon",
@@ -12,8 +13,8 @@ export default defineNuxtConfig({
 	app: {
 		head: {
 			link: [
-				{ rel: "icon", type: "image/png", href: "/favicon/erlich-fliesen-favicon-64.png" },
-				{ rel: "icon", type: "image/png", href: "/favicon/erlich-fliesen-favicon.png" },
+				{ rel: "icon", type: "image/png", href: "/media/favicon/erlich-fliesen-favicon-64.png" },
+				{ rel: "icon", type: "image/png", href: "/media/favicon/erlich-fliesen-favicon.png" },
 				{ rel: "preload" },
 			],
 			htmlAttrs: {

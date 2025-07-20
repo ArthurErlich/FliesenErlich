@@ -13,6 +13,9 @@
 				</h3>
 			</div>
 		</div>
+		<div class="scroll-icon-wrapper">
+			Scroll
+		</div>
 	</div>
 </template>
 
@@ -42,14 +45,15 @@ onMounted(() => {
 .hero-container {
 	padding: 0;
 	margin: 0;
-	height: 100vh;
+	height: 90vh;
 	background-color: gray;
-	background-image: url(/hero/15.41.26_ad8dc9dc.jpg);
+	background-image: url(/media/hero/15.41.26_ad8dc9dc.jpg);
 	background-size: cover;
-
+	flex-wrap: wrap;
 	display: flex;
-	justify-content: center;
+	justify-content: end;
 	align-items: center;
+	transition: height 0.1s ease-in-out;
 
 }
 
@@ -66,7 +70,25 @@ onMounted(() => {
 	justify-content: center;
 	align-items: center;
 	height: 200px;
-	background-color: rgba(255, 255, 255, 0.419);
+	background-color: rgba(255, 255, 255, 0.601);
 	/* opacity: 0.2; */
+}
+.scroll-icon-wrapper{
+	--margin: 10px;
+	--size:80px;
+	width: var(--size);
+	height: var(--size);
+	background-color: white;
+	align-self: flex-end;
+	text-align: center;
+	border-radius: 100%;
+	margin-right: var(--margin);
+	margin-bottom: var(--margin);
+
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 }
 </style>
