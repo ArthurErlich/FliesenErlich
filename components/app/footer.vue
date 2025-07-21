@@ -3,8 +3,19 @@
 		ref="root"
 		class=""
 	>
+		<div class="container footer-wraper company">
+			<div>
+				Mobile: <a href="tel:01634310646 ">01634310646 </a> <br>
+				Telefon: <a href="tel:077749394447">07774 93 94 447</a> <br>
+				E-Mail: <a href="mailto:fliesenerlich@hotmail.com">fliesenerlich@hotmail.com</a>
+			</div>
+			<div>
+				Adresse <br>
+				Adresse
+			</div>
+		</div>
 		<div class="container footer-wraper">
-			<ul class="list-none flex gap-4">
+			<ul>
 				<li>
 					<NuxtLink :to="{ name: 'kontakt' }">Kontakt</NuxtLink>
 				</li>
@@ -72,5 +83,11 @@ a {
 a:hover {
 	color: var(--erlich-white);
 
+}
+.company{
+	display: flex;
+	align-items: baseline;
+	justify-content: space-evenly;
+	color: var(--erlich-white)
 }
 </style>
