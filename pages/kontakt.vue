@@ -1,14 +1,16 @@
 <template>
 	<div class="container mx-auto flex items-center flex-col">
-		<AppKontaktform />
-		<AppKarte />
+		<AppKontaktform :class="{ hidden: isHidden }" />
+		<AppMap />
 	</div>
 </template>
 
 <script lang="ts" setup>
+import { ref } from "vue";
 
+const isHidden = ref(true);
 </script>
 
-<style>
+<style scoped>
 
 </style>
