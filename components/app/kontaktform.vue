@@ -128,6 +128,7 @@ const form = reactive<FormData>({
 function onValidate() {
 	if (form.password == "" || form.email_confirm) {
 		console.log("Form values:", form);
+		// acess api
 	}
 	else {
 		console.log("Honypot");
@@ -146,7 +147,7 @@ textarea {
 	min-height: 200px;
 	resize: none;
 	outline: none;
-	border-radius:  1px;
+	border-radius: 1px;
 	border: 1px solid black;
 }
 
@@ -154,13 +155,15 @@ textarea {
 	display: flex;
 	justify-content: space-between;
 }
-.dsvgo-check{
+
+.dsvgo-check {
 	display: flex;
 }
+
 .input-element {
 	width: 300px;
 	outline: none;
-	border-radius:  1px;
+	border-radius: 1px;
 	border: 1px solid black;
 }
 
@@ -178,7 +181,8 @@ textarea {
 	color: var(--erlich-white);
 	/* rounded-md bg-erlich hover:bg-erlich-light */
 }
-.submit-button:hover{
+
+.submit-button:hover {
 	background-color: var(--erlich-light);
 
 }
