@@ -15,7 +15,7 @@ export default defineNuxtConfig({
 			link: [
 				{ rel: "icon", type: "image/png", href: "/media/favicon/erlich-fliesen-favicon-64.png" },
 				{ rel: "icon", type: "image/png", href: "/media/favicon/erlich-fliesen-favicon.png" },
-				{ rel: "preload" },
+				// { rel: "preload" },
 			],
 			htmlAttrs: {
 				lang: "de",

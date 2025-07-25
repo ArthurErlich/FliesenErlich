@@ -73,4 +73,7 @@ a:hover {
 	color: var(--erlich-white);
 
 }
+@media (max-width: 767px) {
+
+}
 </style>
