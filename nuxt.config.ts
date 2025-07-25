@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 		"@nuxt/image",
 		"@nuxtjs/seo",
 		// "@nuxtjs/tailwindcss",
-		"@nuxt/content",
+		// "@nuxt/content",
 	],
 	devtools: { enabled: true },
 	app: {
