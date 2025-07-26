@@ -12,7 +12,7 @@
 					label="Anrede"
 					name="anrede"
 					type="input"
-					required
+					required-back
 				/>
 				<AppFormInput
 					id="firma"
@@ -27,14 +27,14 @@
 					v-model="form.vorname"
 					label="Vorname"
 					type="input"
-					required
+					required-back
 				/>
 				<AppFormInput
 					id="nachname"
 					v-model="form.nachname"
 					label="Nachname"
 					type="input"
-					required
+					required-back
 				/>
 			</div>
 			<div class="input-pair">
@@ -43,7 +43,7 @@
 					v-model="form.email"
 					label="E-Mail"
 					type="email"
-					required
+					required-back
 				/>
 				<div class="input-form" />
 			</div>
@@ -79,7 +79,7 @@
 					id="dsvgo"
 					type="checkbox"
 					name="dsvgo"
-					required
+					requiredBack
 				>
 				<label for="dsvgo">Wir verwenden Ihre Angaben zur Beantwortung Ihrer Anfrage. Weitere Informationen
 					finden
@@ -128,9 +128,36 @@ const form = reactive<FormData>({
 function onValidate() {
 	if (form.password == "" || form.email_confirm) {
 		console.log("Form values:", form);
+		fetch("/server/api/v1/sendMail", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				postTitle: "sendMail",
+				postAuthor: "nuxt-app",
+			}),
+		})
+			.then(
+				// hide contact form and display send success msg
+			)
+			.catch(
+				// throw an error to the page
+			);
 	}
 	else {
 		console.log("Honypot");
+		// block this ip for 24 houres
+		fetch("/server/api/v1/getClinetIP", {
+			method: "GET",
+		})
+			.then(
+			// block the ip adress
+			)
+			.catch(
+			// log that this ip adress cannot be blocke or none was found etc?
+			);
+		console.log("Your IP:");
 	}
 }
 </script>
@@ -156,6 +183,7 @@ textarea {
 	justify-content: space-between;
 }
 
+
 .input-pair>* {
 	width: 40%;
 }
@@ -169,7 +197,7 @@ textarea {
 	}
 }
 
-.dsvgo-check {
+.dsvgo-check  {
 	display: flex;
 }
 

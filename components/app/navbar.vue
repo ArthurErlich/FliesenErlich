@@ -4,7 +4,7 @@
 		class=""
 	>
 		<nav class="desk-nav">
-			<ul class="">
+			<ul class="nav-logo">
 				<li>
 					<NuxtLink :to="{ name: 'index' }">
 						<NuxtImg
@@ -82,7 +82,8 @@ header>nav {
 	height: 100%;
 }
 
-.nav-links a {
+.nav-links a,
+nav > a {
 	display: flex;
 	align-items: center;
 	height: 100%;
