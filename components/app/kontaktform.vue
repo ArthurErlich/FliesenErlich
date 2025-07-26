@@ -179,15 +179,30 @@ textarea {
 
 .input-pair {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 }
 
-.dsvgo-check {
+
+.input-pair>* {
+	width: 40%;
+}
+
+@media (min-width: 360px) {
+	.input-pair {
+	justify-content: center;
+}
+	.input-pair>* {
+		width: 300px;
+	}
+}
+
+.dsvgo-check  {
 	display: flex;
 }
 
 .input-element {
-	width: 300px;
+	width: 100%;
 	outline: none;
 	border-radius: 1px;
 	border: 1px solid black;

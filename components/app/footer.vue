@@ -84,6 +84,9 @@ a:hover {
 	color: var(--erlich-white);
 
 }
+@media (max-width: 767px) {
+
+}
 .company{
 	display: flex;
 	align-items: baseline;
