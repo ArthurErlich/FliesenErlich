@@ -183,7 +183,6 @@ textarea {
 	justify-content: space-between;
 }
 
-
 .input-pair>* {
 	width: 40%;
 }
