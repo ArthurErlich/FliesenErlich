@@ -6,7 +6,7 @@
 			preload
 			class="faceshoot"
 		/>
-		<h3 v-text="name" />
+		<h2 v-text="name" />
 		<p v-text="moto" />
 	</div>
 </template>

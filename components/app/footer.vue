@@ -3,17 +3,6 @@
 		ref="root"
 		class=""
 	>
-		<div class="container footer-wraper company">
-			<div>
-				Mobile: <a href="tel:01634310646 ">01634310646 </a> <br>
-				Telefon: <a href="tel:077749394447">07774 93 94 447</a> <br>
-				E-Mail: <a href="mailto:fliesenerlich@hotmail.com">fliesenerlich@hotmail.com</a>
-			</div>
-			<div>
-				Adresse <br>
-				Adresse
-			</div>
-		</div>
 		<div class="container footer-wraper">
 			<ul>
 				<li>
@@ -29,6 +18,19 @@
 					<NuxtLink :to="{ name: 'footer-cookies' }">Cookies</NuxtLink>
 				</li>
 			</ul>
+		</div>
+		<div class="footer-gap" />
+		<div class="container footer-wraper company">
+			<div class="company-adress">
+				Mobile: <a href="tel:01634310646 ">01634310646 </a> <br>
+				Telefon: <a href="tel:077749394447">07774 93 94 447</a> <br>
+				E-Mail: <a href="mailto:fliesenerlich@hotmail.com">fliesenerlich@hotmail.com</a>
+			</div>
+			<div class="company-adress">
+				Waldemar Erlich <br>
+				Obere Blatt 17<br>
+				78253 Eigeltingen
+			</div>
 		</div>
 	</footer>
 </template>
@@ -47,17 +49,17 @@ defineExpose({
 <style scoped>
 .footer-wraper {
 	padding: 5px;
-}
-
-.footer-wrapper {
-	height: 50px;
 	display: flex;
-	justify-content: baseline;
+	justify-content: center;
 	margin: auto;
 }
 
 footer {
 	background-color: var(--erlich-default);
+}
+.company-adress{
+	text-align: left;
+	vertical-align: baseline;
 }
 
 ul {
@@ -84,13 +86,39 @@ a:hover {
 	color: var(--erlich-white);
 
 }
-@media (max-width: 767px) {
-
-}
 .company{
 	display: flex;
-	align-items: baseline;
+	align-items: center;
+	flex-wrap: wrap;
 	justify-content: space-evenly;
-	color: var(--erlich-white)
+	color: var(--erlich-white);
+	gap: 10px
+}
+.footer-gap{
+	height:25px;
+	background-color: var(--erlich-white);
+	background-image: var(--erlich-svg-fill);
+	background-size:contain;
+	background-position: 5px 5px;
+	border-top-left-radius: 50px;
+	border-bottom-right-radius: 50px;
+	margin-left:20px;
+	margin-right:20px;
+	/* margin-top: 10px; */
+	margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+	.footer-wraper > ul{
+		flex-direction: column;
+		gap: 5px;
+	}
+	.company{
+		flex-direction: column;
+		gap: 5px;
+	}
+	.company > *{
+		width: 250px
+	}
+
 }
 </style>

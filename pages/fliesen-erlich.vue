@@ -1,14 +1,16 @@
 <template>
 	<div class="container">
-		<h1>Unsere Philosophie</h1>
-		<h2>Historie</h2>
-		<ul>
-			<li>Gründung</li>
-			<li>Lager mietung</li>
-			<li>Aufnahme Azubi</li>
-			<li>Ausbilderschein</li>
-		</ul>
-		<h2>Das Fliesen Erlich Team</h2>
+		<div v-if="false">
+			<h1>Unsere Philosophie</h1>
+			<h2>Historie</h2>
+			<ul>
+				<li>Gründung</li>
+				<li>Lager mietung</li>
+				<li>Aufnahme Azubi</li>
+				<li>Ausbilderschein</li>
+			</ul>
+		</div>
+		<h1>Das Fliesen Erlich Team</h1>
 		<div class="employees">
 			<AppEmployee
 				src="/media/employees/waldemar-erlich.jpg"

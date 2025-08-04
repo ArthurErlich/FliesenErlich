@@ -25,7 +25,7 @@
 				<li>
 					<NuxtLink :to="{ name: 'fliesen-erlich' }">Fliesen-Erlich</NuxtLink>
 				</li>
-				<li>
+				<li v-if="false">
 					<NuxtLink :to="{ name: 'blog' }">Blog</NuxtLink>
 				</li>
 				<li>
@@ -34,7 +34,34 @@
 			</ul>
 		</nav>
 		<nav class="mob-nav">
-			MOBILE NAVBAR --> Hamburger Menue
+			<button
+				class="toggle"
+				@click="toggleHamburger"
+			>
+				X
+			</button>
+			<div
+				class="hamburger"
+				:style="{ marginRight: isOpen ? '0px' : '0px' }"
+			>
+				<ul
+					class="mob-links"
+					:style="{ width: isOpen ? '250px' : '0px' }"
+				>
+					<li>
+						<NuxtLink :to="{ name: 'index' }">Startseite</NuxtLink>
+					</li>
+					<li>
+						<NuxtLink :to="{ name: 'fliesen-erlich' }">Fliesen-Erlich</NuxtLink>
+					</li>
+					<li v-if="false">
+						<NuxtLink :to="{ name: 'blog' }">Blog</NuxtLink>
+					</li>
+					<li>
+						<NuxtLink :to="{ name: 'kontakt' }">Kontakt</NuxtLink>
+					</li>
+				</ul>
+			</div>
 		</nav>
 	</header>
 </template>
@@ -48,6 +75,12 @@ const root = ref<HTMLElement | null>(null);
 defineExpose({
 	el: root,
 });
+
+const isOpen = ref(false);
+
+const toggleHamburger = () => {
+	isOpen.value = !isOpen.value;
+};
 </script>
 
 <style>
@@ -71,7 +104,8 @@ header>nav {
 	justify-content: space-evenly;
 } */
 
-.nav-links a:hover {
+.nav-links a:hover,
+.mob-links a:hover {
 	background-color: var(--erlich-light);
 	border-radius: 1px;
 	color: var(--erlich-white);
@@ -83,7 +117,8 @@ header>nav {
 }
 
 .nav-links a,
-nav > a {
+nav > a,
+.mob-links a {
 	display: flex;
 	align-items: center;
 	height: 100%;
@@ -110,6 +145,7 @@ header ul {
 header li {
 	display: inline;
 	margin: 0;
+	overflow: none;
 }
 
 .logo {
@@ -122,12 +158,56 @@ header li {
 }
 
 @media (max-width: 767px) {
+
 	.desk-nav {
 		display: none;
 	}
-
+	.header{
+		display: block;
+	}
 	.mob-nav {
 		display: block;
 	}
+}
+.mob-nav{
+	margin-left: auto;
+}
+.mob-links{
+	display: flex;
+	flex-direction: column;
+	/* width: 250px; */
+	background-color: var(--erlich-white);
+	/* margin-left: 25px; */
+	padding-top: 25px;
+	padding-bottom: 25px;
+	overflow:hidden;
+	transition: width 0.25s ease-in-out;
+	overflow: hidden;
+	word-break: keep-all;
+	/* height:120px; */
+
+}
+.mob-links > li{
+	gap: 5px;
+	margin:	5px
+}
+.hamburger{
+	position:absolute;
+	right:0;
+	z-index: 10;
+	padding-top: 5px;
+	/* width: 50px; */
+	transition: margin-right 0.25s ease-in-out;
+	/* overflow:hidden */
+}
+.toggle{
+	margin-top: 5px;
+	width: 25px;
+	height: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	margin-left: auto;
 }
 </style>
