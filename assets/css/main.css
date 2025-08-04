@@ -13,6 +13,9 @@
     --erlich-accent: #B08C6B;
     /* Hover für Akzent */
     --erlich-accent-hover: #C7A481;
+    /* Background SVG for fill*/
+    --erlich-svg-fill: url(/media/logo/erlich-fliesen-favicon.svg)
+    
 }
 
 /* Add font */

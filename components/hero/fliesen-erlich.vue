@@ -5,12 +5,12 @@
 	>
 		<div class="wrapper">
 			<div class="text">
-				<h2 class="px-0 mx-0">
+				<h1 class="px-0 mx-0">
 					Fliesen Erlich
-				</h2>
-				<h3 class="px-0 mx-0">
+				</h1>
+				<h2 class="px-0 mx-0">
 					Wenn die Qualität stimmen muss!
-				</h3>
+				</h2>
 			</div>
 		</div>
 		<div class="scroll-icon-wrapper">

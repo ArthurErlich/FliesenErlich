@@ -16,18 +16,19 @@
 			E-Mail: <a href="mailto:fliesenerlich@hotmail.com">fliesenerlich@hotmail.com</a>
 		</p>
 
-		<h2>Streitschlichtung</h2>
-		<p>
-			Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
-			https://ec.europa.eu/consumers/odr.
-			Unsere E-Mail-Adresse finden Sie oben im Impressum.
-		</p>
+		<div v-if="false">
+			<h2>Streitschlichtung</h2>
+			<p>
+				Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+				https://ec.europa.eu/consumers/odr.
+				Unsere E-Mail-Adresse finden Sie oben im Impressum.
+			</p>
 
-		<p>
-			Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
-			teilzunehmen.
-		</p>
-
+			<p>
+				Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+				teilzunehmen.
+			</p>
+		</div>
 		<h2>Haftung für Inhalte</h2>
 		<p>
 			Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen
