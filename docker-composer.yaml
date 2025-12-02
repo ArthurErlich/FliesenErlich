@@ -1,0 +1,13 @@
+services:
+
+services:
+  web:
+    image: nginx:latest
+    volumes:
+      - 
+  php-fpm:
+    image: php:8-fpm
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
