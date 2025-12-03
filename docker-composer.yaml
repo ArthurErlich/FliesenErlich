@@ -1,12 +1,9 @@
 services:
-
-services:
   web:
-    image: nginx:latest
+    image:
+    user: "$UID:$GID"
     volumes:
-      - 
-  php-fpm:
-    image: php:8-fpm
+      - ./web:/var/www/html
   db:
     image: mysql:8
     environment:
