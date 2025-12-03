@@ -8,11 +8,16 @@ RUN apt-get update -y && apt-get install --no-install-recommends -y libc-client-
   libzip-dev libldap2-dev libonig-dev zip rsync wget git nano webp dos2unix \
   \
   # MySQL CLI Tools (DB Dump Handling)
-  default-mysql-client \
+  default-mysql-client && \
   rm -rf /var/lib/apt/lists/*
 
 ## Install supported PHP extensions
-RUN install-php-extensions imap iconv sodium mysqli xsl calendar pdo_mysql gd opcache zip ldap mbstring bcmath intl gmp soap sockets mongodb xdebug apcu amqp pcntl imagick solr ftp
+# Install the helper script used to install many PHP extensions
+# (https://github.com/mlocati/docker-php-extension-installer)
+RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions && \
+  chmod +x /usr/local/bin/install-php-extensions
+
+RUN install-php-extensions imap iconv sodium mysqli pdo_mysql gd opcache zip ldap mbstring bcmath intl gmp soap sockets xdebug apcu amqp pcntl solr ftp
 
 # PHP Config
 COPY ./php/php.ini /usr/local/etc/php/conf.d/user2.ini

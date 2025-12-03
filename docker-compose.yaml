@@ -1,9 +1,12 @@
 services:
   web:
-    image:
+    build: ./docker
     user: "$UID:$GID"
     volumes:
       - ./web:/var/www/html
+    ports:
+      - 80:80
+      - 8080:8080
   db:
     image: mysql:8
     environment:
