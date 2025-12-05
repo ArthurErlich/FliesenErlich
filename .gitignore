@@ -16,6 +16,7 @@
 /system/config/localconfig.php
 /templates/
 /var/
+/bin/
 
 # Skip files
 /system/modules/*/.skip
