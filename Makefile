@@ -6,12 +6,12 @@ SERVICE := web
 
 setup:
 	$(COMPOSE) -f $(COMPOSE_FILE) build
-
+	
 up:
 	$(COMPOSE) -f $(COMPOSE_FILE) up -d
 
 shell:
-	@$(COMPOSE) -f $(COMPOSE_FILE) exec $(SERVICE) bash
+	@$(COMPOSE) -f $(COMPOSE_FILE) exec $(SERVICE) bash 
 
 down:
 	$(COMPOSE) -f $(COMPOSE_FILE) down

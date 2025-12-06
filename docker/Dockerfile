@@ -4,8 +4,8 @@ ARG TARGETARCH
 
 # Abhängigkeiten und Tools
 RUN apt-get update -y && apt-get install --no-install-recommends -y libc-client-dev libkrb5-dev libfreetype6-dev \
-  libjpeg62-turbo-dev libwebp-dev libmcrypt-dev libpng-dev libxslt1-dev libsodium-dev \
-  libzip-dev libldap2-dev libonig-dev zip rsync wget git nano webp dos2unix \
+  libjpeg62-turbo-dev libwebp-dev libmcrypt-dev libpng-dev libxslt1-dev libsodium-dev  \
+  libzip-dev libldap2-dev libonig-dev zip rsync wget git nano webp dos2unix libsqlite3-dev \
   \
   # MySQL CLI Tools (DB Dump Handling)
   default-mysql-client && \
@@ -17,7 +17,7 @@ RUN apt-get update -y && apt-get install --no-install-recommends -y libc-client-
 RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o /usr/local/bin/install-php-extensions && \
   chmod +x /usr/local/bin/install-php-extensions
 
-RUN install-php-extensions imap iconv sodium mysqli pdo_mysql gd opcache zip ldap mbstring bcmath intl gmp soap sockets xdebug apcu amqp pcntl solr ftp
+RUN install-php-extensions imap iconv sodium mysqli pdo_mysql gd opcache zip ldap mbstring bcmath intl gmp soap sockets xdebug apcu amqp pcntl solr ftp pdo_sqlite sqlite3
 
 # PHP Config
 COPY ./php/php.ini /usr/local/etc/php/conf.d/user2.ini
@@ -27,6 +27,7 @@ COPY ./apache/server.crt /etc/ssl/certs/server.crt
 COPY ./apache/server.key /etc/ssl/certs/server.key
 COPY ./apache/000-default.conf /etc/apache2/sites-enabled/
 COPY ./apache/default-ssl.conf /etc/apache2/sites-enabled/
+
 
 # Composer including workaround for WSL
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --2 && \
