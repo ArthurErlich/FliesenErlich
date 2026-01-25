@@ -9,12 +9,10 @@
 
 # Generated folders
 /assets/
-/files/
 /public/
 /system/*
 !/system/config/
 /system/config/localconfig.php
-/templates/
 /var/
 /bin/
 
