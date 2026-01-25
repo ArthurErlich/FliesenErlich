@@ -9,7 +9,6 @@
 
 # Generated folders
 /assets/
-/files/
 /public/
 /system/*
 !/system/config/
