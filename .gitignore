@@ -19,3 +19,4 @@
 # Skip files
 /system/modules/*/.skip
 /node_modules/*
+web/files/aerlFliesenErlichTheme/node_modules/*
