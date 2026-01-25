@@ -18,3 +18,4 @@
 
 # Skip files
 /system/modules/*/.skip
+/node_modules/
