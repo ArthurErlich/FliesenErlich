@@ -9,7 +9,12 @@ RUN apt-get update -y && apt-get install --no-install-recommends -y libc-client-
   \
   # MySQL CLI Tools (DB Dump Handling)
   default-mysql-client && \
+  # Node Abhängikeite
+  curl -fsSL https://deb.nodesource.com/setup_20.x | bash -  && \
+  apt-get install -y nodejs &&  \
+  npm install -g npm && \
   rm -rf /var/lib/apt/lists/*
+
 
 ## Install supported PHP extensions
 # Install the helper script used to install many PHP extensions
