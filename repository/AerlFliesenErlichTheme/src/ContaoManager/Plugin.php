@@ -12,8 +12,11 @@ use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
 use Symfony\Component\Config\Loader\LoaderResolverInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Aerl\FliesenErlichThemeBundle\FliesenErlichThemeBundle;
+use Contao\ManagerPlugin\Config\ConfigPluginInterface;
+use Symfony\Component\Config\Loader\LoaderInterface;
 
-class Plugin implements BundlePluginInterface, RoutingPluginInterface
+
+class Plugin implements BundlePluginInterface, ConfigPluginInterface
 {
     public function getBundles(ParserInterface $parser): array
     {
@@ -22,12 +25,8 @@ class Plugin implements BundlePluginInterface, RoutingPluginInterface
                 ->setLoadAfter([ContaoCoreBundle::class]),
         ];
     }
-
-    public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
+    public function registerContainerConfiguration(LoaderInterface $loader, array $config)
     {
-        return $resolver
-            ->resolve(__DIR__ . '/../Controller', 'attribute')
-            ->load(__DIR__ . '/../Controller')
-        ;
+        $loader->load(__DIR__ . '/../../config/config.yaml');
     }
 }

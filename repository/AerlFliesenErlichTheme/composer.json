@@ -6,7 +6,8 @@
     "authors": [
         {
             "name": "Arthur Erlich",
-            "email": "code@arthurerlich.ch"
+            "email": "code@arthurerlich.ch",
+            "homepage": "https://me.arthurerlich.ch"
         }
     ],
     "autoload": {

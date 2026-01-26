@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0b8a35e3d312f3343f62d29c684b13ef",
+    "content-hash": "b335dcd9f118fe9fbe10301eef4302d7",
     "packages": [
         {
             "name": "aerl/fliesen-erlich-theme-bundle",
@@ -12,12 +12,21 @@
             "dist": {
                 "type": "path",
                 "url": "../repository/AerlFliesenErlichTheme",
-                "reference": "69180aea0f26094f16df7838918c0b0073701666"
+                "reference": "4e275cecbf888700ba8c6d14b2a6408e600ef7b3"
             },
             "require": {
                 "contao/manager-bundle": "~5.6.0"
             },
+            "conflict": {
+                "contao/manager-plugin": "<2.0 || >=3.0"
+            },
+            "require-dev": {
+                "contao/manager-plugin": "^2.0"
+            },
             "type": "contao-bundle",
+            "extra": {
+                "contao-manager-plugin": "Aerl\\FliesenErlichThemeBundle\\ContaoManager\\Plugin"
+            },
             "autoload": {
                 "psr-4": {
                     "Aerl\\FliesenErlichThemeBundle\\": "src/"
@@ -29,7 +38,8 @@
             "authors": [
                 {
                     "name": "Arthur Erlich",
-                    "email": "code@arthurerlich.ch"
+                    "email": "code@arthurerlich.ch",
+                    "homepage": "https://me.arthurerlich.ch"
                 }
             ],
             "transport-options": {

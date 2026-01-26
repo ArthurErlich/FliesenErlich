@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+    <name>AerlFliesenErlichTheme</name>
+    <author>Arthur Erlich</author>
+    <email>code@arthurerlich.ch</email>
+    <templates>
+        <!-- Add paths to your Twig templates, e.g. -->
+        <template>templates/my-template.twig</template>
+    </templates>
+    <stylesheets>
+        <!-- Add CSS files from assets/ or public/ -->
+        <stylesheet>assets/css/style.css</stylesheet>
+    </stylesheets>
+    <javascripts>
+        <!-- Add JS files if any -->
+    </javascripts>
+    <!-- Add modules, layouts, etc., as needed -->
+</theme>
