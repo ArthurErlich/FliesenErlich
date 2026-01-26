@@ -4,8 +4,39 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2813133b9b9f16ab4c512984021568e4",
+    "content-hash": "0b8a35e3d312f3343f62d29c684b13ef",
     "packages": [
+        {
+            "name": "aerl/fliesen-erlich-theme-bundle",
+            "version": "0.0.1",
+            "dist": {
+                "type": "path",
+                "url": "../repository/AerlFliesenErlichTheme",
+                "reference": "69180aea0f26094f16df7838918c0b0073701666"
+            },
+            "require": {
+                "contao/manager-bundle": "~5.6.0"
+            },
+            "type": "contao-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Aerl\\FliesenErlichThemeBundle\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Arthur Erlich",
+                    "email": "code@arthurerlich.ch"
+                }
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
         {
             "name": "ausi/slug-generator",
             "version": "v1.1.1",
