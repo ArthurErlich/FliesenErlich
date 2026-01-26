@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ad8e268035ca3d9b0aff975c7b305b3",
+    "content-hash": "2813133b9b9f16ab4c512984021568e4",
     "packages": [
         {
             "name": "ausi/slug-generator",
@@ -592,16 +592,16 @@
         },
         {
             "name": "contao-components/ace",
-            "version": "1.43.5",
+            "version": "1.43.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contao-components/ace.git",
-                "reference": "40be4460249c1d300389cda8fb15d4e861ae0f45"
+                "reference": "1a51d849d90f85523ee13269a89dd899f30a800f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contao-components/ace/zipball/40be4460249c1d300389cda8fb15d4e861ae0f45",
-                "reference": "40be4460249c1d300389cda8fb15d4e861ae0f45",
+                "url": "https://api.github.com/repos/contao-components/ace/zipball/1a51d849d90f85523ee13269a89dd899f30a800f",
+                "reference": "1a51d849d90f85523ee13269a89dd899f30a800f",
                 "shasum": ""
             },
             "require": {
@@ -621,9 +621,9 @@
             "description": "ACE code editor integration for Contao Open Source CMS",
             "support": {
                 "issues": "https://github.com/contao-components/ace/issues",
-                "source": "https://github.com/contao-components/ace/tree/1.43.5"
+                "source": "https://github.com/contao-components/ace/tree/1.43.6"
             },
-            "time": "2025-12-03T16:35:06+00:00"
+            "time": "2026-01-26T07:43:37+00:00"
         },
         {
             "name": "contao-components/altcha",
@@ -662,16 +662,16 @@
         },
         {
             "name": "contao-components/choices",
-            "version": "11.2.0.2",
+            "version": "11.2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contao-components/choices.git",
-                "reference": "7aa2d34dc3c082624c6d19a5e01eb99f3f09c92f"
+                "reference": "00074bc027c42763b64a6d78fd6909972caa8fe6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contao-components/choices/zipball/7aa2d34dc3c082624c6d19a5e01eb99f3f09c92f",
-                "reference": "7aa2d34dc3c082624c6d19a5e01eb99f3f09c92f",
+                "url": "https://api.github.com/repos/contao-components/choices/zipball/00074bc027c42763b64a6d78fd6909972caa8fe6",
+                "reference": "00074bc027c42763b64a6d78fd6909972caa8fe6",
                 "shasum": ""
             },
             "require": {
@@ -691,9 +691,9 @@
             "description": "Choices integration for Contao Open Source CMS",
             "support": {
                 "issues": "https://github.com/contao-components/choices/issues",
-                "source": "https://github.com/contao-components/choices/tree/11.2.0.2"
+                "source": "https://github.com/contao-components/choices/tree/11.2.0.3"
             },
-            "time": "2026-01-23T09:14:23+00:00"
+            "time": "2026-01-26T15:43:30+00:00"
         },
         {
             "name": "contao-components/colorbox",
@@ -767,16 +767,16 @@
         },
         {
             "name": "contao-components/datepicker",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contao-components/datepicker.git",
-                "reference": "f039ea6ea921abc60f02aee6991c479c85d90151"
+                "reference": "689ffb85dccb90bea35b1a8d09a2e7b5a70dc978"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contao-components/datepicker/zipball/f039ea6ea921abc60f02aee6991c479c85d90151",
-                "reference": "f039ea6ea921abc60f02aee6991c479c85d90151",
+                "url": "https://api.github.com/repos/contao-components/datepicker/zipball/689ffb85dccb90bea35b1a8d09a2e7b5a70dc978",
+                "reference": "689ffb85dccb90bea35b1a8d09a2e7b5a70dc978",
                 "shasum": ""
             },
             "require": {
@@ -796,9 +796,9 @@
             "description": "Date picker integration for Contao Open Source CMS",
             "support": {
                 "issues": "https://github.com/contao-components/datepicker/issues",
-                "source": "https://github.com/contao-components/datepicker/tree/3.0.1"
+                "source": "https://github.com/contao-components/datepicker/tree/3.0.2"
             },
-            "time": "2024-11-15T10:05:54+00:00"
+            "time": "2026-01-26T14:11:19+00:00"
         },
         {
             "name": "contao-components/dropzone",
@@ -1060,16 +1060,16 @@
         },
         {
             "name": "contao-components/simplemodal",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contao-components/simplemodal.git",
-                "reference": "a0347f68e9fa47f8538c20762207f27f3ec97b00"
+                "reference": "e5b0cbe195ff7c32cbff2c3774b23f1c2fcf8ce0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contao-components/simplemodal/zipball/a0347f68e9fa47f8538c20762207f27f3ec97b00",
-                "reference": "a0347f68e9fa47f8538c20762207f27f3ec97b00",
+                "url": "https://api.github.com/repos/contao-components/simplemodal/zipball/e5b0cbe195ff7c32cbff2c3774b23f1c2fcf8ce0",
+                "reference": "e5b0cbe195ff7c32cbff2c3774b23f1c2fcf8ce0",
                 "shasum": ""
             },
             "require": {
@@ -1089,9 +1089,9 @@
             "description": "SimpleModal integration for Contao Open Source CMS",
             "support": {
                 "issues": "https://github.com/contao-components/simplemodal/issues",
-                "source": "https://github.com/contao-components/simplemodal/tree/3.1.0"
+                "source": "https://github.com/contao-components/simplemodal/tree/3.1.1"
             },
-            "time": "2026-01-22T14:48:56+00:00"
+            "time": "2026-01-26T15:41:19+00:00"
         },
         {
             "name": "contao-components/swipe",
@@ -1306,168 +1306,6 @@
                 "source": "https://github.com/contao-components/tristen-tablesort/tree/5.7.0"
             },
             "time": "2026-01-02T10:32:07+00:00"
-        },
-        {
-            "name": "contao/calendar-bundle",
-            "version": "5.6.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/contao/calendar-bundle.git",
-                "reference": "d24696c0263e592351d5e24ba01c0634850ce974"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/contao/calendar-bundle/zipball/d24696c0263e592351d5e24ba01c0634850ce974",
-                "reference": "d24696c0263e592351d5e24ba01c0634850ce974",
-                "shasum": ""
-            },
-            "require": {
-                "contao/core-bundle": "self.version",
-                "friendsofsymfony/http-cache": "^3.0",
-                "php": "^8.2",
-                "php-feed-io/feed-io": "^6.0",
-                "symfony/config": "^6.4 || ^7.0",
-                "symfony/dependency-injection": "^6.4 || ^7.0",
-                "symfony/deprecation-contracts": "^3.0",
-                "symfony/http-foundation": "^6.4 || ^7.0",
-                "symfony/http-kernel": "^6.4 || ^7.0",
-                "symfony/polyfill-mbstring": "^1.0",
-                "symfony/yaml": "^6.4 || ^7.0"
-            },
-            "conflict": {
-                "contao/core": "*",
-                "contao/manager-plugin": "<2.0 || >=3.0"
-            },
-            "require-dev": {
-                "contao/manager-plugin": "^2.3.1",
-                "contao/test-case": "self.version",
-                "phpunit/phpunit": "^11.5",
-                "symfony/http-client": "^6.4 || ^7.0"
-            },
-            "type": "contao-bundle",
-            "extra": {
-                "contao-manager-plugin": "Contao\\CalendarBundle\\ContaoManager\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Contao\\CalendarBundle\\": "src/"
-                },
-                "classmap": [
-                    "contao/"
-                ],
-                "exclude-from-classmap": [
-                    "contao/config/",
-                    "contao/dca/",
-                    "contao/languages/",
-                    "contao/templates/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Leo Feyer",
-                    "homepage": "https://github.com/leofeyer"
-                },
-                {
-                    "name": "Contao Community",
-                    "homepage": "https://contao.org/contributors"
-                }
-            ],
-            "description": "Adds calendar functionality to Contao",
-            "homepage": "https://contao.org",
-            "support": {
-                "docs": "https://docs.contao.org",
-                "forum": "https://community.contao.org",
-                "issues": "https://github.com/contao/contao/issues",
-                "source": "https://github.com/contao/calendar-bundle"
-            },
-            "funding": [
-                {
-                    "url": "https://to.contao.org/donate",
-                    "type": "other"
-                }
-            ],
-            "time": "2026-01-12T12:00:13+00:00"
-        },
-        {
-            "name": "contao/comments-bundle",
-            "version": "5.6.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/contao/comments-bundle.git",
-                "reference": "f056bd6f879e99ab25dab4e31914a7d05a133491"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/contao/comments-bundle/zipball/f056bd6f879e99ab25dab4e31914a7d05a133491",
-                "reference": "f056bd6f879e99ab25dab4e31914a7d05a133491",
-                "shasum": ""
-            },
-            "require": {
-                "contao/core-bundle": "self.version",
-                "php": "^8.2",
-                "symfony/http-kernel": "^6.4 || ^7.0"
-            },
-            "conflict": {
-                "contao/core": "*",
-                "contao/manager-plugin": "<2.0 || >=3.0"
-            },
-            "require-dev": {
-                "contao/manager-plugin": "^2.3.1",
-                "contao/test-case": "self.version",
-                "phpunit/phpunit": "^11.5",
-                "symfony/http-client": "^6.4 || ^7.0"
-            },
-            "type": "contao-bundle",
-            "extra": {
-                "contao-manager-plugin": "Contao\\CommentsBundle\\ContaoManager\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Contao\\CommentsBundle\\": "src/"
-                },
-                "classmap": [
-                    "contao/"
-                ],
-                "exclude-from-classmap": [
-                    "contao/config/",
-                    "contao/dca/",
-                    "contao/languages/",
-                    "contao/templates/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Leo Feyer",
-                    "homepage": "https://github.com/leofeyer"
-                },
-                {
-                    "name": "Contao Community",
-                    "homepage": "https://contao.org/contributors"
-                }
-            ],
-            "description": "Adds comments functionality to Contao",
-            "homepage": "https://contao.org",
-            "support": {
-                "docs": "https://docs.contao.org",
-                "forum": "https://community.contao.org",
-                "issues": "https://github.com/contao/contao/issues",
-                "source": "https://github.com/contao/comments-bundle"
-            },
-            "funding": [
-                {
-                    "url": "https://to.contao.org/donate",
-                    "type": "other"
-                }
-            ],
-            "time": "2026-01-12T12:00:13+00:00"
         },
         {
             "name": "contao/conflicts",
@@ -1759,86 +1597,6 @@
             "time": "2026-01-12T12:00:13+00:00"
         },
         {
-            "name": "contao/faq-bundle",
-            "version": "5.6.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/contao/faq-bundle.git",
-                "reference": "2dbf2cd0243177704ace16d383d8b10e71c2efd2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/contao/faq-bundle/zipball/2dbf2cd0243177704ace16d383d8b10e71c2efd2",
-                "reference": "2dbf2cd0243177704ace16d383d8b10e71c2efd2",
-                "shasum": ""
-            },
-            "require": {
-                "contao/core-bundle": "self.version",
-                "php": "^8.2",
-                "symfony/config": "^6.4 || ^7.0",
-                "symfony/dependency-injection": "^6.4 || ^7.0",
-                "symfony/http-kernel": "^6.4 || ^7.0",
-                "symfony/yaml": "^6.4 || ^7.0"
-            },
-            "conflict": {
-                "contao/core": "*",
-                "contao/manager-plugin": "<2.0 || >=3.0"
-            },
-            "require-dev": {
-                "contao/manager-plugin": "^2.3.1",
-                "contao/test-case": "self.version",
-                "phpunit/phpunit": "^11.5",
-                "symfony/http-client": "^6.4 || ^7.0"
-            },
-            "type": "contao-bundle",
-            "extra": {
-                "contao-manager-plugin": "Contao\\FaqBundle\\ContaoManager\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Contao\\FaqBundle\\": "src/"
-                },
-                "classmap": [
-                    "contao/"
-                ],
-                "exclude-from-classmap": [
-                    "contao/config/",
-                    "contao/dca/",
-                    "contao/languages/",
-                    "contao/templates/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Leo Feyer",
-                    "homepage": "https://github.com/leofeyer"
-                },
-                {
-                    "name": "Contao Community",
-                    "homepage": "https://contao.org/contributors"
-                }
-            ],
-            "description": "Adds FAQ functionality to Contao",
-            "homepage": "https://contao.org",
-            "support": {
-                "docs": "https://docs.contao.org",
-                "forum": "https://community.contao.org",
-                "issues": "https://github.com/contao/contao/issues",
-                "source": "https://github.com/contao/faq-bundle"
-            },
-            "funding": [
-                {
-                    "url": "https://to.contao.org/donate",
-                    "type": "other"
-                }
-            ],
-            "time": "2026-01-12T12:00:13+00:00"
-        },
-        {
             "name": "contao/image",
             "version": "1.2.4",
             "source": {
@@ -1974,81 +1732,6 @@
                 }
             ],
             "time": "2024-10-02T10:47:33+00:00"
-        },
-        {
-            "name": "contao/listing-bundle",
-            "version": "5.6.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/contao/listing-bundle.git",
-                "reference": "6f0c0be55da8b6c30c232161bd396f9cf4cbfb9a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/contao/listing-bundle/zipball/6f0c0be55da8b6c30c232161bd396f9cf4cbfb9a",
-                "reference": "6f0c0be55da8b6c30c232161bd396f9cf4cbfb9a",
-                "shasum": ""
-            },
-            "require": {
-                "contao/core-bundle": "self.version",
-                "php": "^8.2",
-                "symfony/http-kernel": "^6.4 || ^7.0"
-            },
-            "conflict": {
-                "contao/core": "*",
-                "contao/manager-plugin": "<2.0 || >=3.0"
-            },
-            "require-dev": {
-                "contao/manager-plugin": "^2.0",
-                "symfony/http-client": "^6.4 || ^7.0"
-            },
-            "type": "contao-bundle",
-            "extra": {
-                "contao-manager-plugin": "Contao\\ListingBundle\\ContaoManager\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Contao\\ListingBundle\\": "src/"
-                },
-                "classmap": [
-                    "contao/"
-                ],
-                "exclude-from-classmap": [
-                    "contao/config/",
-                    "contao/dca/",
-                    "contao/languages/",
-                    "contao/templates/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Leo Feyer",
-                    "homepage": "https://github.com/leofeyer"
-                },
-                {
-                    "name": "Contao Community",
-                    "homepage": "https://contao.org/contributors"
-                }
-            ],
-            "description": "Allows to list arbitrary data in the Contao front end",
-            "homepage": "https://contao.org",
-            "support": {
-                "docs": "https://docs.contao.org",
-                "forum": "https://community.contao.org",
-                "issues": "https://github.com/contao/contao/issues",
-                "source": "https://github.com/contao/listing-bundle"
-            },
-            "funding": [
-                {
-                    "url": "https://to.contao.org/donate",
-                    "type": "other"
-                }
-            ],
-            "time": "2025-12-15T11:05:05+00:00"
         },
         {
             "name": "contao/manager-bundle",
@@ -2232,170 +1915,6 @@
                 }
             ],
             "time": "2025-06-26T11:56:06+00:00"
-        },
-        {
-            "name": "contao/news-bundle",
-            "version": "5.6.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/contao/news-bundle.git",
-                "reference": "e98d2cb5e03ce4a6d457c51eebf101e302467edd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/contao/news-bundle/zipball/e98d2cb5e03ce4a6d457c51eebf101e302467edd",
-                "reference": "e98d2cb5e03ce4a6d457c51eebf101e302467edd",
-                "shasum": ""
-            },
-            "require": {
-                "contao/core-bundle": "self.version",
-                "friendsofsymfony/http-cache": "^3.0",
-                "php": "^8.2",
-                "php-feed-io/feed-io": "^6.0",
-                "symfony/config": "^6.4 || ^7.0",
-                "symfony/dependency-injection": "^6.4 || ^7.0",
-                "symfony/deprecation-contracts": "^3.0",
-                "symfony/http-foundation": "^6.4 || ^7.0",
-                "symfony/http-kernel": "^6.4 || ^7.0",
-                "symfony/polyfill-mbstring": "^1.0",
-                "symfony/yaml": "^6.4 || ^7.0"
-            },
-            "conflict": {
-                "contao/core": "*",
-                "contao/manager-plugin": "<2.0 || >=3.0"
-            },
-            "require-dev": {
-                "contao/manager-plugin": "^2.3.1",
-                "contao/test-case": "self.version",
-                "phpunit/phpunit": "^11.5",
-                "symfony/http-client": "^6.4 || ^7.0"
-            },
-            "type": "contao-bundle",
-            "extra": {
-                "contao-manager-plugin": "Contao\\NewsBundle\\ContaoManager\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Contao\\NewsBundle\\": "src/"
-                },
-                "classmap": [
-                    "contao/"
-                ],
-                "exclude-from-classmap": [
-                    "contao/config/",
-                    "contao/dca/",
-                    "contao/languages/",
-                    "contao/templates/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Leo Feyer",
-                    "homepage": "https://github.com/leofeyer"
-                },
-                {
-                    "name": "Contao Community",
-                    "homepage": "https://contao.org/contributors"
-                }
-            ],
-            "description": "Adds news functionality to Contao",
-            "homepage": "https://contao.org",
-            "support": {
-                "docs": "https://docs.contao.org",
-                "forum": "https://community.contao.org",
-                "issues": "https://github.com/contao/contao/issues",
-                "source": "https://github.com/contao/news-bundle"
-            },
-            "funding": [
-                {
-                    "url": "https://to.contao.org/donate",
-                    "type": "other"
-                }
-            ],
-            "time": "2026-01-12T12:00:13+00:00"
-        },
-        {
-            "name": "contao/newsletter-bundle",
-            "version": "5.6.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/contao/newsletter-bundle.git",
-                "reference": "fca4e2bd99d24c6ce473b71f4f76a68223847fcd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/contao/newsletter-bundle/zipball/fca4e2bd99d24c6ce473b71f4f76a68223847fcd",
-                "reference": "fca4e2bd99d24c6ce473b71f4f76a68223847fcd",
-                "shasum": ""
-            },
-            "require": {
-                "contao/core-bundle": "self.version",
-                "php": "^8.2",
-                "symfony/deprecation-contracts": "^3.0",
-                "symfony/http-kernel": "^6.4 || ^7.0",
-                "tijsverkoyen/css-to-inline-styles": "^2.0"
-            },
-            "conflict": {
-                "contao/core": "*",
-                "contao/manager-plugin": "<2.0 || >=3.0"
-            },
-            "require-dev": {
-                "contao/manager-plugin": "^2.3.1",
-                "contao/test-case": "self.version",
-                "phpunit/phpunit": "^11.5",
-                "symfony/http-client": "^6.4 || ^7.0"
-            },
-            "type": "contao-bundle",
-            "extra": {
-                "contao-manager-plugin": "Contao\\NewsletterBundle\\ContaoManager\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Contao\\NewsletterBundle\\": "src/"
-                },
-                "classmap": [
-                    "contao/"
-                ],
-                "exclude-from-classmap": [
-                    "contao/config/",
-                    "contao/dca/",
-                    "contao/languages/",
-                    "contao/templates/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Leo Feyer",
-                    "homepage": "https://github.com/leofeyer"
-                },
-                {
-                    "name": "Contao Community",
-                    "homepage": "https://contao.org/contributors"
-                }
-            ],
-            "description": "Adds newsletter functionality to Contao",
-            "homepage": "https://contao.org",
-            "support": {
-                "docs": "https://docs.contao.org",
-                "forum": "https://community.contao.org",
-                "issues": "https://github.com/contao/contao/issues",
-                "source": "https://github.com/contao/newsletter-bundle"
-            },
-            "funding": [
-                {
-                    "url": "https://to.contao.org/donate",
-                    "type": "other"
-                }
-            ],
-            "time": "2026-01-12T12:00:13+00:00"
         },
         {
             "name": "dasprid/enum",
@@ -8653,75 +8172,6 @@
             "time": "2026-01-13T11:36:38+00:00"
         },
         {
-            "name": "symfony/css-selector",
-            "version": "v8.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/css-selector.git",
-                "reference": "6225bd458c53ecdee056214cb4a2ffaf58bd592b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/6225bd458c53ecdee056214cb4a2ffaf58bd592b",
-                "reference": "6225bd458c53ecdee056214cb4a2ffaf58bd592b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\CssSelector\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Jean-François Simon",
-                    "email": "jeanfrancois.simon@sensiolabs.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Converts CSS selectors to XPath expressions",
-            "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/css-selector/tree/v8.0.0"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/nicolas-grekas",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-10-30T14:17:19+00:00"
-        },
-        {
             "name": "symfony/debug-bundle",
             "version": "v7.4.0",
             "source": {
@@ -14223,61 +13673,6 @@
                 }
             ],
             "time": "2025-11-25T17:06:27+00:00"
-        },
-        {
-            "name": "tijsverkoyen/css-to-inline-styles",
-            "version": "v2.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tijsverkoyen/CssToInlineStyles.git",
-                "reference": "f0292ccf0ec75843d65027214426b6b163b48b41"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/f0292ccf0ec75843d65027214426b6b163b48b41",
-                "reference": "f0292ccf0ec75843d65027214426b6b163b48b41",
-                "shasum": ""
-            },
-            "require": {
-                "ext-dom": "*",
-                "ext-libxml": "*",
-                "php": "^7.4 || ^8.0",
-                "symfony/css-selector": "^5.4 || ^6.0 || ^7.0 || ^8.0"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "^2.0",
-                "phpstan/phpstan-phpunit": "^2.0",
-                "phpunit/phpunit": "^8.5.21 || ^9.5.10"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "TijsVerkoyen\\CssToInlineStyles\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Tijs Verkoyen",
-                    "email": "css_to_inline_styles@verkoyen.eu",
-                    "role": "Developer"
-                }
-            ],
-            "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
-            "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
-            "support": {
-                "issues": "https://github.com/tijsverkoyen/CssToInlineStyles/issues",
-                "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/v2.4.0"
-            },
-            "time": "2025-12-02T11:56:42+00:00"
         },
         {
             "name": "toflar/cronjob-supervisor",
