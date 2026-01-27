@@ -1,7 +1,7 @@
 services:
   web:
     build: ./docker
-    user: "1000:www-data"
+    user: "${UID}:${GID}"
     volumes:
       - ./web:/var/www/html
       - ./repository:/var/www/repository:ro
