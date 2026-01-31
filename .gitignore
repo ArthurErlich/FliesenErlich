@@ -3,20 +3,3 @@
 
 # Composer
 /vendor/
-
-# Contao Manager
-/contao-manager/
-
-# Generated folders
-/assets/
-/public/
-/system/*
-!/system/config/
-/system/config/localconfig.php
-/var/
-/bin/
-
-# Skip files
-/system/modules/*/.skip
-/node_modules/*
-web/files/aerlFliesenErlichTheme/node_modules/*

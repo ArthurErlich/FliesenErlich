@@ -12,13 +12,13 @@ services:
       - USER_ID=${UID}
       - GROUP_ID=${GID}
 
-  db:
-    image: mysql:8
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: contao
-    volumes:
-      - db_files:/var/lib/mysql
+  # db:
+  #   image: mysql:8
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: contao
+  #   volumes:
+  #     - db_files:/var/lib/mysql
 
 volumes:
   db_files:

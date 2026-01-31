@@ -1,23 +1,15 @@
-# Configuration
+
+###> symfony/framework-bundle ###
 /.env.local
-
-# Composer
-/vendor/
-
-# Contao Manager
-/contao-manager/
-
-# Generated folders
-/assets/
-/public/
-/templates/
-/files/
-/system/*
-!/system/config/
-/system/config/localconfig.php
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
 /var/
-/bin/
+/vendor/
+###< symfony/framework-bundle ###
 
-# Skip files
-/system/modules/*/.skip
-/node_modules/*
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###
