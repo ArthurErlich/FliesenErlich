@@ -1,5 +1,5 @@
 COMPOSE := docker compose
-COMPOSE_FILE ?= docker-compose.yaml
+COMPOSE_FILE ?= docker-compose.yml
 SERVICE := web
 
 DEFAULT_GOAL := help
