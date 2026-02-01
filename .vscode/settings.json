@@ -1,0 +1,4 @@
+{
+    "twiggy.phpExecutable": "php",
+    "twiggy.symfonyConsolePath": "web/bin/console",
+}

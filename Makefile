@@ -25,3 +25,6 @@ stop:
 
 logs:
 	$(COMPOSE) -f $(COMPOSE_FILE) logs -f -n 0
+
+watch:
+	$(COMPOSE) -f $(COMPOSE_FILE) exec -u root $(SERVICE) bin/console tailwind:build --watch

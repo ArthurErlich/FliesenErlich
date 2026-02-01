@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@theme {
+    /* Hauptrot */
+    --color-default: #822c2a;
+    /* Hoverrot*/
+    --color-light: #a13a35;
+    /* Hellgrau */
+    --color-light-gray: #e6e6e6;
+    /* leicht getöntes Weiß */
+    --color-white: #f2f2f2;
+    /* Standardtext */
+    --color-black: #000000;
+    /* Kupfer-Gold Akzent */
+    --color-accent: #b08c6b;
+    /* Hover für Akzent */
+    --color-accent-hover: #c7a481;
+    /* Background SVG for fill*/
+    --color-svg-fill: url(/media/logo/erlich-fliesen-favicon.svg);
+}

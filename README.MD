@@ -14,4 +14,4 @@ https://symfony.com/doc/current/translation.html#configuration
 
 https://symfony.com/doc/current/frontend/asset_mapper.html
 
-- Run Tailwind watcher: bin/console tailwind:build --watch --poll
+- Run Tailwind watcher: bin/console tailwind:build --watch

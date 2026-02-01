@@ -6,7 +6,7 @@ ARG TARGETARCH
 RUN apt-get update -y && apt-get install --no-install-recommends -y libc-client-dev apt-utils libkrb5-dev libfreetype6-dev \
   libjpeg62-turbo-dev libwebp-dev libmcrypt-dev libpng-dev libxslt1-dev libsodium-dev  \
   libzip-dev libldap2-dev libonig-dev zip rsync wget git nano webp dos2unix libsqlite3-dev \
-  \
+  watchman \
   # MySQL CLI Tools (DB Dump Handling)
   default-mysql-client && \
   # Node Abhängikeite
