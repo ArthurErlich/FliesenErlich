@@ -1,21 +1,38 @@
 {% block head %}
 	{% block head_meta %}
 		<meta charset="UTF-8">
-		<meta name="author" content="">
-		<meta name="robots" content="">
-		<meta name="revisit-after" content="">
-		<meta name="keywords" content="">
-		<meta name="description" content="">
+		<meta name="author" content="{{page.seo.author}}">
+		<meta name="robots" content="{{page.seo.robots}}">
+		<meta name="revisit-after" content="{{page.seo.revisitAfter}}">
+		<meta name="keywords" content="{{page.seo.keywords}}">
+		<meta name="description" content="{{page.seo.description}}">
 	{% endblock %}
-	<title>
-		{% block title %}
-			welcome!
-		{% endblock %}
-	</title>
-	<link rel="icon" href="{{ asset('media/favicon/erlich-fliesen-favicon.svg') }}">
-	{% block stylesheets %}{% endblock %}
-	{% block javascripts %}
-		{% block importmap %}
+	{% block head_opengraph %}
+		<meta property="og:url" content="">
+		<meta property="og:type" content="">
+		<meta property="og:site_name" content="">
+		<meta property="og:title" content="">
+		<meta property="og:description" content="">
+		<meta property="og:image" content="">
+
+		<meta name="twitter:card" content="">
+		<meta name="twitter:site" content="">
+		<meta name="twitter:title" content="">
+		<meta name="twitter:description" content="">
+		<meta name="twitter:image" content="">
+	{% endblock %}
+	{% block head_title %}
+		<title>welcome!</title>
+	{% endblock %}
+	{% block head_viwport %}
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	{% endblock %}
+	{% block head_favicon %}
+		<link rel="icon" href="{{ asset('media/favicon/erlich-fliesen-favicon.svg') }}">
+	{% endblock %}
+	{% block head_stylesheets %}{% endblock %}
+	{% block head_javascripts %}
+		{% block head_javascripts_importmap %}
 			{{ importmap('app') }}
 		{% endblock %}
 	{% endblock %}
