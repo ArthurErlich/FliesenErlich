@@ -13,6 +13,13 @@ class MainController extends AbstractController
     #[Route('/')]
     public function base(): Response
     {
-        return $this->render('layout/base.html.twig');
+
+        return $this->render('@app/pages/index.html.twig', [
+            "page" => [
+                "seo" => [
+                    "author" => null
+                ]
+            ]
+        ]);
     }
 }

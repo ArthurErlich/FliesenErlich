@@ -3,7 +3,12 @@
 	<head>
 		{% include "@app/layout/header.html.twig" %}
 	</head>
-	<body class="bg-white-100"> {% block body %}{% endblock %}
-		</body>
-		{% include "@app/layout/footer.html.twig" %}
-	</html>
+	<body class="bg-white-100">
+		{% block body %}
+			<main>
+				{% block body_main %}{% endblock %}
+			</main>
+		{% endblock %}
+	</body>
+	{% include "@app/layout/footer.html.twig" %}
+</html>
