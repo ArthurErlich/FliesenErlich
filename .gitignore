@@ -3,3 +3,5 @@
 
 # Composer
 /vendor/
+
+/node_modules/
