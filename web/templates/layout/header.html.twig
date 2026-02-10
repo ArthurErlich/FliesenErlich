@@ -1,42 +1,43 @@
 {% block head %}
-	{% block head_meta %}
-		<meta charset="UTF-8">
-		<meta name="author" content="{{page.seo.author}}">
-		<meta name="robots" content="{{page.seo.robots}}">
-		<meta name="revisit-after" content="{{page.seo.revisitAfter}}">
-		<meta name="keywords" content="{{page.seo.keywords}}">
-		<meta name="description" content="{{page.seo.description}}">
-	{% endblock %}
-	{% block head_opengraph %}
-		<meta property="og:url" content="">
-		<meta property="og:type" content="">
-		<meta property="og:site_name" content="">
-		<meta property="og:title" content="">
-		<meta property="og:description" content="">
-		<meta property="og:image" content="">
+    {% block head_meta %}
+        <meta charset="UTF-8">
+        <meta name="author" content="{{ page.seo.author }}">
+        <meta name="robots" content="{{ page.seo.robots }}">
+        <meta name="revisit-after" content="{{ page.seo.revisitAfter }}">
+        <meta name="keywords" content="{{ page.seo.keywords }}">
+        <meta name="description" content="{{ page.seo.description }}">
+        <meta name="robots" content="{{ page.seo.robots }}"
+    {% endblock %}
+    {% block head_opengraph %}
+        <meta property="og:url" content="{{ page.seo.url }}">
+        <meta property="og:type" content="{{ page.seo.author }}">
+        <meta property="og:site_name" content="{{ page.seo.siteName }}">
+        <meta property="og:title" content="{{ page.seo.atitler }}">
+        <meta property="og:description" content="{{ page.seo.description }}">
+        <meta property="og:image" content="{{ page.seo.image }}">
+        <meta property="og:image:alt" content="{{ page.seo.imgAlt }}">
 
-		<meta name="twitter:card" content="">
-		<meta name="twitter:site" content="">
-		<meta name="twitter:title" content="">
-		<meta name="twitter:description" content="">
-		<meta name="twitter:image" content="">
-	{% endblock %}
-	{% block head_title %}
-		<title>welcome!</title>
-	{% endblock %}
-	{% block head_viwport %}
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	{% endblock %}
-	{% block head_favicon %}
-		<link rel="icon" href="{{ asset('media/favicon/erlich-fliesen-favicon.svg') }}">
-	{% endblock %}
-	{% block head_apple_favicon %}
-		<link rel="apple-touch-icon" href="{{ asset('media/favicon/erlich-fliesen-favicon.svg') }}">
-	{% endblock %}
-	{% block head_stylesheets %}{% endblock %}
-	{% block head_javascripts %}
-		{% block head_javascripts_importmap %}
-			{{ importmap('app') }}
-		{% endblock %}
-	{% endblock %}
+        <meta name="twitter:card" content="{{ page.seo.author }}">
+        <meta name="twitter:title" content="{{ page.seo.title }}">
+        <meta name="twitter:description" content="{{ page.seo.adescriptionr }}">
+        <meta name="twitter:image" content="{{ page.seo.aimager }}">
+    {% endblock %}
+    {% block head_title %}
+        <title>{{ page.seo.title }}</title>
+    {% endblock %}
+    {% block head_viwport %}
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% endblock %}
+    {% block head_favicon %}
+        <link rel="icon" href="{{ asset('media/favicon/erlich-fliesen-favicon.svg') }}">
+    {% endblock %}
+    {% block head_apple_favicon %}
+        <link rel="apple-touch-icon" href="{{ asset('media/favicon/erlich-fliesen-favicon.svg') }}">
+    {% endblock %}
+    {% block head_stylesheets %}{% endblock %}
+    {% block head_javascripts %}
+        {% block head_javascripts_importmap %}
+            {{ importmap('app') }}
+        {% endblock %}
+    {% endblock %}
 {% endblock %}
