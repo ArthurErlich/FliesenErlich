@@ -16,11 +16,7 @@ class MainController extends AbstractController
 
         return $this->render('@app/pages/index.html.twig', [
             "page" => [
-                "seo" => [
-                    "author" => "",
-                    "robots" => "",
-                    "revisitAfter" => "",
-                ]
+                "seo" => DefaultSeoOptions::SEO_DEFAULTS
             ]
         ]);
     }
