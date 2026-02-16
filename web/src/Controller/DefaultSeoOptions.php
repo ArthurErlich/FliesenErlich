@@ -7,9 +7,8 @@ namespace App\Controller;
 class DefaultSeoOptions
 {
     const SEO_DEFAULTS = [
-        "author" => "",
-        "robots" => "",
-        "revisitAfter" => "",
+        "author" => "Agentur Erlich, Arthur Erlich",
+        "robots" => "index, follow",
         "keywords" => "",
         "description"  => "",
         "url" => "",
@@ -18,4 +17,5 @@ class DefaultSeoOptions
         "image" => "",
         "imgAlt" => ""
     ];
+    const BASE_URL = "fleisen-erlich.de";
 }
