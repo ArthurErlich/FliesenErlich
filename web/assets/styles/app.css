@@ -8,7 +8,7 @@
     /* Hellgrau */
     --color-light-gray: #e6e6e6;
     /* leicht getöntes Weiß */
-    --color-white: #f2f2f2;
+    --color-erlich-white: #f2f2f2;
     /* Standardtext */
     --color-black: #000000;
     /* Kupfer-Gold Akzent */
@@ -16,5 +16,5 @@
     /* Hover für Akzent */
     --color-accent-hover: #c7a481;
     /* Background SVG for fill*/
-    --color-svg-fill: url(/media/logo/erlich-fliesen-favicon.svg);
+    --color-svg-fill: url();
 }
