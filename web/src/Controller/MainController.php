@@ -15,7 +15,7 @@ class MainController extends AbstractController
     private const PATH = "/";
     private const TITLE = "Startseite";
 
-    #[Route(self::PATH)]
+    #[Route(self::PATH, name: 'frontend.home')]
     public function base(): Response
     {
 
@@ -25,11 +25,13 @@ class MainController extends AbstractController
                 "seo" => array_replace(DefaultSeoOptions::SEO_DEFAULTS, [
                     "keywords" => "",
                     "description"  => "",
-                    "url" => self::PATH + DefaultSeoOptions::BASE_URL,
+                    "url" => self::PATH . DefaultSeoOptions::BASE_URL,
                     "siteName" => self::TITLE,
                     "title" => self::TITLE,
-                ])
+                    "revisitAfter" => ""
+                ]),
             ]
+
         ]);
     }
 }
