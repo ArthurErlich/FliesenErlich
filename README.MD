@@ -15,3 +15,9 @@ https://symfony.com/doc/current/translation.html#configuration
 https://symfony.com/doc/current/frontend/asset_mapper.html
 
 - Run Tailwind watcher: bin/console tailwind:build --watch
+
+## Some links for design ideas:
+
+- https://themewagon.github.io/Weldork/
+- https://themewagon.github.io/Dewi/
+- https://themewagon.github.io/logisticexpress/
