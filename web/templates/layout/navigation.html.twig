@@ -1,0 +1,28 @@
+{% block navigation %}
+    <nav class="bg-whtie md:sticky md:top-0 md:left-0 p-1">
+        {# Desktop shows the hidden topbar #}
+    <section class="hidden md:block " data-js-topbar>
+        {# TODO: Add corect background #}
+       <div class="w-60">
+         {% include "@app/components/logo-component.html.twig" with {
+            isMobile: false
+        } %}
+       </div>
+         
+    </section>
+    {# Mobile and Desktop #}
+    <section class="flex justify-between" data-js-navigation>
+        {# Logo only visible when shown in Mobile #}
+    <div class="w-40 md:hidden">
+         {% include "@app/components/logo-component.html.twig" with {
+            isMobile: true
+         } %}
+    </div>
+    <div class="md:hidden block">
+        HAMBURGER <br> 
+        MENU
+    </div>
+    </section>
+        {# TODO: create a way to automaticly read generate the navigation parts. May need componepnts etc. #}
+    </nav>
+{% endblock %}

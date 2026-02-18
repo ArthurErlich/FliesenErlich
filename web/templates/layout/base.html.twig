@@ -1,14 +1,17 @@
+{% block html %}
 <!DOCTYPE html>
 <html>
     <head>
         {{ include('@app/layout/header.html.twig') }}
     </head>
-    <body class="bg-white-100">
+    {{ include('@app/layout/navigation.html.twig')}}
+    <body class="bg-white text-black flex flex-col min-h-screen">
         {% block body %}
-            <main>
+            <main class="grow">
                 {% block body_main %}{% endblock %}
             </main>
         {% endblock %}
     </body>
     {{ include('@app/layout/footer.html.twig') }}
 </html>
+{% endblock %}
