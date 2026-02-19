@@ -1,0 +1,111 @@
+{% extends '@app/layout/base.html.twig' %}
+
+{# Remove all elements #}
+{% block html %}
+<html>
+
+<head>
+    {{ include('@app/layout/header.html.twig') }}
+</head>
+
+<body class="bg-erlich-white text-black font-sans leading-relaxed">
+
+    <!-- Navigation -->
+    <nav class="flex gap-4 p-3 border-b border-light-gray sticky top-0 bg-erlich-white z-10">
+        <a href="#colors" class="font-semibold text-black hover:text-default">Colors</a>
+        <a href="#typography" class="font-semibold text-black hover:text-default">Typography</a>
+        <a href="#buttons" class="font-semibold text-black hover:text-default">Buttons</a>
+        <a href="#forms" class="font-semibold text-black hover:text-default">Forms</a>
+        <a href="#cards" class="font-semibold text-black hover:text-default">Cards</a>
+        <a href="#layout" class="font-semibold text-black hover:text-default">Layout</a>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-8">
+
+        <header class="mb-12">
+            <h1 class="text-4xl font-bold mb-2">Website Styleguide</h1>
+            <p class="text-gray-600">Design tokens and UI components reference.</p>
+        </header>
+
+        <!-- Colors -->
+        <section id="colors" class="mb-12">
+            <h2 class="text-2xl font-bold mb-4">Colors</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="bg-default text-white p-4 rounded-lg font-semibold text-center">Default</div>
+                <div class="bg-light text-white p-4 rounded-lg font-semibold text-center">Light</div>
+                <div class="bg-light-gray text-black p-4 rounded-lg font-semibold text-center">Light Gray</div>
+                <div class="bg-accent text-white p-4 rounded-lg font-semibold text-center hover:bg-accent-hover">Accent
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section id="typography" class="mb-12">
+            <h2 class="text-2xl font-bold mb-4">Typography</h2>
+            <div class="border border-light-gray p-6 rounded-lg bg-erlich-white space-y-2">
+                <h1 class="text-4xl font-bold">Heading 1</h1>
+                <h2 class="text-3xl font-semibold">Heading 2</h2>
+                <h3 class="text-2xl font-semibold">Heading 3</h3>
+                <p>Body text example. Lorem ipsum dolor sit amet.</p>
+                <small class="text-gray-500">Small text</small>
+            </div>
+        </section>
+
+        <!-- Buttons -->
+        <section id="buttons" class="mb-12">
+            <h2 class="text-2xl font-bold mb-4">Buttons</h2>
+            <div class="space-x-4">
+                <button class="bg-default text-white px-4 py-2 rounded-lg font-semibold hover:bg-light">Primary</button>
+                <button
+                    class="bg-accent text-white px-4 py-2 rounded-lg font-semibold hover:bg-accent-hover">Accent</button>
+                <button
+                    class="bg-light-gray text-black px-4 py-2 rounded-lg font-semibold hover:bg-default hover:text-white">Secondary</button>
+            </div>
+        </section>
+
+        <!-- Forms -->
+        <section id="forms" class="mb-12">
+            <h2 class="text-2xl font-bold mb-4">Forms</h2>
+            <div class="space-y-4 border border-light-gray p-6 rounded-lg bg-erlich-white">
+                <input type="text" placeholder="Text input" class="w-full p-3 border border-light-gray rounded-lg" />
+                <select class="w-full p-3 border border-light-gray rounded-lg">
+                    <option>Select option</option>
+                </select>
+                <textarea placeholder="Textarea" class="w-full p-3 border border-light-gray rounded-lg"></textarea>
+                <button class="bg-default text-white px-4 py-2 rounded-lg font-semibold hover:bg-light">Submit</button>
+            </div>
+        </section>
+
+        <!-- Cards -->
+        <section id="cards" class="mb-12">
+            <h2 class="text-2xl font-bold mb-4">Cards</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-6 border border-light-gray rounded-lg bg-erlich-white space-y-2">
+                    <h3 class="text-xl font-semibold">Card Title</h3>
+                    <p>Card content example.</p>
+                    <button
+                        class="bg-default text-white px-4 py-2 rounded-lg font-semibold hover:bg-light">Action</button>
+                </div>
+                <div class="p-6 border border-light-gray rounded-lg bg-erlich-white space-y-2">
+                    <h3 class="text-xl font-semibold">Card Title</h3>
+                    <p>Card content example.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layout -->
+        <section id="layout" class="mb-12">
+            <h2 class="text-2xl font-bold mb-4">Layout</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="p-6 border border-light-gray rounded-lg bg-erlich-white text-center">Grid Item</div>
+                <div class="p-6 border border-light-gray rounded-lg bg-erlich-white text-center">Grid Item</div>
+                <div class="p-6 border border-light-gray rounded-lg bg-erlich-white text-center">Grid Item</div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
+{% endblock %}
