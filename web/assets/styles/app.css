@@ -12,7 +12,10 @@
     /* Standardtext */
     --color-black: #000000;
     /* Kupfer-Gold Akzent */
-    --color-accent: #b08c6b;
+    /* darker accent for AA compliance */
+    /* formerly #b08c6b */
+    --color-accent: #8b6e55;
+
     /* Hover für Akzent */
     --color-accent-hover: #c7a481;
     /* Background SVG for fill*/
