@@ -4,9 +4,7 @@
     <section class="hidden md:block " data-js-topbar>
         {# TODO: Add corect background #}
        <div class="w-60">
-         {% include "@app/components/logo-component.html.twig" with {
-            isMobile: false
-        } %}
+            {{ component('HeadLogo', {isMobile: false}) }}
        </div>
          
     </section>
@@ -14,9 +12,7 @@
     <section class="flex justify-between" data-js-navigation>
         {# Logo only visible when shown in Mobile #}
     <div class="w-40 md:hidden">
-         {% include "@app/components/logo-component.html.twig" with {
-            isMobile: true
-         } %}
+          {{ component('HeadLogo', {isMobile: true}) }}
     </div>
     <div class="md:hidden block">
         HAMBURGER <br> 
