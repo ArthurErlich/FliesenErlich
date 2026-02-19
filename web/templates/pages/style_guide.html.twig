@@ -11,16 +11,24 @@
 <body class="bg-erlich-white text-black font-sans leading-relaxed ">
 
     <!-- Navigation -->
-<nav class="flex gap-4 p-3 border-b border-light-gray sticky top-0 bg-erlich-white z-10">
-  <a href="#colors" class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Colors</a>
-  <a href="#typography" class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Typography</a>
-  <a href="#buttons" class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Buttons</a>
-  <a href="#forms" class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Forms</a>
-  <a href="#cards" class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Cards</a>
-  <a href="#layout" class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Layout</a>
-</nav>
+    <div class="max-w-5xl mx-auto px-8">
+        <nav class="flex flex-wrap gap-4 p-3 border-b border-light-gray sticky top-0 bg-erlich-white z-10">
+            <a href="#colors"
+                class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Colors</a>
+            <a href="#typography"
+                class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Typography</a>
+            <a href="#buttons"
+                class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Buttons</a>
+            <a href="#forms"
+                class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Forms</a>
+            <a href="#cards"
+                class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Cards</a>
+            <a href="#layout"
+                class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Layout</a>
+        </nav>
+    </div>
 
-    <main class="max-w-6xl mx-auto p-8">
+    <main class="max-w-5xl mx-auto p-8">
 
         <!-- Logo -->
         <header class="mb-12 flex items-center gap-4">
@@ -52,6 +60,64 @@
                 <div class="bg-light-gray text-black p-4 rounded-lg font-semibold text-center">Light Gray</div>
                 <div class="bg-accent text-white p-4 rounded-lg font-semibold text-center">Accent
                 </div>
+            </div>
+        </section>
+
+
+        <!-- Hero Section -->
+        <section id="hero" class="relative bg-default text-white hidden md:block"> 
+            <div class="max-w-6xl mx-auto px-8 py-20 text-center space-y-6">
+                <h1 class="text-5xl font-bold">Welcome to Our Styleguide</h1>
+                <p class="text-xl">A demonstration of colors, typography, buttons, forms, and layouts for your project.
+                </p>
+                <div class="space-x-4">
+                    <button
+                        class="bg-accent text-black px-6 py-3 rounded-lg font-semibold hover:bg-accent-hover transition-colors duration-300 ease-in-out">
+                        Get Started
+                    </button>
+                    <button
+                        class="bg-light-gray text-black px-6 py-3 rounded-lg font-semibold hover:bg-default hover:text-white transition-colors duration-300 ease-in-out">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Section -->
+        <section id="features" class="max-w-6xl mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+                class="text-center p-6 border border-light-gray rounded-lg bg-erlich-white hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                <img src="https://placehold.co/100x100" alt="Feature 1" class="mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">Feature One</h3>
+                <p class="text-gray-800">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec justo ut
+                    metus.</p>
+            </div>
+            <div
+                class="text-center p-6 border border-light-gray rounded-lg bg-erlich-white hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                <img src="https://placehold.co/100x100" alt="Feature 2" class="mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">Feature Two</h3>
+                <p class="text-gray-800">Proin a velit vel sem tincidunt placerat. Sed ut perspiciatis unde omnis iste
+                    natus.</p>
+            </div>
+            <div
+                class="text-center p-6 border border-light-gray rounded-lg bg-erlich-white hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                <img src="https://placehold.co/100x100" alt="Feature 3" class="mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">Feature Three</h3>
+                <p class="text-gray-800">Quisque sagittis nisi eu nisl dapibus, eget fringilla dolor fermentum.</p>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section id="cta" class="bg-default text-white py-16 text-center hidden md:block">
+            <h2 class="text-3xl font-bold mb-4">Ready to get started?</h2>
+            <p class="mb-6">Explore the styleguide and start building consistent UI components today.</p>
+            <div class="space-x-4">
+                <button
+                    class="bg-accent text-black px-6 py-3 rounded-lg font-semibold hover:bg-accent-hover transition-colors duration-300 ease-in-out">Get
+                    Started</button>
+                <button
+                    class="bg-light-gray text-black px-6 py-3 rounded-lg font-semibold hover:bg-default hover:text-white transition-colors duration-300 ease-in-out">Learn
+                    More</button>
             </div>
         </section>
 
@@ -208,7 +274,93 @@ function helloWorld() {
             </div>
         </section>
 
+        <!-- Cards with images-->
+        <section id="cards-with-images" class="mb-12">
+            <h2 class="text-2xl font-bold mb-4">Cards with Images</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Card 1 -->
+                <div
+                    class="border border-light-gray rounded-lg overflow-hidden bg-erlich-white shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out">
+                    <img src="https://placehold.co/400x200" alt="Sample image 1"
+                        class="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105">
+                    <div class="p-4 space-y-2">
+                        <h3 class="text-xl font-semibold">Card Title 1</h3>
+                        <p>This is a sample card with an image. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                        <button
+                            class="bg-default text-white px-4 py-2 rounded-lg font-semibold hover:bg-light transition-colors duration-300 ease-in-out">
+                            Action
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="border border-light-gray rounded-lg overflow-hidden bg-erlich-white shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out">
+                    <img src="https://placehold.co/400x200" alt="Sample image 2"
+                        class="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105">
+                    <div class="p-4 space-y-2">
+                        <h3 class="text-xl font-semibold">Card Title 2</h3>
+                        <p>Another example card with an image and a description. Links, buttons, and hover effects are
+                            all included.</p>
+                        <button
+                            class="bg-accent text-black px-4 py-2 rounded-lg font-semibold hover:bg-accent-hover transition-colors duration-300 ease-in-out">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="border border-light-gray rounded-lg overflow-hidden bg-erlich-white shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out">
+                    <img src="https://placehold.co/400x200" alt="Sample image 3"
+                        class="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105">
+                    <div class="p-4 space-y-2">
+                        <h3 class="text-xl font-semibold">Card Title 3</h3>
+                        <p>Cards can also include longer content, multiple links, or additional buttons as needed for
+                            your UI.</p>
+                        <button
+                            class="bg-light-gray text-black px-4 py-2 rounded-lg font-semibold hover:bg-default hover:text-white transition-colors duration-300 ease-in-out">
+                            Details
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-light-gray text-black py-12">
+        <div class="max-w-6xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="font-semibold mb-2">About</h3>
+                <p>Sample footer content. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-2">Links</h3>
+                <ul class="space-y-1">
+                    <li><a href="#hero"
+                            class="text-default underline hover:text-accent transition-colors duration-300 ease-in-out">Hero</a>
+                    </li>
+                    <li><a href="#features"
+                            class="text-default underline hover:text-accent transition-colors duration-300 ease-in-out">Features</a>
+                    </li>
+                    <li><a href="#cards"
+                            class="text-default underline hover:text-accent transition-colors duration-300 ease-in-out">Cards</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-2">Contact</h3>
+                <p>Email: <a href="mailto:info@example.com"
+                        class="text-default underline hover:text-accent transition-colors duration-300 ease-in-out">info@example.com</a>
+                </p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
