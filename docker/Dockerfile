@@ -9,7 +9,7 @@ RUN apt-get update -y && apt-get install --no-install-recommends -y libc-client-
   watchman \
   # MySQL CLI Tools (DB Dump Handling)
   default-mysql-client && \
-  # Node Abhängikeite
+  # Node Abhängikeiten
   curl -fsSL https://deb.nodesource.com/setup_20.x | bash -  && \
   apt-get install -y nodejs &&  \
   npm install -g npm && \

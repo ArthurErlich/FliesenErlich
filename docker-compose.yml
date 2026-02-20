@@ -11,6 +11,8 @@ services:
     environment:
       - USER_ID=${UID}
       - GROUP_ID=${GID}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   # db:
   #   image: mysql:8
