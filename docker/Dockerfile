@@ -7,7 +7,7 @@ RUN apt-get update -y && apt-get install --no-install-recommends -y libc-client-
   libjpeg62-turbo-dev libwebp-dev libmcrypt-dev libpng-dev libxslt1-dev libsodium-dev  \
   libzip-dev libldap2-dev libonig-dev zip rsync wget git nano webp dos2unix libsqlite3-dev \
   watchman \
-  # MySQL CLI Tools (DB Dump Handling)
+  # MySQL CLI Tools (DB Dump Handling) \
   default-mysql-client && \
   # Node Abhängikeiten
   curl -fsSL https://deb.nodesource.com/setup_20.x | bash -  && \
@@ -47,7 +47,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Fix git unsave directory error
 RUN git config --system --add safe.directory /var/www/html && \
-  # Fix ld config
+  # Fix ld config \
   ldconfig && \
   # Enable apache2-foreground modules
   a2enmod rewrite expires headers ssl

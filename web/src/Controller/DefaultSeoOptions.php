@@ -10,7 +10,7 @@ class DefaultSeoOptions
         "author" => "Agentur Erlich, Arthur Erlich",
         "robots" => "index, follow",
         "keywords" => "",
-        "description"  => "",
+        "description" => "",
         "url" => "",
         "siteName" => "",
         "title" => "",

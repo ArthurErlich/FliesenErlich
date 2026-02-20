@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use App\Controller\DefaultSeoOptions;
 
 class MainController extends AbstractController
 {
@@ -24,7 +23,7 @@ class MainController extends AbstractController
             "page" => [
                 "seo" => array_replace(DefaultSeoOptions::SEO_DEFAULTS, [
                     "keywords" => "",
-                    "description"  => "",
+                    "description" => "",
                     "url" => self::PATH . DefaultSeoOptions::BASE_URL,
                     "siteName" => self::TITLE,
                     "title" => self::TITLE,

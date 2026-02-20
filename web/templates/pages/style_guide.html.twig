@@ -2,367 +2,372 @@
 
 {# Remove all elements #}
 {% block html %}
-<html class="scroll-smooth">
+  <html class="scroll-smooth">
 
-<head>
+  <head>
     {{ include('@app/layout/header.html.twig') }}
-</head>
+  </head>
 
-<body class="bg-erlich-white text-black font-sans leading-relaxed ">
+  <body class="bg-erlich-white text-black font-sans leading-relaxed ">
 
-    <!-- Navigation -->
-    <div class="max-w-5xl mx-auto px-8">
-        <nav class="flex flex-wrap gap-4 p-3 border-b border-light-gray sticky top-0 bg-erlich-white z-10">
-            <a href="#colors"
-                class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Colors</a>
-            <a href="#typography"
-                class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Typography</a>
-            <a href="#buttons"
-                class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Buttons</a>
-            <a href="#forms"
-                class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Forms</a>
-            <a href="#cards"
-                class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Cards</a>
-            <a href="#layout"
-                class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Layout</a>
-        </nav>
-    </div>
+  <!-- Navigation -->
+  <div class="max-w-5xl mx-auto px-8">
+    <nav class="flex flex-wrap gap-4 p-3 border-b border-light-gray sticky top-0 bg-erlich-white z-10">
+      <a href="#colors"
+         class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Colors</a>
+      <a href="#typography"
+         class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Typography</a>
+      <a href="#buttons"
+         class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Buttons</a>
+      <a href="#forms"
+         class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Forms</a>
+      <a href="#cards"
+         class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Cards</a>
+      <a href="#layout"
+         class="font-semibold text-black hover:text-default transition-colors duration-300 ease-in-out">Layout</a>
+    </nav>
+  </div>
 
-    <main class="max-w-5xl mx-auto p-8">
+  <main class="max-w-5xl mx-auto p-8">
 
-        <!-- Logo -->
-        <header class="mb-12 flex items-center gap-4">
-            <!-- Inline SVG logo -->
-            <svg class="w-16 h-16" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                <g transform="matrix(.890619 0 0 0.890603 15.46905 15.46985)">
-                    <rect width="229.695598" height="247.32004" rx="0" ry="0"
-                        transform="matrix(.177939 0 0 0.165255 0 0)" fill="#842c2c" />
-                    <rect width="229.695598" height="247.32004" rx="0" ry="0"
-                        transform="matrix(.177939 0 0 0.165255 59.128195 0)" fill="#d2dbed" />
-                    <rect width="229.695598" height="247.32004" rx="0" ry="0"
-                        transform="matrix(.177939 0 0 0.165255 59.128195 59.129126)" fill="#842c2c" />
-                    <rect width="229.695598" height="247.32004" rx="0" ry="0"
-                        transform="matrix(.177939 0 0 0.165255 0 59.129126)" fill="#d2dbed" />
-                </g>
-            </svg>
-            <div>
-                <h1 class="text-4xl font-bold mb-1">Website Styleguide</h1>
-                <p class="text-gray-800">Design tokens and UI components reference.</p>
-            </div>
-        </header>
+    <!-- Logo -->
+    <header class="mb-12 flex items-center gap-4">
+      <!-- Inline SVG logo -->
+      <svg class="w-16 h-16" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <g transform="matrix(.890619 0 0 0.890603 15.46905 15.46985)">
+          <rect width="229.695598" height="247.32004" rx="0" ry="0"
+                transform="matrix(.177939 0 0 0.165255 0 0)" fill="#842c2c" />
+          <rect width="229.695598" height="247.32004" rx="0" ry="0"
+                transform="matrix(.177939 0 0 0.165255 59.128195 0)" fill="#d2dbed" />
+          <rect width="229.695598" height="247.32004" rx="0" ry="0"
+                transform="matrix(.177939 0 0 0.165255 59.128195 59.129126)" fill="#842c2c" />
+          <rect width="229.695598" height="247.32004" rx="0" ry="0"
+                transform="matrix(.177939 0 0 0.165255 0 59.129126)" fill="#d2dbed" />
+        </g>
+      </svg>
+      <div>
+        <h1 class="text-4xl font-bold mb-1">Website Styleguide</h1>
+        <p class="text-gray-800">Design tokens and UI components reference.</p>
+      </div>
+    </header>
 
-        <!-- Colors -->
-        <section id="colors" class="mb-12">
-            <h2 class="text-2xl font-bold mb-4">Colors</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div class="bg-default text-white p-4 rounded-lg font-semibold text-center">Default</div>
-                <div class="bg-light text-white p-4 rounded-lg font-semibold text-center">Light</div>
-                <div class="bg-light-gray text-black p-4 rounded-lg font-semibold text-center">Light Gray</div>
-                <div class="bg-accent text-white p-4 rounded-lg font-semibold text-center">Accent
-                </div>
-            </div>
-        </section>
+    <!-- Colors -->
+    <section id="colors" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Colors</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-default text-white p-4 rounded-lg font-semibold text-center">Default</div>
+        <div class="bg-light text-white p-4 rounded-lg font-semibold text-center">Light</div>
+        <div class="bg-light-gray text-black p-4 rounded-lg font-semibold text-center">Light Gray</div>
+        <div class="bg-accent text-white p-4 rounded-lg font-semibold text-center">Accent
+        </div>
+      </div>
+    </section>
 
 
-        <!-- Hero Section -->
-        <section id="hero" class="relative bg-default text-white hidden md:block"> 
-            <div class="max-w-6xl mx-auto px-8 py-20 text-center space-y-6">
-                <h1 class="text-5xl font-bold">Welcome to Our Styleguide</h1>
-                <p class="text-xl">A demonstration of colors, typography, buttons, forms, and layouts for your project.
-                </p>
-                <div class="space-x-4">
-                    <button
-                        class="bg-accent text-black px-6 py-3 rounded-lg font-semibold hover:bg-accent-hover transition-colors duration-300 ease-in-out">
-                        Get Started
-                    </button>
-                    <button
-                        class="bg-light-gray text-black px-6 py-3 rounded-lg font-semibold hover:bg-default hover:text-white transition-colors duration-300 ease-in-out">
-                        Learn More
-                    </button>
-                </div>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section id="hero" class="relative bg-default text-white hidden md:block">
+      <div class="max-w-6xl mx-auto px-8 py-20 text-center space-y-6">
+        <h1 class="text-5xl font-bold">Welcome to Our Styleguide</h1>
+        <p class="text-xl">A demonstration of colors, typography, buttons, forms, and layouts for your project.
+        </p>
+        <div class="space-x-4">
+          <button
+            class="bg-accent text-black px-6 py-3 rounded-lg font-semibold hover:bg-accent-hover transition-colors duration-300 ease-in-out">
+            Get Started
+          </button>
+          <button
+            class="bg-light-gray text-black px-6 py-3 rounded-lg font-semibold hover:bg-default hover:text-white transition-colors duration-300 ease-in-out">
+            Learn More
+          </button>
+        </div>
+      </div>
+    </section>
 
-        <!-- Feature Section -->
-        <section id="features" class="max-w-6xl mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div
-                class="text-center p-6 border border-light-gray rounded-lg bg-erlich-white hover:shadow-lg transition-shadow duration-300 ease-in-out">
-                <img src="https://placehold.co/100x100" alt="Feature 1" class="mx-auto mb-4">
-                <h3 class="text-xl font-semibold mb-2">Feature One</h3>
-                <p class="text-gray-800">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec justo ut
-                    metus.</p>
-            </div>
-            <div
-                class="text-center p-6 border border-light-gray rounded-lg bg-erlich-white hover:shadow-lg transition-shadow duration-300 ease-in-out">
-                <img src="https://placehold.co/100x100" alt="Feature 2" class="mx-auto mb-4">
-                <h3 class="text-xl font-semibold mb-2">Feature Two</h3>
-                <p class="text-gray-800">Proin a velit vel sem tincidunt placerat. Sed ut perspiciatis unde omnis iste
-                    natus.</p>
-            </div>
-            <div
-                class="text-center p-6 border border-light-gray rounded-lg bg-erlich-white hover:shadow-lg transition-shadow duration-300 ease-in-out">
-                <img src="https://placehold.co/100x100" alt="Feature 3" class="mx-auto mb-4">
-                <h3 class="text-xl font-semibold mb-2">Feature Three</h3>
-                <p class="text-gray-800">Quisque sagittis nisi eu nisl dapibus, eget fringilla dolor fermentum.</p>
-            </div>
-        </section>
+    <!-- Feature Section -->
+    <section id="features" class="max-w-6xl mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div
+        class="text-center p-6 border border-light-gray rounded-lg bg-erlich-white hover:shadow-lg transition-shadow duration-300 ease-in-out">
+        <img src="https://placehold.co/100x100" alt="Feature 1" class="mx-auto mb-4">
+        <h3 class="text-xl font-semibold mb-2">Feature One</h3>
+        <p class="text-gray-800">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec justo ut
+          metus.</p>
+      </div>
+      <div
+        class="text-center p-6 border border-light-gray rounded-lg bg-erlich-white hover:shadow-lg transition-shadow duration-300 ease-in-out">
+        <img src="https://placehold.co/100x100" alt="Feature 2" class="mx-auto mb-4">
+        <h3 class="text-xl font-semibold mb-2">Feature Two</h3>
+        <p class="text-gray-800">Proin a velit vel sem tincidunt placerat. Sed ut perspiciatis unde omnis iste
+          natus.</p>
+      </div>
+      <div
+        class="text-center p-6 border border-light-gray rounded-lg bg-erlich-white hover:shadow-lg transition-shadow duration-300 ease-in-out">
+        <img src="https://placehold.co/100x100" alt="Feature 3" class="mx-auto mb-4">
+        <h3 class="text-xl font-semibold mb-2">Feature Three</h3>
+        <p class="text-gray-800">Quisque sagittis nisi eu nisl dapibus, eget fringilla dolor fermentum.</p>
+      </div>
+    </section>
 
-        <!-- Call to Action Section -->
-        <section id="cta" class="bg-default text-white py-16 text-center hidden md:block">
-            <h2 class="text-3xl font-bold mb-4">Ready to get started?</h2>
-            <p class="mb-6">Explore the styleguide and start building consistent UI components today.</p>
-            <div class="space-x-4">
-                <button
-                    class="bg-accent text-black px-6 py-3 rounded-lg font-semibold hover:bg-accent-hover transition-colors duration-300 ease-in-out">Get
-                    Started</button>
-                <button
-                    class="bg-light-gray text-black px-6 py-3 rounded-lg font-semibold hover:bg-default hover:text-white transition-colors duration-300 ease-in-out">Learn
-                    More</button>
-            </div>
-        </section>
+    <!-- Call to Action Section -->
+    <section id="cta" class="bg-default text-white py-16 text-center hidden md:block">
+      <h2 class="text-3xl font-bold mb-4">Ready to get started?</h2>
+      <p class="mb-6">Explore the styleguide and start building consistent UI components today.</p>
+      <div class="space-x-4">
+        <button
+          class="bg-accent text-black px-6 py-3 rounded-lg font-semibold hover:bg-accent-hover transition-colors duration-300 ease-in-out">
+          Get
+          Started
+        </button>
+        <button
+          class="bg-light-gray text-black px-6 py-3 rounded-lg font-semibold hover:bg-default hover:text-white transition-colors duration-300 ease-in-out">
+          Learn
+          More
+        </button>
+      </div>
+    </section>
 
-        <!-- Typography -->
-        <section id="typography" class="mb-12">
-            <h2 class="text-2xl font-bold mb-4">Typography</h2>
+    <!-- Typography -->
+    <section id="typography" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Typography</h2>
 
-            <div class="border border-light-gray p-6 rounded-lg bg-erlich-white space-y-6">
+      <div class="border border-light-gray p-6 rounded-lg bg-erlich-white space-y-6">
 
-                <!-- Headings -->
-                <div class="space-y-2">
-                    <h1 class="text-4xl font-bold">Heading 1</h1>
-                    <h2 class="text-3xl font-semibold">Heading 2</h2>
-                    <h3 class="text-2xl font-semibold">Heading 3</h3>
-                    <h4 class="text-xl font-semibold">Heading 4</h4>
-                    <h5 class="text-lg font-semibold">Heading 5</h5>
-                    <h6 class="text-base font-semibold">Heading 6</h6>
-                </div>
+        <!-- Headings -->
+        <div class="space-y-2">
+          <h1 class="text-4xl font-bold">Heading 1</h1>
+          <h2 class="text-3xl font-semibold">Heading 2</h2>
+          <h3 class="text-2xl font-semibold">Heading 3</h3>
+          <h4 class="text-xl font-semibold">Heading 4</h4>
+          <h5 class="text-lg font-semibold">Heading 5</h5>
+          <h6 class="text-base font-semibold">Heading 6</h6>
+        </div>
 
-                <!-- Paragraphs -->
-                <div class="space-y-2">
-                    <p>
-                        This is a sample paragraph demonstrating normal body text. It supports
-                        <a href="#links" class="text-default underline hover:text-accent">inline links</a>
-                        inside flowing text. You can also include <strong>bold text</strong> and <em>italic text</em>.
-                    </p>
+        <!-- Paragraphs -->
+        <div class="space-y-2">
+          <p>
+            This is a sample paragraph demonstrating normal body text. It supports
+            <a href="#links" class="text-default underline hover:text-accent">inline links</a>
+            inside flowing text. You can also include <strong>bold text</strong> and <em>italic text</em>.
+          </p>
 
-                    <p>
-                        Another paragraph to demonstrate spacing. Paragraphs stack with
-                        <code class="bg-light-gray px-1 rounded">code elements</code> inline and proper line height.
-                    </p>
-                </div>
+          <p>
+            Another paragraph to demonstrate spacing. Paragraphs stack with
+            <code class="bg-light-gray px-1 rounded">code elements</code> inline and proper line height.
+          </p>
+        </div>
 
-                <!-- Lists -->
-                <div class="space-y-2">
-                    <h3 class="font-semibold">Unordered List</h3>
-                    <ul class="list-disc list-inside">
-                        <li>First item</li>
-                        <li>Second item with <a href="#links" class="text-default underline hover:text-accent">a
-                                link</a></li>
-                        <li>Third item</li>
-                    </ul>
+        <!-- Lists -->
+        <div class="space-y-2">
+          <h3 class="font-semibold">Unordered List</h3>
+          <ul class="list-disc list-inside">
+            <li>First item</li>
+            <li>Second item with <a href="#links" class="text-default underline hover:text-accent">a
+                link</a></li>
+            <li>Third item</li>
+          </ul>
 
-                    <h3 class="font-semibold mt-4">Ordered List</h3>
-                    <ol class="list-decimal list-inside">
-                        <li>First step</li>
-                        <li>Second step</li>
-                        <li>Third step</li>
-                    </ol>
-                </div>
+          <h3 class="font-semibold mt-4">Ordered List</h3>
+          <ol class="list-decimal list-inside">
+            <li>First step</li>
+            <li>Second step</li>
+            <li>Third step</li>
+          </ol>
+        </div>
 
-                <!-- Blockquote -->
-                <div class="space-y-2">
-                    <h3 class="font-semibold">Blockquote</h3>
-                    <blockquote class="border-l-4 border-default pl-4 italic text-gray-700">
-                        “This is an example blockquote. It should stand out from regular text and indicate quoted
-                        content.”
-                    </blockquote>
-                </div>
+        <!-- Blockquote -->
+        <div class="space-y-2">
+          <h3 class="font-semibold">Blockquote</h3>
+          <blockquote class="border-l-4 border-default pl-4 italic text-gray-700">
+            “This is an example blockquote. It should stand out from regular text and indicate quoted
+            content.”
+          </blockquote>
+        </div>
 
-                <!-- Inline code and code block -->
-                <div class="space-y-2">
-                    <h3 class="font-semibold">Code Examples</h3>
-                    <p>Inline code: <code class="bg-light-gray px-1 rounded">npm install package-name</code></p>
-                    <pre class="bg-light-gray p-4 rounded overflow-x-auto text-sm">
+        <!-- Inline code and code block -->
+        <div class="space-y-2">
+          <h3 class="font-semibold">Code Examples</h3>
+          <p>Inline code: <code class="bg-light-gray px-1 rounded">npm install package-name</code></p>
+          <pre class="bg-light-gray p-4 rounded overflow-x-auto text-sm">
 <code>
 function helloWorld() {
   console.log("Hello, world!");
 }
 </code>
 </pre>
-                </div>
-
-                <!-- Links in flowing text -->
-                <div class="space-y-2">
-                    <h3 class="font-semibold">Links in flowing text</h3>
-                    <p>
-                        You can reference <a href="#colors" class="text-default underline hover:text-accent">Colors</a>,
-                        <a href="#buttons" class="text-default underline hover:text-accent">Buttons</a>, or
-                        <a href="#forms" class="text-default underline hover:text-accent">Forms</a> sections from any
-                        paragraph.
-                        This shows how inline links flow naturally in body text.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Buttons -->
-        <section id="buttons" class="mb-12">
-            <h2 class="text-2xl font-bold mb-4">Buttons</h2>
-            <div class="space-x-4">
-                <button
-                    class="bg-default text-white px-4 py-2 rounded-lg font-semibold hover:bg-light transition-colors duration-300 ease-in-out">
-                    Primary
-                </button>
-                <button
-                    class="bg-accent text-black px-4 py-2 rounded-lg font-semibold hover:bg-accent-hover transition-colors duration-300 ease-in-out">
-                    Accent
-                </button>
-                <button
-                    class="bg-light-gray text-black px-4 py-2 rounded-lg font-semibold hover:bg-default hover:text-white transition-colors duration-300 ease-in-out">
-                    Secondary
-                </button>
-            </div>
-        </section>
-
-        <!-- Forms -->
-        <section id="forms" class="mb-12">
-            <h2 class="text-2xl font-bold mb-4">Forms</h2>
-            <div class="space-y-4 border border-light-gray p-6 rounded-lg bg-erlich-white">
-                <input type="text" placeholder="Text input"
-                    class="w-full p-3 border border-light-gray rounded-lg transition-shadow duration-300 ease-in-out focus:ring-2 focus:ring-default focus:outline-none" />
-                <label for="example-select" class="block font-semibold">Choose an option</label>
-                <select aria-label="Choose an option" id="example-select"
-                    class="w-full p-3 border border-light-gray rounded-lg transition-shadow duration-300 ease-in-out focus:ring-2 focus:ring-default focus:outline-none">
-                    <option value="">Select option</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                </select>
-                <textarea placeholder="Textarea"
-                    class="w-full p-3 border border-light-gray rounded-lg transition-shadow duration-300 ease-in-out focus:ring-2 focus:ring-default focus:outline-none"></textarea>
-                <button
-                    class="bg-default text-white px-4 py-2 rounded-lg font-semibold hover:bg-light transition-colors duration-300 ease-in-out">
-                    Submit
-                </button>
-            </div>
-        </section>
-
-        <!-- Cards -->
-        <section id="cards" class="mb-12">
-            <h2 class="text-2xl font-bold mb-4">Cards</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="p-6 border border-light-gray rounded-lg bg-erlich-white space-y-2">
-                    <h3 class="text-xl font-semibold">Card Title</h3>
-                    <p>Card content example.</p>
-                    <button
-                        class="bg-default text-white px-4 py-2 rounded-lg font-semibold hover:bg-light">Action</button>
-                </div>
-                <div class="p-6 border border-light-gray rounded-lg bg-erlich-white space-y-2">
-                    <h3 class="text-xl font-semibold">Card Title</h3>
-                    <p>Card content example.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Layout -->
-        <section id="layout" class="mb-12">
-            <h2 class="text-2xl font-bold mb-4">Layout</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="p-6 border border-light-gray rounded-lg bg-erlich-white text-center">Grid Item</div>
-                <div class="p-6 border border-light-gray rounded-lg bg-erlich-white text-center">Grid Item</div>
-                <div class="p-6 border border-light-gray rounded-lg bg-erlich-white text-center">Grid Item</div>
-            </div>
-        </section>
-
-        <!-- Cards with images-->
-        <section id="cards-with-images" class="mb-12">
-            <h2 class="text-2xl font-bold mb-4">Cards with Images</h2>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <!-- Card 1 -->
-                <div
-                    class="border border-light-gray rounded-lg overflow-hidden bg-erlich-white shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out">
-                    <img src="https://placehold.co/400x200" alt="Sample image 1"
-                        class="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105">
-                    <div class="p-4 space-y-2">
-                        <h3 class="text-xl font-semibold">Card Title 1</h3>
-                        <p>This is a sample card with an image. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        </p>
-                        <button
-                            class="bg-default text-white px-4 py-2 rounded-lg font-semibold hover:bg-light transition-colors duration-300 ease-in-out">
-                            Action
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div
-                    class="border border-light-gray rounded-lg overflow-hidden bg-erlich-white shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out">
-                    <img src="https://placehold.co/400x200" alt="Sample image 2"
-                        class="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105">
-                    <div class="p-4 space-y-2">
-                        <h3 class="text-xl font-semibold">Card Title 2</h3>
-                        <p>Another example card with an image and a description. Links, buttons, and hover effects are
-                            all included.</p>
-                        <button
-                            class="bg-accent text-black px-4 py-2 rounded-lg font-semibold hover:bg-accent-hover transition-colors duration-300 ease-in-out">
-                            Learn More
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div
-                    class="border border-light-gray rounded-lg overflow-hidden bg-erlich-white shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out">
-                    <img src="https://placehold.co/400x200" alt="Sample image 3"
-                        class="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105">
-                    <div class="p-4 space-y-2">
-                        <h3 class="text-xl font-semibold">Card Title 3</h3>
-                        <p>Cards can also include longer content, multiple links, or additional buttons as needed for
-                            your UI.</p>
-                        <button
-                            class="bg-light-gray text-black px-4 py-2 rounded-lg font-semibold hover:bg-default hover:text-white transition-colors duration-300 ease-in-out">
-                            Details
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer Section -->
-    <footer class="bg-light-gray text-black py-12">
-        <div class="max-w-6xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="font-semibold mb-2">About</h3>
-                <p>Sample footer content. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div>
-                <h3 class="font-semibold mb-2">Links</h3>
-                <ul class="space-y-1">
-                    <li><a href="#hero"
-                            class="text-default underline hover:text-accent transition-colors duration-300 ease-in-out">Hero</a>
-                    </li>
-                    <li><a href="#features"
-                            class="text-default underline hover:text-accent transition-colors duration-300 ease-in-out">Features</a>
-                    </li>
-                    <li><a href="#cards"
-                            class="text-default underline hover:text-accent transition-colors duration-300 ease-in-out">Cards</a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-semibold mb-2">Contact</h3>
-                <p>Email: <a href="mailto:info@example.com"
-                        class="text-default underline hover:text-accent transition-colors duration-300 ease-in-out">info@example.com</a>
-                </p>
-            </div>
         </div>
-    </footer>
 
-</body>
+        <!-- Links in flowing text -->
+        <div class="space-y-2">
+          <h3 class="font-semibold">Links in flowing text</h3>
+          <p>
+            You can reference <a href="#colors" class="text-default underline hover:text-accent">Colors</a>,
+            <a href="#buttons" class="text-default underline hover:text-accent">Buttons</a>, or
+            <a href="#forms" class="text-default underline hover:text-accent">Forms</a> sections from any
+            paragraph.
+            This shows how inline links flow naturally in body text.
+          </p>
+        </div>
 
-</html>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section id="buttons" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Buttons</h2>
+      <div class="space-x-4">
+        <button
+          class="bg-default text-white px-4 py-2 rounded-lg font-semibold hover:bg-light transition-colors duration-300 ease-in-out">
+          Primary
+        </button>
+        <button
+          class="bg-accent text-black px-4 py-2 rounded-lg font-semibold hover:bg-accent-hover transition-colors duration-300 ease-in-out">
+          Accent
+        </button>
+        <button
+          class="bg-light-gray text-black px-4 py-2 rounded-lg font-semibold hover:bg-default hover:text-white transition-colors duration-300 ease-in-out">
+          Secondary
+        </button>
+      </div>
+    </section>
+
+    <!-- Forms -->
+    <section id="forms" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Forms</h2>
+      <div class="space-y-4 border border-light-gray p-6 rounded-lg bg-erlich-white">
+        <input type="text" placeholder="Text input"
+               class="w-full p-3 border border-light-gray rounded-lg transition-shadow duration-300 ease-in-out focus:ring-2 focus:ring-default focus:outline-none" />
+        <label for="example-select" class="block font-semibold">Choose an option</label>
+        <select aria-label="Choose an option" id="example-select"
+                class="w-full p-3 border border-light-gray rounded-lg transition-shadow duration-300 ease-in-out focus:ring-2 focus:ring-default focus:outline-none">
+          <option value="">Select option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+        </select>
+        <textarea placeholder="Textarea"
+                  class="w-full p-3 border border-light-gray rounded-lg transition-shadow duration-300 ease-in-out focus:ring-2 focus:ring-default focus:outline-none"></textarea>
+        <button
+          class="bg-default text-white px-4 py-2 rounded-lg font-semibold hover:bg-light transition-colors duration-300 ease-in-out">
+          Submit
+        </button>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section id="cards" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Cards</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="p-6 border border-light-gray rounded-lg bg-erlich-white space-y-2">
+          <h3 class="text-xl font-semibold">Card Title</h3>
+          <p>Card content example.</p>
+          <button
+            class="bg-default text-white px-4 py-2 rounded-lg font-semibold hover:bg-light">Action
+          </button>
+        </div>
+        <div class="p-6 border border-light-gray rounded-lg bg-erlich-white space-y-2">
+          <h3 class="text-xl font-semibold">Card Title</h3>
+          <p>Card content example.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section id="layout" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Layout</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="p-6 border border-light-gray rounded-lg bg-erlich-white text-center">Grid Item</div>
+        <div class="p-6 border border-light-gray rounded-lg bg-erlich-white text-center">Grid Item</div>
+        <div class="p-6 border border-light-gray rounded-lg bg-erlich-white text-center">Grid Item</div>
+      </div>
+    </section>
+
+    <!-- Cards with images-->
+    <section id="cards-with-images" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Cards with Images</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1 -->
+        <div
+          class="border border-light-gray rounded-lg overflow-hidden bg-erlich-white shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out">
+          <img src="https://placehold.co/400x200" alt="Sample image 1"
+               class="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105">
+          <div class="p-4 space-y-2">
+            <h3 class="text-xl font-semibold">Card Title 1</h3>
+            <p>This is a sample card with an image. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <button
+              class="bg-default text-white px-4 py-2 rounded-lg font-semibold hover:bg-light transition-colors duration-300 ease-in-out">
+              Action
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="border border-light-gray rounded-lg overflow-hidden bg-erlich-white shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out">
+          <img src="https://placehold.co/400x200" alt="Sample image 2"
+               class="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105">
+          <div class="p-4 space-y-2">
+            <h3 class="text-xl font-semibold">Card Title 2</h3>
+            <p>Another example card with an image and a description. Links, buttons, and hover effects are
+              all included.</p>
+            <button
+              class="bg-accent text-black px-4 py-2 rounded-lg font-semibold hover:bg-accent-hover transition-colors duration-300 ease-in-out">
+              Learn More
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="border border-light-gray rounded-lg overflow-hidden bg-erlich-white shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out">
+          <img src="https://placehold.co/400x200" alt="Sample image 3"
+               class="w-full h-48 object-cover transition-transform duration-300 ease-in-out hover:scale-105">
+          <div class="p-4 space-y-2">
+            <h3 class="text-xl font-semibold">Card Title 3</h3>
+            <p>Cards can also include longer content, multiple links, or additional buttons as needed for
+              your UI.</p>
+            <button
+              class="bg-light-gray text-black px-4 py-2 rounded-lg font-semibold hover:bg-default hover:text-white transition-colors duration-300 ease-in-out">
+              Details
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="bg-light-gray text-black py-12">
+    <div class="max-w-6xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="font-semibold mb-2">About</h3>
+        <p>Sample footer content. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Links</h3>
+        <ul class="space-y-1">
+          <li><a href="#hero"
+                 class="text-default underline hover:text-accent transition-colors duration-300 ease-in-out">Hero</a>
+          </li>
+          <li><a href="#features"
+                 class="text-default underline hover:text-accent transition-colors duration-300 ease-in-out">Features</a>
+          </li>
+          <li><a href="#cards"
+                 class="text-default underline hover:text-accent transition-colors duration-300 ease-in-out">Cards</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Contact</h3>
+        <p>Email: <a href="mailto:info@example.com"
+                     class="text-default underline hover:text-accent transition-colors duration-300 ease-in-out">info@example.com</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  </body>
+
+  </html>
 {% endblock %}

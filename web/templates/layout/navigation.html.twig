@@ -1,24 +1,24 @@
 {% block navigation %}
-    <nav class="bg-whtie md:sticky md:top-0 md:left-0 p-1">
-        {# Desktop shows the hidden topbar #}
+  <nav class="bg-whtie md:sticky md:top-0 md:left-0 p-1">
+    {# Desktop shows the hidden topbar #}
     <section class="hidden md:block " data-js-topbar>
-        {# TODO: Add corect background #}
-       <div class="w-60">
-            {{ component('HeadLogo', {isMobile: false}) }}
-       </div>
-         
+      {# TODO: Add corect background #}
+      <div class="w-60">
+        {{ component('HeadLogo', {isMobile: false}) }}
+      </div>
+
     </section>
     {# Mobile and Desktop #}
     <section class="flex justify-between" data-js-navigation>
-        {# Logo only visible when shown in Mobile #}
-    <div class="w-40 md:hidden">
-          {{ component('HeadLogo', {isMobile: true}) }}
-    </div>
-    <div class="md:hidden block">
-        HAMBURGER <br> 
+      {# Logo only visible when shown in Mobile #}
+      <div class="w-40 md:hidden">
+        {{ component('HeadLogo', {isMobile: true}) }}
+      </div>
+      <div class="md:hidden block">
+        HAMBURGER <br>
         MENU
-    </div>
+      </div>
     </section>
-        {# TODO: create a way to automaticly read generate the navigation parts. May need componepnts etc. #}
-    </nav>
+    {# TODO: create a way to automaticly read generate the navigation parts. May need componepnts etc. #}
+  </nav>
 {% endblock %}
