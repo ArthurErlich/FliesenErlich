@@ -10,12 +10,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
-class MainController extends AbstractController
+class StyleGuideController extends AbstractController
 {
 
-    private const string PATH = "/";
-    private const string TITLE = "Startseite";
-    private const string PATH_NAME = "frontend.home";
+    private const string PATH = "/style-guide";
+    private const string TITLE = "Style Guide";
+    private const string PATH_NAME = "frontend.styl_guide";
 
     #[Route(self::PATH, name: self::PATH_NAME)]
     public function base(SeoManager $seo): Response
@@ -23,11 +23,11 @@ class MainController extends AbstractController
         $seo->setMany([
             'title' => self::TITLE,
             'siteName' => self::TITLE,
-            'url' => $this->generateUrl(self::PATH_NAME,  [],UrlGeneratorInterface::ABSOLUTE_URL),
+            'url' => $this->generateUrl(self::PATH_NAME, [],UrlGeneratorInterface::ABSOLUTE_URL),
             'description' => '',
             'keywords' => '',
         ]);
 
-        return $this->render('@app/pages/index.html.twig', []);
+        return $this->render('@app/pages/style_guide.html.twig');
     }
 }

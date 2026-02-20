@@ -1,0 +1,12 @@
+parameters:
+    seo.defaults:
+        author: 'Agentur Erlich, Arthur Erlich'
+        robots: 'index, follow'
+        revisitAfter: ''
+        keywords: ''
+        description: ''
+        url: ''
+        siteName: ''
+        title: ''
+        image: ''
+        imgAlt: ''

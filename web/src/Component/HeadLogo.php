@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Components;
+namespace App\Component;
 
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
