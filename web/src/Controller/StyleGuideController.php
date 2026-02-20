@@ -23,7 +23,9 @@ class StyleGuideController extends AbstractController
         $seo->setMany([
             'title' => self::TITLE,
             'siteName' => self::TITLE,
-            'url' => $this->generateUrl(self::PATH_NAME, [],UrlGeneratorInterface::ABSOLUTE_URL),
+            'image' => '',
+            'imgAlt' =>'',
+            'url' => $this->generateUrl(self::PATH_NAME, [],UrlGeneratorInterface::ABSOLUTE_URL),  //TODO: create event to replace the url
             'description' => '',
             'keywords' => '',
         ]);
