@@ -1,10 +1,10 @@
 {% block html %}
   <!DOCTYPE html>
-  <html>
+  <html lang="{{ seo.lang }}">
   <head>
-    {{ include('@app/layout/header.html.twig') }}
+    {{ include('@ErlichFliesen/layout/header.html.twig') }}
   </head>
-  {{ include('@app/layout/navigation.html.twig') }}
+  {{ include('@ErlichFliesen/layout/navigation.html.twig') }}
   <body class="bg-white text-black flex flex-col min-h-screen">
   {% block body %}
     <main class="grow">
@@ -12,6 +12,6 @@
     </main>
   {% endblock %}
   </body>
-  {{ include('@app/layout/footer.html.twig') }}
+  {{ include('@ErlichFliesen/layout/footer.html.twig') }}
   </html>
 {% endblock %}

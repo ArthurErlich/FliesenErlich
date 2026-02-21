@@ -1,12 +1,13 @@
 parameters:
     seo.defaults:
-        author: 'Agentur Erlich, Arthur Erlich'
+        author: 'Agentur Erlich'
         robots: 'index, follow'
         revisitAfter: ''
         keywords: ''
         description: ''
         url: ''
         siteName: ''
-        title: ''
-        image: ''
-        imgAlt: ''
+        title: 'Erlich Fliesen'
+        image: 'media/favicon/erlich-fliesen-favicon.svg'
+        imgAlt: 'Erlich Fliesen Logo'
+        lang: 'de'

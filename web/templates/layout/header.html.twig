@@ -6,6 +6,7 @@
     <meta name="revisit-after" content="{{ seo.revisitAfter }}" />
     <meta name="keywords" content="{{ seo.keywords }}" />
     <meta name="description" content="{{ seo.description }}" />
+    <meta name="content-language" content="{{ seo.lang }}">
   {% endblock %}
   {% block head_opengraph %}
     <meta property="og:url" content="{{ seo.url }}" />
@@ -34,12 +35,16 @@
   {% block head_favicon %}
     <link
       rel="icon"
-      href="{{ asset('media/favicon/erlich-fliesen-favicon.svg') }}" />
+      href="{{ asset('media/favicon/erlich-fliesen-favicon.svg') }}"
+      type="image/svg+xml"
+    />
   {% endblock %}
   {% block head_apple_favicon %}
     <link
       rel="apple-touch-icon"
-      href="{{ asset('media/favicon/erlich-fliesen-favicon.svg') }}" />
+      href="{{ asset('media/favicon/erlich-fliesen-favicon.svg') }}"
+      type="image/svg+xml"
+    />
   {% endblock %}
   {% block head_stylesheets %}
 

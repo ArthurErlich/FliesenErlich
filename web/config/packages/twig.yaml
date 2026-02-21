@@ -1,7 +1,7 @@
 twig:
     file_name_pattern: '*.twig'
     paths:
-        'templates': app
+        'templates': ErlichFliesen
 
 when@test:
     twig:

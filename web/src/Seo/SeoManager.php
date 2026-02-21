@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Seo;
+namespace ErlichFliesen\Seo;
 
 class SeoManager
 {
@@ -11,17 +11,17 @@ class SeoManager
         $this->data = $defaults;
     }
 
-    public function set(string $key, ?string $value): void
-    {
-        if ($value !== null) {
-            $this->data[$key] = $value;
-        }
-    }
-
     public function setMany(array $values): void
     {
         foreach ($values as $k => $v) {
             $this->set($k, $v);
+        }
+    }
+
+    public function set(string $key, ?string $value): void
+    {
+        if ($value !== null) {
+            $this->data[$key] = $value;
         }
     }
 

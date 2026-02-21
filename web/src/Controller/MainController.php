@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace ErlichFliesen\Controller;
 
-use App\Seo\SeoManager;
+use ErlichFliesen\Seo\SeoManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -13,21 +14,77 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 class MainController extends AbstractController
 {
 
-    private const string PATH = "/";
-    private const string TITLE = "Startseite";
-    private const string PATH_NAME = "frontend.home";
+    const string TITLE_PREFIX = "Erlich Fliesen | ";
+    const string PAGE_PREFIX = "@ErlichFliesen/pages/";
 
-    #[Route(self::PATH, name: self::PATH_NAME)]
-    public function base(SeoManager $seo): Response
+    #[Route("/", name: "frontend.home")]
+    public function home(SeoManager $seo, Request $request): Response
     {
+        $title = self::TITLE_PREFIX . "Startseite";
         $seo->setMany([
-            'title' => self::TITLE,
-            'siteName' => self::TITLE,
-            'url' => $this->generateUrl(self::PATH_NAME,  [],UrlGeneratorInterface::ABSOLUTE_URL),
+            'title' => $title,
+            'siteName' => $title,
+            'image' => '',
+            'imgAlt' => '',
+            'url' => $this->generateUrl($request->attributes->get('_route'), [], UrlGeneratorInterface::ABSOLUTE_URL),
             'description' => '',
             'keywords' => '',
         ]);
 
-        return $this->render('@app/pages/index.html.twig', []);
+        return $this->render(self::PAGE_PREFIX . 'index.html.twig', []);
+    }
+
+    #[Route("/impressum", name: "frontend.imprint")]
+    public function imprint(SeoManager $seo, Request $request): Response
+    {
+
+        $title = self::TITLE_PREFIX . "Impressum";
+        $seo->setMany([
+            'title' => $title,
+            'siteName' => $title,
+            'image' => '',
+            'imgAlt' => '',
+            'url' => $this->generateUrl($request->attributes->get('_route'), [], UrlGeneratorInterface::ABSOLUTE_URL),
+            'description' => '',
+            'keywords' => '',
+        ]);
+
+        return $this->render(self::PAGE_PREFIX . 'imprint.html.twig', []);
+    }
+
+    #[Route("/kontakt", name: "frontend.contact")]
+    public function contact(SeoManager $seo, Request $request): Response
+    {
+
+        $title = self::TITLE_PREFIX . "Kontakt";
+        $seo->setMany([
+            'title' => $title,
+            'siteName' => $title,
+            'image' => '',
+            'imgAlt' => '',
+            'url' => $this->generateUrl($request->attributes->get('_route'), [], UrlGeneratorInterface::ABSOLUTE_URL),
+            'description' => '',
+            'keywords' => '',
+        ]);
+
+        return $this->render(self::PAGE_PREFIX . 'contact.html.twig', []);
+    }
+
+    #[Route("/style-guide", name: "frontend.styl_guide")]
+    public function styleGuide(SeoManager $seo, Request $request): Response
+    {
+
+        $title = self::TITLE_PREFIX . "Style Guide";
+        $seo->setMany([
+            'title' => $title,
+            'siteName' => $title,
+            'image' => '',
+            'imgAlt' => '',
+            'url' => $this->generateUrl($request->attributes->get('_route'), [], UrlGeneratorInterface::ABSOLUTE_URL),
+            'description' => '',
+            'keywords' => '',
+        ]);
+
+        return $this->render(self::PAGE_PREFIX . 'style_guide.html.twig', []);
     }
 }
