@@ -4,10 +4,10 @@
   <head>
     {{ include('@ErlichFliesen/layout/header.html.twig') }}
   </head>
-  {{ include('@ErlichFliesen/layout/navigation.html.twig') }}
-  <body class="bg-white text-black flex flex-col min-h-screen">
+    {{ component('Navigation') }}
+  <body class="bg-white text-black flex flex-col min-h-screen ">
   {% block body %}
-    <main class="grow">
+    <main class="max-w-2xl grow">
       {% block body_main %}{% endblock %}
     </main>
   {% endblock %}

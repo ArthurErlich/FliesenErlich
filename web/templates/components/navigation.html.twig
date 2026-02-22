@@ -2,10 +2,8 @@
   <nav class="bg-whtie md:sticky md:top-0 md:left-0 p-1">
     {# Desktop shows the hidden topbar #}
     <section class="hidden md:block " data-js-topbar>
-      {# TODO: Add corect background #}
-      <div class="w-60">
-        {{ component('HeadLogo', {isMobile: false}) }}
-      </div>
+     {{ component('Navigation-Mobile') }}
+
 
     </section>
     {# Mobile and Desktop #}
