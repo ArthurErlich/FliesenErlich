@@ -6,8 +6,7 @@ namespace ErlichFliesen\Component;
 
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
-#[AsTwigComponent("MainNavigation", template: 'components/navigation/top_bar.html.twig')]
+#[AsTwigComponent("HeadLogo", template: 'components/head_logo.html.twig')]
 class HeadLogo
 {
-    public bool $isMobile = false;
 }

@@ -1,12 +1,8 @@
 {% block navigation_logo_component %}
-  {% if isMobile %}
-    {% set asset =  asset('media/coperated/logo-erlich-mobile.png') %}
-  {% else %}
-    {% set asset =  asset('media/coperated/logo-erlich.png') %}
-  {% endif %}
+  {# TODO: replace with svg logo #}
+  {% set asset = asset('media/coperated/logo-erlich.png') %}
 
-  <a class="cursor-pointer" href="{{ path('frontend.home') }}" title="Fliesen Erlich Logo">
-    <img src="{{ asset }}" alt="Fliesen Erlich Logo">
-    </img>
+  <a class="cursor-pointer block" href="{{ path('frontend.home') }}" title="Fliesen Erlich Logo">
+    <img src="{{ asset }}" alt="Fliesen Erlich Logo" class="object-contain h-15 " />
   </a>
 {% endblock %}

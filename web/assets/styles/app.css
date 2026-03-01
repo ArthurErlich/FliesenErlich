@@ -15,10 +15,9 @@
     /* darker accent for AA compliance */
     /* formerly #b08c6b */
     --color-accent: #8b6e55;
-
     /* Hover für Akzent */
     --color-accent-hover: #c7a481;
     /* Background SVG for fill*/
-    --color-svg-fill: url();
+    --color-svg-fill: url("");
     /* TODO: add missing fonts */
 }
