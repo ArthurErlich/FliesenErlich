@@ -1,14 +1,15 @@
 {% block html %}
   <!DOCTYPE html>
-  <html lang="{{ seo.lang }} p-0 m-0">
+  <html lang="{{ seo.lang }}" class="p-0 m-0">
   <head>
     {{ include('@ErlichFliesen/layout/header.html.twig') }}
   </head>
-    {{ component('Navigation') }}
-  <body class="bg-white text-black flex flex-col justify-start  min-h-screen">
+  {{ component('Navigation') }}
+  <body class="bg-white text-black justify-items-center flex flex-col  min-h-screen">
   {% block body %}
-    <main class="max-w-2xl grow mx-auto">
-      {% block body_main %}{% endblock %}
+    <main class="grow">
+      {% block body_main %}
+      {% endblock %}
     </main>
   {% endblock %}
   </body>

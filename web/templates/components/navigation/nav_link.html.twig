@@ -1,0 +1,16 @@
+{% block main_navigation_link %}
+
+  {% set active = "text-white" %}
+
+  {%- if app.request.attributes.get('_route') == route -%}
+    {% set active = "bg-light-gray" %}
+  {%- endif -%}
+
+  <li class="{{ active }}">
+    <a href="{{ path(route) }}">
+      <div class=" py-1 px-2">
+        {{ text }}
+      </div>
+    </a>
+  </li>
+{% endblock %}

@@ -3,6 +3,6 @@
   <component name="SonarLintProjectSettings">
     <option name="bindingEnabled" value="true" />
     <option name="projectKey" value="FliesenErlich" />
-    <option name="serverId" value="HaylanSonar" />
+    <option name="serverId" value="local" />
   </component>
 </project>

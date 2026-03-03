@@ -1,5 +1,18 @@
 {% extends '@ErlichFliesen/layout/base.html.twig' %}
 
 {% block body_main %}
-  <h1>This is the main page</h1>
+  {# TODO: check how to set up the correct hero hight #}
+  <section>
+    <div class="max-h-[80vh] overflow-hidden">
+      {# TODO: make hreo image on the right side with homans on the left should be a slogen #}
+      <img class="opacity-50"
+           src="{{ asset('media/images/hero/15.41.26_temp-hreo.jpg') }}"
+           alt="Test"
+           loading="lazy"
+           decoding="async">
+    </div>
+  </section>
+  <section class="w-full max-w-2xl mx-auto">
+    <h1>This is the main page</h1>
+  </section>
 {% endblock %}

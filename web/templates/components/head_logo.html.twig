@@ -1,8 +1,8 @@
 {% block navigation_logo_component %}
   {# TODO: replace with svg logo #}
-  {% set asset = asset('media/coperated/logo-erlich.png') %}
+  {% set asset = asset('media/coperated/logo-erlich-dunkel.png') %}
 
-  <a class="cursor-pointer block" href="{{ path('frontend.home') }}" title="Fliesen Erlich Logo">
+  <a class="cursor-pointer block pl-2 py-1" href="{{ path('frontend.home') }}" title="Fliesen Erlich Logo">
     <img src="{{ asset }}" alt="Fliesen Erlich Logo" class="object-contain h-15 " />
   </a>
 {% endblock %}

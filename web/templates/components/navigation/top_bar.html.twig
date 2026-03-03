@@ -1,10 +1,10 @@
 {% block navigation_top_bar %}
   <section data-js-topbar class="flex gap-10">
-    {{ component('HeadLogo')}}
-    <address data-js-address class="grow-1 flex flex-wrap justify-between items-center pr-10">
-      <span> data-js-address-address></span>
-      <span>data-js-address-address></span>
-      <span> data-js-address-address></span>
+    {{ component('HeadLogo') }}
+    <address data-js-address
+             class="grow-1 flex-wrap justify-around items-center pr-10 not-italic hidden md:flex">
+      <a href="tel:01634310646">Mobil: +49 (0) 1634 3106 46</a>
+      <a href="mailto: fliesenerlich@hotmail.com"> E-Mail: fliesenerlich@hotmail.com</a>
     </address>
   </section>
 {% endblock %}
