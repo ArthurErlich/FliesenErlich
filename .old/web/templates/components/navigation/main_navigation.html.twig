@@ -1,0 +1,18 @@
+{% block main_navigation %}
+  <section data-js-mainnavigation>
+    <nav aria-label="Navigation" class="hidden md:block">
+      <ul class="grow-1 gap-10 flex  justify-center bg-default items-stretch">
+        {{ component('NavLink',{
+          route:'frontend.home',
+          text:'Fliesen Erlich'
+        }) }}
+
+        {{ component('NavLink',{
+          route:'frontend.imprint',
+          text: 'Impressum'
+        }) }}
+
+      </ul>
+    </nav>
+  </section>
+{% endblock %}

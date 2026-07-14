@@ -1,22 +1,24 @@
-# Configuration
-/.env.local
+# build output
+dist/
+# generated types
+.astro/
 
-# Composer
-/vendor/
+# dependencies
+node_modules/
 
-# Contao Manager
-/contao-manager/
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Generated folders
-/assets/
-/public/
-/system/*
-!/system/config/
-/system/config/localconfig.php
-/var/
-/bin/
 
-# Skip files
-/system/modules/*/.skip
-/node_modules/*
-web/files/aerlFliesenErlichTheme/node_modules/*
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/

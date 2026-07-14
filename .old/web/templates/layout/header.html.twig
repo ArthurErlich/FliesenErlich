@@ -1,0 +1,57 @@
+{% block head %}
+  {% block head_meta %}
+    <meta charset="UTF-8" />
+    <meta name="author" content="{{ seo.author }}" />
+    <meta name="robots" content="{{ seo.robots }}" />
+    <meta name="revisit-after" content="{{ seo.revisitAfter }}" />
+    <meta name="keywords" content="{{ seo.keywords }}" />
+    <meta name="description" content="{{ seo.description }}" />
+    <meta name="content-language" content="{{ seo.lang }}">
+  {% endblock %}
+  {% block head_opengraph %}
+    <meta property="og:url" content="{{ seo.url }}" />
+    <meta property="og:type" content="{{ seo.author }}" />
+    <meta property="og:site_name" content="{{ seo.siteName }}" />
+    <meta property="og:title" content="{{ seo.title }}" />
+    <meta property="og:description" content="{{ seo.description }}" />
+    <meta property="og:image" content="{{ seo.image }}" />
+    <meta property="og:image:alt" content="{{ seo.imgAlt }}" />
+
+    <meta name="twitter:card" content="{{ seo.author }}" />
+    <meta name="twitter:title" content="{{ seo.title }}" />
+    <meta name="twitter:description" content="{{ seo.description }}" />
+    <meta name="twitter:image" content="{{ seo.image }}" />
+  {% endblock %}
+  {% block head_title %}
+    <title>
+      {{ seo.title }}
+    </title>
+  {% endblock %}
+  {% block head_viwport %}
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  {% endblock %}
+  {% block head_favicon %}
+    <link
+      rel="icon"
+      href="{{ asset('media/favicon/erlich-fliesen-favicon.svg') }}"
+      type="image/svg+xml"
+    />
+  {% endblock %}
+  {% block head_apple_favicon %}
+    <link
+      rel="apple-touch-icon"
+      href="{{ asset('media/favicon/erlich-fliesen-favicon.svg') }}"
+      type="image/svg+xml"
+    />
+  {% endblock %}
+  {% block head_stylesheets %}
+
+  {% endblock %}
+  {% block head_javascripts %}
+    {% block head_javascripts_importmap %}
+      {{ importmap('app') }}
+    {% endblock %}
+  {% endblock %}
+{% endblock %}

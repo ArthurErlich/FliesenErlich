@@ -1,0 +1,13 @@
+twig:
+    file_name_pattern: '*.twig'
+    paths:
+        'templates': ErlichFliesen
+
+when@dev:
+    twig:
+        auto_reload: true
+
+when@test:
+    twig:
+        strict_variables: true
+
