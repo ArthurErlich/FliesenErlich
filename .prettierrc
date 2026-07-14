@@ -6,17 +6,9 @@
     "singleQuote": true,
     "bracketSameLine": true,
     "trailingComma": "all",
-    "overrides": [
-        {
-            "files": "*.twig",
-            "options": {
-                "parser": "twig"
-            }
-        }
-    ],
     "plugins": [
         "@zackad/prettier-plugin-twig",
         "prettier-plugin-tailwindcss"
     ],
-    "tailwindStylesheet": "web/assets/styles/app.css"
+    "tailwindStylesheet": "xxx"
 }

@@ -1,23 +1,43 @@
-# Deploy
+# Astro Starter Kit: Minimal
 
-https://symfony.com/bundles/TailwindBundle/current/index.html
+```sh
+npm create astro@latest -- --template minimal
+```
 
-- Build assets
-  - php bin/console tailwind:build --minify
-  - php bin/console asset-map:compile
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-# Translation
+## 🚀 Project Structure
 
-https://symfony.com/doc/current/translation.html#configuration
+Inside of your Astro project, you'll see the following folders and files:
 
-# Asset Mapper for JS and CSSS
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-https://symfony.com/doc/current/frontend/asset_mapper.html
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-- Run Tailwind watcher: bin/console tailwind:build --watch
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-## Some links for design ideas:
+Any static assets, like images, can be placed in the `public/` directory.
 
-- https://themewagon.github.io/Weldork/
-- https://themewagon.github.io/Dewi/
-- https://themewagon.github.io/logisticexpress/
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
