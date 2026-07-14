@@ -1,0 +1,28 @@
+---
+import Link from './Link.astro';
+import { navLinks } from '../consts';
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<nav aria-label="Navigation">
+	<ul class="flex gap-8">
+		{
+			navLinks.map(({ href, text }) => {
+				const isActive = (href.replace(/\/$/, '') || '/') === currentPath;
+				return (
+					<li>
+						<Link
+							nav
+							href={href}
+							aria-current={isActive ? 'page' : undefined}
+							class={`text text-black hover:text-default ${isActive ? 'underline decoration-2 underline-offset-4 decoration-default' : ''}`}
+						>
+							{text}
+						</Link>
+					</li>
+				);
+			})
+		}
+	</ul>
+</nav>

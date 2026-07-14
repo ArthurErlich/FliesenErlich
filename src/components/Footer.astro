@@ -1,0 +1,62 @@
+---
+import Link from './Link.astro';
+import { navLinks, legalLinks, contact } from '../consts';
+---
+
+<footer id="kontakt">
+	<div
+		class="bg-default px-8 py-16 text-white md:px-16 md:py-20 [--link-underline-color:var(--color-accent-hover)]"
+	>
+		<div class="grid gap-8 md:grid-cols-[5fr_3fr_3fr]">
+			<div>
+	<!-- NEUES PROJEKT SLOGEN -->
+			</div>
+			<!-- LINK CTO Zur Kontakt seite	 -->
+			
+		</div>
+	</div>
+	<div class="bg-black px-8 py-12 text-white md:px-16 [--link-underline-color:var(--color-accent-hover)]">
+		<div class="grid gap-8 text-sm leading-loose opacity-90 md:grid-cols-3">
+			<div class="text-sm leading-loose opacity-90">
+				<div class="mb-2 text-xs font-semibold tracking-widest text-accent-hover uppercase">
+					Kontakt
+				</div>
+				<div>{contact.street}, {contact.city}</div>
+				<div>{contact.email}</div>
+				<div>{contact.phone}</div>
+			</div>
+
+			<div>
+							<div class="mb-2 text-xs font-semibold tracking-widest text-accent-hover uppercase">
+					Navigation
+				</div>
+				{
+					navLinks.map(({ href, text }) => (
+						<div>
+							<Link href={href}>{text}</Link>
+						</div>
+					))
+				}
+			</div>
+			<div>
+				<div class="mb-2 text-xs font-semibold tracking-widest text-accent-hover uppercase">
+					Rechtliches
+				</div>
+				{
+					legalLinks.map(({ href, text }) => (
+						<div>
+							<Link href={href}>{text}</Link>
+						</div>
+					))
+				}
+			</div>
+		</div>
+		<hr class="mt-12 h-px w-full border-0 bg-accent-hover/30" />
+		<div class="mt-8 text-xs text-center">
+			<div>© 2026 Fliesen Erlich. Alle Rechte vorbehalten.</div>
+			<div class="mt-2 text-center">
+				Design & Umsetzung: <Link href="https://me.arthurelich.de">Arthur Erlich</Link>
+			</div>
+		</div>
+	</div>
+</footer>
