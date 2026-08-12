@@ -1,0 +1,9 @@
+---
+// ponytail: no analytics on dev builds — SITE_URL is only set by the deploy
+// pipeline (.gitea/workflows/deploy.yml), staging and prod each track under
+// their own SITE_URL host, dev renders nothing.
+const siteUrl = process.env.SITE_URL;
+const domain = siteUrl ? new URL(siteUrl).hostname : null;
+---
+
+{domain && <script is:inline defer data-domain={domain} src="https://plausible.arthurerlch.de/js/script.js" />}
