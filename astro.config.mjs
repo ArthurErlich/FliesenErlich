@@ -5,13 +5,19 @@ import sitemap from '@astrojs/sitemap';
 
 import icon from 'astro-icon';
 
+import markdoc from '@astrojs/markdoc';
+
+import mdx from '@astrojs/mdx';
+
+import llms from 'astro-llms-md';
+
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
   site: process.env.SITE_URL ?? 'https://erlich-fliesen.de',
   trailingSlash: 'always',
-  integrations: [sitemap(), icon()],
+  integrations: [sitemap(), icon(), markdoc(), mdx(), llms()],
 
   vite: {
     plugins: [tailwindcss()]

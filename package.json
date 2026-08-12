@@ -12,16 +12,23 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/markdoc": "^2.0.6",
+    "@astrojs/mdx": "^7.0.5",
     "@astrojs/sitemap": "^3.7.3",
     "@plausible-analytics/tracker": "^0.4.6",
     "@tailwindcss/vite": "^4.3.2",
     "astro": "^7.2.0",
     "astro-icon": "^1.1.5",
+    "astro-llms-md": "^2.2.2",
     "astro-seo": "^1.1.0",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.3.2"
   },
   "allowScripts": {
     "esbuild@0.28.1": true
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^6.0.3"
   }
 }
