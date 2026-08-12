@@ -15,7 +15,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.SITE_URL ?? 'https://erlich-fliesen.de',
+  site: process.env.SITE_URL ?? 'http://localhost.de',
   trailingSlash: 'always',
   integrations: [sitemap(), icon(), markdoc(), mdx(), llms()],
 
