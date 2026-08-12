@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
 
@@ -14,5 +14,31 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+
+  fonts: [
+    {
+      name: 'Yeseva One',
+      cssVariable: '--font-yeseva-one',
+      provider: fontProviders.fontsource()
+    },
+    {
+      name: 'Noto Serif',
+      cssVariable: '--font-noto-serif',
+      provider: fontProviders.fontsource(),
+      weights: [400, 600, 700],
+      styles: ['normal', 'italic']
+    },
+    {
+      name: 'Inter',
+      cssVariable: '--font-inter',
+      provider: fontProviders.fontsource(),
+      weights: [400, 500, 600, 700]
+    }
+  ],
+  	trailingSlash: "always",
+	  site: process.env.SITE_URL ?? "https://erlich-fliesen.de",
+	  server: {
+		  port: 5500,
+	  },
 });

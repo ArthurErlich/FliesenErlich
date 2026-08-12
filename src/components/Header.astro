@@ -1,0 +1,14 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/coperated/logo-erlich-dunkel.png';
+import Navigation from './Navigation.astro';
+---
+
+<header
+	class="sticky top-0 z-10 flex h-12 items-center justify-between border-b border-accent bg-white/50 px-8 backdrop-blur-xl"
+>
+	<a href="/" title="Erlich Fliesen">
+		<Image src={logo} alt="Erlich Fliesen" class="h-10 w-auto object-contain" loading={"eager"} decoding={"auto"} />
+	</a>
+	<Navigation />
+</header>

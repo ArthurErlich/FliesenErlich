@@ -1,5 +1,8 @@
 ---
 import { SEO } from 'astro-seo';
+import { Font } from 'astro:assets';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -8,11 +11,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-
-const navLinks = [
-	{ href: '/', text: 'Fliesen Erlich' },
-	{ href: '/impressum', text: 'Impressum' }
-];
+const fullTitle = `${title} – Erlich Fliesen`;
 ---
 
 <html lang="de" class="m-0 p-0">
@@ -23,12 +22,15 @@ const navLinks = [
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" href="/media/favicon/erlich-fliesen-favicon.svg" type="image/svg+xml" />
 		<link rel="apple-touch-icon" href="/media/favicon/erlich-fliesen-favicon.svg" type="image/svg+xml" />
+		<Font cssVariable="--font-yeseva-one" preload />
+		<Font cssVariable="--font-noto-serif" preload />
+		<Font cssVariable="--font-inter" preload />
 		<SEO
-			title={title}
+			title={fullTitle}
 			description={description}
 			openGraph={{
 				basic: {
-					title,
+					title: fullTitle,
 					type: 'website',
 					image: '/media/favicon/erlich-fliesen-favicon.svg'
 				},
@@ -36,44 +38,17 @@ const navLinks = [
 			}}
 			twitter={{
 				card: 'summary',
-				title,
+				title: fullTitle,
 				description,
 				image: '/media/favicon/erlich-fliesen-favicon.svg'
 			}}
 		/>
 	</head>
-	<body class="flex min-h-screen flex-col justify-items-center bg-white text-black">
-		<div class="bg-white shadow-md md:sticky md:top-0 md:left-0 z-10">
-			<section class="flex gap-10">
-				<a class="block cursor-pointer py-1 pl-2" href="/" title="Fliesen Erlich Logo">
-					<img
-						src="/media/coperated/logo-erlich-dunkel.png"
-						alt="Fliesen Erlich Logo"
-						class="h-15 object-contain"
-					/>
-				</a>
-				<address class="hidden grow-1 flex-wrap items-center justify-around pr-10 not-italic md:flex">
-					<a href="tel:01634310646">Mobil: +49 (0) 1634 3106 46</a>
-					<a href="mailto:fliesenerlich@hotmail.com">E-Mail: fliesenerlich@hotmail.com</a>
-				</address>
-			</section>
-			<nav aria-label="Navigation" class="hidden md:block">
-				<ul class="grow-1 flex items-stretch justify-center gap-10 bg-default">
-					{
-						navLinks.map(({ href, text }) => (
-							<li class="text-white">
-								<a href={href}>
-									<div class="px-2 py-1">{text}</div>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</nav>
-		</div>
+	<body class="flex min-h-screen flex-col bg-erlich-white font-sans text-black">
+		<Header />
 		<main class="grow">
 			<slot />
 		</main>
-		<footer class="min-h-20 w-full bg-default"></footer>
+		<Footer />
 	</body>
 </html>

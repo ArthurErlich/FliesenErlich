@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { contact } from '../consts';
+---
+
+<Layout title="Kontakt" description="Kontaktieren Sie Erlich Fliesen">
+	<section class="px-8 py-24 md:px-16 md:py-32">
+		<span class="text-xs font-semibold tracking-widest text-accent uppercase">Kontakt</span>
+		<h1 class="my-5 font-display text-5xl leading-[1.05] tracking-[-0.02em] text-default md:text-6xl">
+			Sprechen Sie mit uns
+		</h1>
+		<p class="max-w-md text-sm leading-relaxed text-black/60">
+			Rufen Sie uns an oder schreiben Sie uns eine E-Mail – wir melden uns zeitnah zurück.
+		</p>
+		<div class="mt-10 space-y-2 text-sm leading-relaxed text-black/70">
+			<div>{contact.owner}</div>
+			<div>{contact.street}, {contact.city}</div>
+			<div>
+				Telefon: <a class="underline" href={`tel:${contact.phone.replace(/\s/g, '')}`}
+					>{contact.phone}</a
+				>
+			</div>
+			<div>
+				E-Mail: <a class="underline" href={`mailto:${contact.email}`}>{contact.email}</a>
+			</div>
+			<div>Erreichbarkeit: {contact.hours}</div>
+		</div>
+	</section>
+</Layout>
