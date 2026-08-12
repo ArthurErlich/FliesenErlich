@@ -9,7 +9,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.SITE_URL,
+  site: process.env.SITE_URL ?? 'https://erlich-fliesen.de',
+  trailingSlash: 'always',
   integrations: [sitemap(), icon()],
 
   vite: {
@@ -36,9 +37,8 @@ export default defineConfig({
       weights: [400, 500, 600, 700]
     }
   ],
-  	trailingSlash: "always",
-	  site: process.env.SITE_URL ?? "https://erlich-fliesen.de",
-	  server: {
-		  port: 5500,
-	  },
+
+  server: {
+    port: 5500
+  }
 });
