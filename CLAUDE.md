@@ -1,3 +1,13 @@
+## Agent skills
+
+### Issue tracker
+
+Self-hosted Gitea (`git.arthurerlich.de`), via the `tea` CLI. See `docs/agents/issue-tracker.md`.
+
+### Domain docs
+
+Single-context — one `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
+
 ## Development
 
 When starting the dev server, use background mode:
