@@ -1,0 +1,35 @@
+---
+const navLinks = [
+	{ href: '/', text: 'Fliesen Erlich' },
+	{ href: '/impressum', text: 'Impressum' }
+];
+---
+
+<div class="bg-white shadow-md md:sticky md:top-0 md:left-0 z-10">
+	<section class="flex gap-10">
+		<a class="block cursor-pointer py-1 pl-2" href="/" title="Fliesen Erlich Logo">
+			<img
+				src="/media/coperated/logo-erlich-dunkel.png"
+				alt="Fliesen Erlich Logo"
+				class="h-15 object-contain"
+			/>
+		</a>
+		<address class="hidden grow flex-wrap items-center justify-around pr-10 not-italic md:flex">
+			<a href="tel:01634310646">Mobil: +49 (0) 1634 3106 46</a>
+			<a href="mailto:fliesenerlich@hotmail.com">E-Mail: fliesenerlich@hotmail.com</a>
+		</address>
+	</section>
+	<nav aria-label="Navigation" class="hidden md:block">
+		<ul class="grow flex items-stretch justify-center gap-10 bg-default">
+			{
+				navLinks.map(({ href, text }) => (
+					<li class="text-white">
+						<a href={href}>
+							<div class="px-2 py-1">{text}</div>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
+</div>
