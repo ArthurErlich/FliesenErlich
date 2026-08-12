@@ -2,8 +2,29 @@
 // ponytail: no analytics on dev builds — SITE_URL is only set by the deploy
 // pipeline (.gitea/workflows/deploy.yml), staging and prod each track under
 // their own SITE_URL host, dev renders nothing.
+//
+// Two script tags because Astro only bundles/resolves npm imports in scripts
+// with zero dynamic attributes — passing `domain` in requires define:vars,
+// which forces is:inline (no import support). So a tiny is:inline script
+// hands the value off via a global, and the real (bundled) script reads it.
 const siteUrl = process.env.SITE_URL;
 const domain = siteUrl ? new URL(siteUrl).hostname : null;
 ---
 
-{domain && <script is:inline defer data-domain={domain} src="https://plausible.arthurerlch.de/js/script.js" />}
+{
+	domain && (
+		<>
+			<script define:vars={{ domain }} is:inline>
+				window.__PLAUSIBLE_DOMAIN__ = domain;
+			</script>
+			<script>
+				import { init } from '@plausible-analytics/tracker';
+
+				init({
+					domain: (window as any).__PLAUSIBLE_DOMAIN__,
+					endpoint: 'https://plausible.arthurerlch.de/api/event'
+				});
+			</script>
+		</>
+	)
+}
