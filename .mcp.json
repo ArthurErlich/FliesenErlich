@@ -4,6 +4,11 @@
       "type": "http",
       "url": "https://mcp.docs.astro.build/mcp",
       "autostart": true
+    },
+    "codebase-memory-mcp": {
+      "command": "bunx",
+      "args": ["codebase-memory-mcp"],
+      "autostart": true
     }
   }
 }
