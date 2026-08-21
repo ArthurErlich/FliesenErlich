@@ -13,12 +13,10 @@ jobs:
   steps:
    - uses: actions/checkout@v4
 
-   - uses: actions/setup-node@v4
-     with:
-      node-version-file: "package.json"
+   - uses: oven-sh/setup-bun@v2
 
    - name: Install dependencies
-     run: npm ci
+     run: bun install --frozen-lockfile
 
    - name: Set SITE_URL (main)
      if: github.ref == 'refs/heads/main'
@@ -29,7 +27,7 @@ jobs:
      run: echo "SITE_URL=${{ vars.STAGING_URL }}" >> $GITHUB_ENV
 
    - name: Build
-     run: npm run build
+     run: bun run build
      env:
       SITE_URL: ${{ env.SITE_URL }}
 
