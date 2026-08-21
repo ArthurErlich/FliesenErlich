@@ -30,7 +30,7 @@
   "trustedDependencies": ["esbuild", "codebase-memory-mcp"],
   "devDependencies": {
     "@astrojs/check": "0.9.10",
-    "codebase-memory-mcp": "^0.10.8",
-    "typescript": "^6.0.3"
+    "codebase-memory-mcp": "0.10.8",
+    "typescript": "6.0.3"
   }
 }
