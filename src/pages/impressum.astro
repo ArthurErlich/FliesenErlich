@@ -26,14 +26,32 @@ import { contact } from '../consts';
 			<div>
 				<h2 class="mb-2 font-display text-xl text-black">Kontakt</h2>
 				<p>
-					Telefon: {contact.phone}<br />
+					Telefon: <a class="underline" href={`tel:${contact.phone.replace(/\s+/g, '')}`}
+						>{contact.phone}</a
+					><br />
+					Mobil: <a class="underline" href={`tel:${contact.mobile.replace(/\s+/g, '')}`}
+						>{contact.mobile}</a
+					><br />
 					Telefax: {contact.fax}<br />
 					E-Mail: <a class="underline" href={`mailto:${contact.email}`}>{contact.email}</a>
 				</p>
 			</div>
 
 			<div>
-				<h2 class="mb-2 font-display text-xl text-black">Streitschlichtung</h2>
+				<h2 class="mb-2 font-display text-xl text-black">
+					Berufsbezeichnung und berufsrechtliche Regelungen
+				</h2>
+				<p>
+					Berufsbezeichnung: Fliesen-, Platten- und Mosaikleger/in<br />
+					Zuständige Kammer: Handwerkskammer (HWK)<br />
+					Verliehen in: Deutschland
+				</p>
+			</div>
+
+			<div>
+				<h2 class="mb-2 font-display text-xl text-black">
+					Verbraucherstreitbeilegung/Universalschlichtungsstelle
+				</h2>
 				<p>
 					Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
 					Verbraucherschlichtungsstelle teilzunehmen.
@@ -43,8 +61,8 @@ import { contact } from '../consts';
 			<div>
 				<h2 class="mb-2 font-display text-xl text-black">Haftung für Inhalte</h2>
 				<p>
-					Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten
-					nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
+					Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten
+					nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als
 					Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
 					Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
 					Tätigkeit hinweisen.
@@ -90,6 +108,15 @@ import { contact } from '../consts';
 					gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden,
 					bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen
 					werden wir derartige Inhalte umgehend entfernen.
+				</p>
+			</div>
+
+			<div>
+				<h2 class="mb-2 font-display text-xl text-black">Quelle</h2>
+				<p>
+					Textbausteine erstellt mit dem <a class="underline" href="https://www.e-recht24.de"
+						>Impressum-Generator von eRecht24</a
+					>.
 				</p>
 			</div>
 		</div>

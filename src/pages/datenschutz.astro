@@ -20,40 +20,108 @@ import { contact } from '../consts';
 					{contact.street}<br />
 					{contact.city}<br />
 					E-Mail: <a class="underline" href={`mailto:${contact.email}`}>{contact.email}</a><br />
-					Telefon: {contact.phone}
+					Telefon: <a class="underline" href={`tel:${contact.phone.replace(/\s+/g, '')}`}
+						>{contact.phone}</a
+					>
 				</p>
 			</div>
 
 			<div>
-				<h2 class="mb-2 font-display text-xl text-black">Hosting und Server-Logfiles</h2>
+				<h2 class="mb-2 font-display text-xl text-black">Hosting</h2>
 				<p>
-					Beim Aufruf dieser Website erhebt unser Hosting-Provider automatisch technische
-					Zugriffsdaten (sogenannte Server-Logfiles), die Ihr Browser übermittelt: IP-Adresse,
-					Datum und Uhrzeit der Anfrage, aufgerufene Seite, übertragene Datenmenge, Browsertyp und
-					-version sowie das verwendete Betriebssystem. Diese Daten dienen ausschließlich der
-					technischen Bereitstellung und Absicherung der Website (Art. 6 Abs. 1 lit. f DSGVO) und
-					werden nicht mit anderen Datenquellen zusammengeführt.
+					Wir hosten die Inhalte unserer Website bei folgendem Anbieter: netcup GmbH,
+					Emmy-Noether-Straße 10, D-76131 Karlsruhe. Das externe Hosting erfolgt zum Zwecke der
+					Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1
+					lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung
+					unseres Online-Angebots (Art. 6 Abs. 1 lit. f DSGVO).
+				</p>
+				<p class="mt-2">
+					Zusätzlich nutzen wir Cloudflare (Cloudflare Germany GmbH, Rosental 7, c/o Mindspace,
+					80331 München) als Content-Delivery-Network mit DNS, das den Datenverkehr zwischen Ihrem
+					Browser und unseren Servern leitet und als Schutz gegen böswilligen Datenverkehr dient
+					(Art. 6 Abs. 1 lit. f DSGVO). Eine etwaige Datenübertragung in die USA wird auf die
+					Standardvertragsklauseln der EU-Kommission gestützt.
 				</p>
 			</div>
 
 			<div>
-				<h2 class="mb-2 font-display text-xl text-black">Cookies und Tracking</h2>
+				<h2 class="mb-2 font-display text-xl text-black">Server-Log-Dateien</h2>
 				<p>
-					Diese Website setzt derzeit keine Cookies und keine Analyse- oder Tracking-Dienste ein,
-					die über das technisch Notwendige hinausgehen. Sollten künftig Cookies, Analyse-Tools
-					oder eingebettete Drittinhalte hinzugefügt werden, wird vorab eine Einwilligung gemäß §
-					25 TTDSG eingeholt und diese Erklärung entsprechend aktualisiert.
+					Der Provider der Seiten erhebt und speichert automatisch Informationen in Server-Log-Dateien,
+					die Ihr Browser automatisch übermittelt: Browsertyp und -version, verwendetes
+					Betriebssystem, Referrer-URL, Hostname des zugreifenden Rechners, Uhrzeit der
+					Serveranfrage und IP-Adresse. Eine Zusammenführung dieser Daten mit anderen Datenquellen
+					wird nicht vorgenommen. Die Erfassung erfolgt auf Grundlage unseres berechtigten
+					Interesses an der technisch fehlerfreien Darstellung und Optimierung unserer Website
+					(Art. 6 Abs. 1 lit. f DSGVO).
+				</p>
+			</div>
+
+			<div>
+				<h2 class="mb-2 font-display text-xl text-black">Webanalyse mit Plausible Analytics</h2>
+				<p>
+					Diese Website nutzt den Webanalysedienst Plausible Analytics, den wir selbst gehostet
+					betreiben (plausible.arthurerlich.de) – es werden dabei keine Daten an Dritte übertragen.
+					Plausible verwendet keine Cookies und keine sonstigen Tracking-Technologien, die eine
+					geräteübergreifende Wiedererkennung einzelner Nutzer ermöglichen. Erfasst werden
+					lediglich aggregierte, anonymisierte Nutzungsdaten (z. B. aufgerufene Seiten, Referrer,
+					grober Standort auf Länderebene, Geräte- und Browsertyp); die volle IP-Adresse wird nicht
+					gespeichert. Eine Identifizierung einzelner Websitebesucher ist anhand dieser Daten nicht
+					möglich.
+				</p>
+				<p class="mt-2">
+					Die Nutzung erfolgt auf Grundlage unseres berechtigten Interesses an der statistischen
+					Analyse des Nutzerverhaltens zu Optimierungszwecken (Art. 6 Abs. 1 lit. f DSGVO). Da
+					keine Cookies gesetzt und keine personenbezogenen Kennungen gespeichert werden, ist
+					hierfür keine Einwilligung nach § 25 Abs. 1 TDDDG erforderlich.
+				</p>
+			</div>
+
+			<div>
+				<h2 class="mb-2 font-display text-xl text-black">Fehlerüberwachung mit Sentry</h2>
+				<p>
+					<em
+						>Hinweis: Sentry ist zum jetzigen Zeitpunkt noch nicht produktiv im Einsatz. Dieser
+						Abschnitt ist vorbereitend und wird vor dem tatsächlichen Einsatz von Sentry gegen den
+						dann gewählten Anbieter (SaaS oder selbst gehostet) und dessen Serverstandort
+						geprüft.</em
+					>
+				</p>
+				<p class="mt-2">
+					Sobald aktiv, erfasst Sentry bei technischen Fehlern u. a. die aufgerufene URL,
+					IP-Adresse, Browser- und Geräteinformationen sowie den Zeitpunkt des Fehlers,
+					ausschließlich zum Zweck der Fehleranalyse und -behebung, auf Grundlage unseres
+					berechtigten Interesses an der technisch fehlerfreien Bereitstellung unserer Website
+					(Art. 6 Abs. 1 lit. f DSGVO).
+				</p>
+			</div>
+
+			<div>
+				<h2 class="mb-2 font-display text-xl text-black">Instagram</h2>
+				<p>
+					Auf dieser Website sind Funktionen des Dienstes Instagram eingebunden, angeboten durch
+					die Meta Platforms Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland. Wenn das
+					Social-Media-Element aktiv ist, wird eine direkte Verbindung zwischen Ihrem Endgerät und
+					dem Instagram-Server hergestellt; Instagram erhält dadurch Informationen über Ihren
+					Besuch dieser Website. Die Nutzung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs.
+					1 lit. a DSGVO, § 25 Abs. 1 TDDDG), die jederzeit widerrufbar ist.
+				</p>
+				<p class="mt-2">
+					Weitere Informationen finden Sie in der <a
+						class="underline"
+						href="https://privacycenter.instagram.com/policy/">Datenschutzerklärung von Instagram</a
+					>.
 				</p>
 			</div>
 
 			<div>
 				<h2 class="mb-2 font-display text-xl text-black">Kontaktaufnahme</h2>
 				<p>
-					Wenn Sie per E-Mail oder Telefon mit uns Kontakt aufnehmen, verarbeiten wir die von Ihnen
-					mitgeteilten Daten (z. B. Name, Kontaktdaten, Ihr Anliegen) zur Bearbeitung Ihrer Anfrage
-					auf Grundlage von Art. 6 Abs. 1 lit. b bzw. f DSGVO. Diese Daten werden gelöscht, sobald
-					sie für die Bearbeitung nicht mehr erforderlich sind und keine gesetzlichen
-					Aufbewahrungspflichten entgegenstehen.
+					Wenn Sie per E-Mail, Telefon oder über das Kontaktformular mit uns Kontakt aufnehmen,
+					verarbeiten wir die von Ihnen mitgeteilten Daten (z. B. Name, Kontaktdaten, Ihr Anliegen)
+					zur Bearbeitung Ihrer Anfrage auf Grundlage von Art. 6 Abs. 1 lit. b bzw. f DSGVO. Diese
+					Daten werden gelöscht, sobald sie für die Bearbeitung nicht mehr erforderlich sind und
+					keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
 				</p>
 			</div>
 
@@ -69,7 +137,17 @@ import { contact } from '../consts';
 
 			<div>
 				<h2 class="mb-2 font-display text-xl text-black">Stand</h2>
-				<p>Diese Datenschutzerklärung wurde zuletzt am 14.07.2026 aktualisiert.</p>
+				<p>Diese Datenschutzerklärung wurde zuletzt am 20.08.2026 aktualisiert.</p>
+			</div>
+
+			<div>
+				<h2 class="mb-2 font-display text-xl text-black">Quelle</h2>
+				<p>
+					Textbausteine erstellt mit dem <a
+						class="underline"
+						href="https://www.e-recht24.de">Datenschutz-Generator von eRecht24</a
+					>.
+				</p>
 			</div>
 		</div>
 	</section>
