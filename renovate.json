@@ -42,7 +42,8 @@
         "helpers:pinGitHubActionDigests"
     ],
     "enabledManagers": [
-        "npm"
+        "npm",
+        "bun"
     ],
     "baseBranchPatterns": [
         "staging"
