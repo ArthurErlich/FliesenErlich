@@ -7,7 +7,9 @@
     },
     "codebase-memory-mcp": {
       "command": "bunx",
-      "args": ["codebase-memory-mcp"],
+      "args": [
+        "codebase-memory-mcp"
+      ],
       "autostart": true
     }
   }

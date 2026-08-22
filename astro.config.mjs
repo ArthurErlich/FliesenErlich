@@ -13,11 +13,13 @@ import llms from 'astro-llms-md';
 
 import tailwindcss from '@tailwindcss/vite';
 
+import sentry from '@sentry/astro';
+
 // https://astro.build/config
 export default defineConfig({
   site: process.env.SITE_URL ?? 'http://localhost.de',
   trailingSlash: 'always',
-  integrations: [sitemap(), icon(), markdoc(), mdx(), llms()],
+  integrations: [sitemap(), icon(), markdoc(), mdx(), llms(), sentry()],
 
   vite: {
     plugins: [tailwindcss()]

@@ -1,0 +1,14 @@
+---
+// Cap CAPTCHA widget (https://trycap.dev/guide/widget.html).
+// Drop this inside a <form> once one exists — it auto-injects a hidden
+// `cap-token` field that gets submitted along with the rest of the form.
+// Server-side verification happens in public/api/cap-verify.php.
+
+const CAP_API_ENDPOINT = "https://captcha.arthurerlich.de/cd95f97050/";
+---
+
+<cap-widget id="cap" required data-cap-api-endpoint={CAP_API_ENDPOINT}></cap-widget>
+
+<script type="module">
+  import "https://cdn.jsdelivr.net/npm/cap-widget";
+</script>

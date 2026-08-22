@@ -1,0 +1,5 @@
+# Deny web access to dotfiles (.env, .git, etc.) that might end up in the
+# webroot by mistake — .env itself should never be here, see cap-verify.php.
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
