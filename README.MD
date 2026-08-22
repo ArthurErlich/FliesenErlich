@@ -1,5 +1,8 @@
 # Astro Starter Kit: Minimal
 
+[![Deploy](https://git.arthurerlich.de/haylan/FliesenErlich/actions/workflows/deploy.yml/badge.svg?branch=main)](https://git.arthurerlich.de/haylan/FliesenErlich/actions?workflow=deploy.yml)
+[![Deploy](https://git.arthurerlich.de/haylan/FliesenErlich/actions/workflows/deploy.yml/badge.svg?branch=staging)](https://git.arthurerlich.de/haylan/FliesenErlich/actions?workflow=deploy.yml)
+
 ```sh
 bun create astro@latest -- --template minimal
 bun create astro@latest -- --template minimal
