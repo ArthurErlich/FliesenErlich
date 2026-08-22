@@ -10,6 +10,8 @@ Single-context — one `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/ag
 
 ## Development
 
+Package manager: **Bun** (not npm) — install deps with `bun install`, run scripts with `bun run <script>` (e.g. `bun run build`). See [Bun skill](.claude/skills/bun/SKILL.md) for the full command mapping. CI (`.gitea/workflows/deploy.yml`) uses `oven-sh/setup-bun` + `bun install --frozen-lockfile`.
+
 When starting the dev server, use background mode:
 
 ```

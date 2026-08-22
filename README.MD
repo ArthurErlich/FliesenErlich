@@ -2,6 +2,7 @@
 
 ```sh
 bun create astro@latest -- --template minimal
+bun create astro@latest -- --template minimal
 ```
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!

@@ -24,14 +24,19 @@
     "astro-llms-md": "^2.2.2",
     "astro-seo": "^1.1.0",
     "cap-widget": "^0.1.57",
-    "prettier-plugin-tailwindcss": "^0.7.2",
+    "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4.3.2"
   },
   "allowScripts": {
     "esbuild@0.28.1": true
   },
+  "trustedDependencies": [
+    "esbuild",
+    "codebase-memory-mcp"
+  ],
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
-    "typescript": "^6.0.3"
+    "@astrojs/check": "0.9.10",
+    "codebase-memory-mcp": "0.10.8",
+    "typescript": "6.0.3"
   }
 }
