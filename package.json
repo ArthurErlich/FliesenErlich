@@ -16,6 +16,7 @@
     "@astrojs/mdx": "^7.0.5",
     "@astrojs/sitemap": "^3.7.3",
     "@plausible-analytics/tracker": "^0.4.6",
+    "@sentry/astro": "^10.70.0",
     "@tailwindcss/vite": "^4.3.2",
     "astro": "^7.2.0",
     "astro-icon": "^1.1.5",
