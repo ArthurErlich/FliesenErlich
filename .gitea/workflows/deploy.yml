@@ -63,11 +63,19 @@ jobs:
           ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy via SCP + SSH
+        env:
+          DEPLOY_PATH: ${{ vars.PROD_DEPLOY_PATH }}
         run: |
+          if [ -z "$DEPLOY_PATH" ]; then
+            echo "::error::PROD_DEPLOY_PATH is not set - refusing to deploy" >&2
+            exit 1
+          fi
           scp -i ~/.ssh/id_rsa dist.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/tmp/dist.tar.gz
           ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
-            rm -rf ${{ vars.PROD_DEPLOY_PATH }}/* &&
-            tar -xzf /tmp/dist.tar.gz -C ${{ vars.PROD_DEPLOY_PATH }} --strip-components=1 &&
+            set -e
+            [ -n '$DEPLOY_PATH' ]
+            rm -rf '$DEPLOY_PATH'/* &&
+            tar -xzf /tmp/dist.tar.gz -C '$DEPLOY_PATH' --strip-components=1 &&
             rm /tmp/dist.tar.gz
           "
 
@@ -90,10 +98,18 @@ jobs:
           ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy via SCP + SSH
+        env:
+          DEPLOY_PATH: ${{ vars.STAGING_DEPLOY_PATH }}
         run: |
+          if [ -z "$DEPLOY_PATH" ]; then
+            echo "::error::STAGING_DEPLOY_PATH is not set - refusing to deploy" >&2
+            exit 1
+          fi
           scp -i ~/.ssh/id_rsa dist.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/tmp/dist.tar.gz
           ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
-            rm -rf ${{ vars.STAGING_DEPLOY_PATH }}/* &&
-            tar -xzf /tmp/dist.tar.gz -C ${{ vars.STAGING_DEPLOY_PATH }} --strip-components=1 &&
+            set -e
+            [ -n '$DEPLOY_PATH' ]
+            rm -rf '$DEPLOY_PATH'/* &&
+            tar -xzf /tmp/dist.tar.gz -C '$DEPLOY_PATH' --strip-components=1 &&
             rm /tmp/dist.tar.gz
           "
