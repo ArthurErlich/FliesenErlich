@@ -19,8 +19,17 @@ jobs:
 
       - uses: oven-sh/setup-bun@v2
 
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          tools: composer
+
       - name: Install dependencies
         run: bun install --frozen-lockfile
+
+      - name: Install API dependencies
+        run: composer install --no-dev --no-interaction --optimize-autoloader
+        working-directory: public/api
 
       - name: Set SITE_URL (main)
         if: github.ref == 'refs/heads/main'

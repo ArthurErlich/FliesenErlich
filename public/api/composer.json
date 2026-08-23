@@ -1,0 +1,16 @@
+{
+    "name": "erlich-fliesen/api",
+    "description": "PSR-4 backend for the site's single JSON API endpoint (form submissions, CAPTCHA verification).",
+    "type": "project",
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\Api\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

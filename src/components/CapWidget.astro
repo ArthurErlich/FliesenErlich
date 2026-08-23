@@ -2,7 +2,7 @@
 // Cap CAPTCHA widget (https://trycap.dev/guide/widget.html).
 // Drop this inside a <form> once one exists — it auto-injects a hidden
 // `cap-token` field that gets submitted along with the rest of the form.
-// Server-side verification happens in public/api/cap-verify.php.
+// Server-side verification happens in public/api/index.php (App\Api\Security\CapVerifier).
 
 interface Props {
   /** Override when a page can render more than one widget instance at once. */
