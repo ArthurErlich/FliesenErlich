@@ -1,0 +1,51 @@
+---
+// Reusable text-like input (text/email/tel) with label + optional hint +
+// error slot. Error display is data-driven by src/scripts/form-validation.ts
+// via aria-describedby — this component only renders the markup/styling.
+export interface Props {
+	id: string;
+	name: string;
+	label: string;
+	type?: 'text' | 'email' | 'tel';
+	required?: boolean;
+	autocomplete?: string;
+	hint?: string;
+	errorMessage?: string;
+}
+
+const {
+	id,
+	name,
+	label,
+	type = 'text',
+	required = false,
+	autocomplete,
+	hint,
+	errorMessage = type === 'email'
+		? 'Bitte geben Sie eine gültige E-Mail-Adresse ein.'
+		: 'Bitte füllen Sie dieses Feld aus.'
+} = Astro.props;
+
+const hintId = hint ? `${id}-hint` : undefined;
+const errorId = `${id}-err`;
+const describedBy = [hintId, errorId].filter(Boolean).join(' ');
+---
+
+<div class="space-y-1.5">
+	<label for={id} class="block text-sm font-semibold tracking-wide text-black/80">
+		{label}{required && ' *'}
+	</label>
+	<input
+		id={id}
+		name={name}
+		type={type}
+		required={required}
+		autocomplete={autocomplete}
+		aria-describedby={describedBy}
+		class="w-full border-b border-light-gray bg-white px-3.5 py-2.5 text-sm text-black outline-none focus:border-b-2 focus:border-accent"
+	/>
+	{hint && (
+		<p id={hintId} class="text-xs text-black/50">{hint}</p>
+	)}
+	<p id={errorId} class="hidden text-sm text-default" role="alert">{errorMessage}</p>
+</div>

@@ -1,0 +1,32 @@
+---
+// Custom square checkbox (native <input>, appearance-none) — see
+// .design/style.md "Form Fields: The Custom Tickmark" for why it isn't a
+// native-appearance checkbox. Label content (e.g. a Datenschutzerklärung
+// link) is passed via the default slot.
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+	id: string;
+	name: string;
+	required?: boolean;
+}
+
+const { id, name, required = false } = Astro.props;
+---
+
+<label for={id} class="flex items-start gap-2 text-sm text-black/70">
+	<span class="relative mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center">
+		<input
+			id={id}
+			name={name}
+			type="checkbox"
+			required={required}
+			class="peer h-5 w-5 shrink-0 cursor-pointer appearance-none border border-black/20 bg-white checked:border-default checked:bg-default focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light"
+		/>
+		<Icon
+			name="iconamoon:check-bold"
+			class="pointer-events-none absolute inset-0 hidden h-5 w-5 p-0.75 text-white peer-checked:block"
+		/>
+	</span>
+	<span><slot /></span>
+</label>

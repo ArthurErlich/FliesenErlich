@@ -46,9 +46,14 @@ We reject heavy drop shadows in favor of **Ambient Light** and **Materiality**.
 ## 5. Components
 
 ### Buttons: The Inlaid Tile
+*   **Default padding (all buttons, all variants):** `0.8rem` top/bottom, `0.9rem` left/right — Tailwind: `py-[0.8rem] px-[0.9rem]`.
 *   **Primary:** `--color-default` (#822c2a) background, white text. Sharp corners. On hover, shift to `--color-light` (#a13a35) with a subtle 2px copper (`--color-accent`) bottom-border.
 *   **Secondary:** Ghost style. Transparent background, `--color-default` text, 1px `--color-default` border at 20% opacity.
 *   **Tertiary:** Text-only, `--color-accent` (Copper) color, All-caps `label-md` styling.
+
+### Form Fields: The Custom Tickmark
+*   **Cap.js CAPTCHA widget** (`src/components/CapWidget.astro`): the widget's own default theme (rounded corners, `system-ui` font) is overridden via its documented CSS custom properties (`--cap-border-radius`, `--cap-checkbox-border-radius`: `0px`; `--cap-font`: `var(--font-sans)`; `--cap-color`/`--cap-spinner-color`/`--cap-spinner-background-color` mapped to `--color-black`/`--color-accent`/`--color-light-gray`) so it reads as part of this system, not a third-party embed. See the `<style>` block in that component for the full mapping.
+*   **Checkbox (e.g. DSGVO consent):** not a native checkbox appearance — `appearance-none`, explicit `h-5 w-5` square, 1px `--color-black` border at 20% opacity. Checked state: fills `--color-default` (red) background + border, with a white checkmark from the `iconamoon:check-bold` icon (Iconify's `@iconify-json/iconamoon` collection, `bun add`ed as a dependency; `astro-icon` resolves `iconamoon:*` names automatically once the package is installed) overlaid via a sibling element toggled with `peer-checked:block`. Focus state: `focus-visible:outline` ring (matches `src/components/Link.astro`'s convention), since a bottom-border focus effect doesn't apply to a square control.
 
 ### Cards: The Mosaic Units
 *   No borders. Use background `--color-light-gray`.

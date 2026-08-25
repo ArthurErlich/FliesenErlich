@@ -1,0 +1,33 @@
+---
+// Site-wide button, all three .design/style.md variants. Default padding
+// (0.8rem top/bottom, 0.9rem left/right) applies to every variant.
+export interface Props {
+	type?: 'submit' | 'button' | 'reset';
+	href?: string;
+	variant?: 'primary' | 'secondary' | 'tertiary';
+	class?: string;
+}
+
+const { type = 'button', href, variant = 'primary', class: className = '' } = Astro.props;
+
+const base =
+	'px-[0.9rem] py-[0.8rem] text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light';
+const variants = {
+	primary: 'bg-default text-white hover:bg-light',
+	secondary: 'border border-default/20 bg-transparent text-default hover:bg-default/5',
+	tertiary: 'text-xs tracking-widest text-accent uppercase hover:text-accent-hover'
+};
+const cls = `${base} ${variants[variant]} ${className}`;
+---
+
+{
+	href ? (
+		<a href={href} class={cls}>
+			<slot />
+		</a>
+	) : (
+		<button type={type} class={cls}>
+			<slot />
+		</button>
+	)
+}
