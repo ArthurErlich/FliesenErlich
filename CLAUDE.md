@@ -26,22 +26,44 @@ Root domain: `erlich-fliesen.de`, configured as `site` in `astro.config.mjs` (ov
 
 ## Legal & accessibility compliance
 
-This is a public-facing commercial site for a German company (Fliesen-/Natursteinleger), so it must meet German/EU accessibility and web-law requirements, not just design/UX goals. None of this is implemented yet — treat it as required scope, not a nice-to-have.
+This is a public-facing commercial site for a German company (Fliesen-/Natursteinleger), so it must meet German/EU accessibility and web-law requirements, not just design/UX goals.
 
 **Accessibility ("Barrierefreiheit")**
 
 - Target **WCAG 2.2 level AA**: https://www.w3.org/TR/WCAG22/ (German quick-reference: https://www.w3.org/WAI/WCAG22/quickref/)
 - `BFSG` (Barrierefreiheitsstärkungsgesetz) — the German law implementing the EU Accessibility Act, in force since 2025-06-28, applies to commercial B2C digital services/e-commerce: https://www.gesetze-im-internet.de/bfsg/
-- If any part of the site is deemed in scope of BFSG (e.g. an online quote/contact form used as a consumer service), a public **Barrierefreiheitserklärung** (accessibility statement) is required, modeled on the public-sector template under BITV 2.0: https://www.gesetze-im-internet.de/bitv_2_0/ (schema reference: https://www.barrierefreiheit-dienstekonsolidierung.bund.de/Webs/PB/DE/instrumente/barrierefreiheitserklaerung/barrierefreiheitserklaerung_node.html)
+- `src/pages/barrierefreiheitserklärung.astro` publishes the accessibility statement, modeled on the public-sector BITV 2.0 template: https://www.gesetze-im-internet.de/bitv_2_0/
 
-**Required legal pages/notices**
+**Legal pages — implemented, real content**
 
-- **Impressum** (legal notice) — mandatory for any commercial website under `DDG` §5 (Digitale-Dienste-Gesetz, replaced the TMG in 2024): https://www.gesetze-im-internet.de/ddg/. Reference structure/copy from `.old/web/templates/pages/imprint` (see [Migrating from `.old/`](#migrating-from-old)), but content must be re-verified against current `DDG` §5 requirements, not just copied.
-- **Datenschutzerklärung** (privacy policy) — required under `DSGVO`/GDPR Art. 13: https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32016R0679. Must cover any forms, analytics, fonts/assets loaded from third parties, etc.
-- **Cookie/tracking consent** — if any cookies, analytics, or embeds beyond strictly necessary ones are added, `TTDSG` §25 consent requirements apply: https://www.gesetze-im-internet.de/ttdsg/
-- **Barrierefreiheitserklärung** — see accessibility section above; add as its own page once accessibility work is done enough to describe conformance status honestly.
+- `src/pages/impressum.astro` — Impressum under `DDG` §5, entity data sourced from `src/consts.ts` (`contact`). https://www.gesetze-im-internet.de/ddg/
+- `src/pages/datenschutz.astro` — Datenschutzerklärung under `DSGVO`/GDPR Art. 13, covers Cloudflare, Plausible, and a provisional Sentry section (flag for review once Sentry actually ships). https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32016R0679
+- `src/pages/barrierefreiheitserklärung.astro` — accessibility statement (see above).
+- Source text for Impressum/Datenschutz was generated via e-recht24.de and is archived in `docs/legal/`.
+
+**Cookie/tracking consent — not yet implemented**
+
+- Plausible (`src/components/Plausible.astro`) is cookieless and needs no consent gate itself.
+- A planned Google Maps embed and the Kontakt form's cookie-setting backend (see [Contact form](#contact-form) below) will need consent per `TTDSG` §25 once built: https://www.gesetze-im-internet.de/ttdsg/. No `orestbida/cookieconsent` banner exists in `src/` yet — treat this as open scope, not done.
 
 When building pages/forms/components, prefer solutions that are accessible by default (semantic HTML, native form controls, visible focus states, sufficient color contrast per the [Design tokens](#design-tokens) above) rather than retrofitting compliance later.
+
+## Contact form
+
+`src/pages/kontakt.astro` renders the quote-request form as a static Astro component. It submits (client-side `fetch()`) to a standalone Node/Express microservice — hosted separately on the VPS, not as Astro SSR — that checks a honeypot field and a self-hosted Cap.js proof-of-work CAPTCHA before emailing the submission to a configured address. That microservice is not yet built; `CAP_SECRET_KEY` in `.env.example` is a placeholder for it, unused anywhere in `src/` today.
+
+## Analytics & error tracking
+
+- **Plausible** (`@plausible-analytics/tracker`) — self-hosted at `plausible.arthurerlch.de` (currently offline), wired via `src/components/Plausible.astro` using `init({ domain, endpoint })`. Domain is derived at build time from `SITE_URL` (see [Deployment](#deployment) below), so prod/staging track separately and local `astro dev` sends nothing.
+- **Sentry** (`@sentry/astro`) — integration is installed and registered in `astro.config.mjs`; treat its Datenschutz coverage as provisional until it's actually configured and shipping events.
+
+## Deployment
+
+CI is `.gitea/workflows/deploy.yml` (Gitea Actions): on push to `main` or `staging`, builds with `bun run build` (site URL from the `PROD_URL`/`STAGING_URL` repo **variable**, selected by branch), tars `dist/`, and ships it via SCP+SSH to the path in the `PROD_DEPLOY_PATH`/`STAGING_DEPLOY_PATH` repo variable — refusing to deploy rather than wiping the target if that path variable is empty. SSH access itself (`SSH_PRIVATE_KEY`/`SSH_HOST`/`SSH_USER`) is stored as Gitea repo **secrets**, not variables — secrets are masked in logs and unreadable again after saving, which is the point; don't move credentials to variables for retrievability, keep your own copy of a generated key instead. Deploy status badges for both branches are in `README.MD`.
+
+## AI tooling
+
+`.mcp.json` (project-level, shared by any session working this repo) registers two MCP servers: `astro-docs` (streamable HTTP, no auth, `https://mcp.docs.astro.build/mcp`) for live Astro documentation lookups, and `codebase-memory-mcp` for graph-based code search.
 
 ## Documentation
 
@@ -60,14 +82,14 @@ Consult these guides before working on related tasks:
 
 `src/styles/global.css` is the source of truth for color tokens. `.design/style.md` documents layout, typography, elevation, and component rules, and its color tokens are kept in sync with `global.css` (referenced by CSS variable name, not by separate hex values).
 
-- `.design/style.md` — full design spec ("The Architectural Craftsman"): color tokens (mapped to `global.css`), typography (`notoSerif` headings / `inter` body), elevation via tonal layering (no drop shadows, no rounded corners, no border lines), and per-component rules (buttons, cards, nav, inputs). Read this before styling anything.
+- `.design/style.md` — full design spec ("The Architectural Craftsman"): color tokens (mapped to `global.css`), typography (Yeseva One wordmark, Noto Serif headings, Inter body — see [Design tokens](#design-tokens) below), elevation via tonal layering (no drop shadows, no rounded corners, no border lines), and per-component rules (buttons, cards, nav, inputs). Read this before styling anything.
 - `.design/styles.fig` — Figma source file backing the spec (binary, not directly readable — open in Figma for exact layout/spacing reference).
 
 ## Migrating from `.old/`
 
 `.old/` contains the previous Symfony/Twig implementation of this site (unfinished) — use it only as a reference for page/component **structure** (nav, footer, hero markup) and copy, not for colors/design (see `.design/` above) or as running code.
 
-Site language is German (`lang="de"`) — all user-facing content must be German. Current `src/pages/index.astro` still has starter `lang="en"` boilerplate that needs correcting during real migration.
+Site language is German (`lang="de"`, set in `src/layouts/Layout.astro`) — all user-facing content must be German.
 
 Reference locations in `.old/`:
 
@@ -89,18 +111,16 @@ Reference locations in `.old/`:
 - `--color-accent: #8b6e55` (copper-gold, AA-contrast adjusted)
 - `--color-accent-hover: #c7a481`
 
-`.design/style.md` also specifies fonts (`notoSerif` headings, `inter` body) — `.old` never defined a font family.
+Fonts (Yeseva One display/wordmark, Noto Serif headings, Inter body) are declared in `astro.config.mjs` via `fonts: [...]` (Fontsource provider, `--font-yeseva-one`/`--font-noto-serif`/`--font-inter` CSS variables), then mapped to `--font-display`/`--font-serif`/`--font-sans` in the `@theme` block of `src/styles/global.css`.
 
 ## Tailwind setup status
 
-`tailwindcss` and `@tailwindcss/vite` are installed in `package.json`, but **not yet activated**.
+**Activated.** `@tailwindcss/vite` is registered as a Vite plugin in `astro.config.mjs`, and `src/styles/global.css` (`@import 'tailwindcss';` + the `@theme` token block above) is imported by `src/layouts/Layout.astro`, the shared layout every page uses.
 
-To use it: add the `tailwindcss()` Vite plugin in `astro.config.mjs`, then import a Tailwind stylesheet (`@import "tailwindcss";` + the `@theme` tokens above) in a shared layout, per Astro's Tailwind (Vite plugin) guide.
+## Asset pipeline: `src/assets/` vs `public/`
 
-No `src/layouts/` exists yet — this stylesheet import needs a layout to live in once one is created.
+Logos and content images live in `src/assets/` (e.g. `src/assets/coperated/`, `src/assets/images/`) so they go through `astro:assets` (`<Image>`/`import`); favicon and small icon SVGs stay in `public/media/`. **Known drift to fix, not carry over:**
 
-## Known asset gaps in `.old/` (carry over as-is when migrating)
-
-- Logo filename mismatch: templates reference `logo-erlich-dunkel.png`, but `public/media/coperated/` only has `logo-erlich.png` and `logo-erlich-mobile.png` — carry over the existing files as-is and resolve the mismatch when doing the real migration, not now.
-- Hero image is a placeholder with a typo in its filename (`15.41.26_temp-hreo.jpg`) — carry over as-is, replace later.
+- `src/components/Header.astro` still hardcodes `src="/media/coperated/logo-erlich-dunkel.png"` (a `public/` path) even though the real file now lives at `src/assets/coperated/logo-erlich-dunkel.png` — the image 404s in production. Needs an `astro:assets` import.
+- The hero image's typo'd filename (`src/assets/images/hero/15.41.26_temp-hreo.jpg`) was decided to be renamed during the `src/assets/` move (#6 on the wayfinder map) but wasn't — still carries the typo.
 - Favicon (`media/favicon/erlich-fliesen-favicon.svg`) and icon (`media/icons/ExternalLink.svg`) are usable as-is.

@@ -14,7 +14,7 @@ const { href, class: className, nav = false, 'aria-current': ariaCurrent } = Ast
 const isExternal = /^https?:\/\//.test(href) && new URL(href).hostname !== Astro.site?.hostname;
 
 const focusRing =
-	'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-light)]';
+	'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-light)]';
 
 const underlineSpan =
 	"relative inline-block leading-none after:absolute after:inset-x-0 after:-bottom-0.5 after:h-[1.5px] after:origin-right after:bg-[var(--link-underline-color,var(--color-light))] after:transition-transform after:duration-150 after:ease-out after:content-[''] hover:after:scale-x-0";
