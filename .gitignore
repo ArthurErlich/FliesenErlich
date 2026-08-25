@@ -28,3 +28,6 @@ bun-debug.log*
 
 
 .agents/
+
+# leankg MCP local index/runtime state
+.leankg/
