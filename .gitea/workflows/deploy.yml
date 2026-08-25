@@ -32,7 +32,7 @@ jobs:
         uses: sillyguodong/composer@gitea
         with:
           php_version: "8.3"
-          working_dir: public/api
+          working_dir: ${{ github.workspace }}/public/api
           dev: no
           args: "--optimize-autoloader"
 
