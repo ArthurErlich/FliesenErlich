@@ -36,7 +36,7 @@
   ],
   "devDependencies": {
     "@astrojs/check": "0.9.10",
-    "@iconify-json/iconamoon": "^1.2.2",
+    "@iconify-json/iconamoon": "1.2.2",
     "codebase-memory-mcp": "0.10.8",
     "typescript": "6.0.3"
   }
