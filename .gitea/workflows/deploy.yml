@@ -37,11 +37,11 @@ jobs:
           args: "--optimize-autoloader"
 
       - name: Set SITE_URL (main)
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' || github.base_ref == 'main'
         run: echo "SITE_URL=${{ vars.PROD_URL }}" >> $GITHUB_ENV
 
       - name: Set SITE_URL (staging)
-        if: github.ref == 'refs/heads/staging'
+        if: github.ref == 'refs/heads/staging' || github.base_ref == 'staging'
         run: echo "SITE_URL=${{ vars.STAGING_URL }}" >> $GITHUB_ENV
 
       - name: Build
