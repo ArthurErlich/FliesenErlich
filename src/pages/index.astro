@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Section from '../components/layout/Section.astro';
 import Container from '../components/layout/Container.astro';
+import GalleryCategories from '../components/GalleryCategories.astro';
 
 const services = [
 	{ title: 'Bodenbeläge', desc: 'Naturstein- und Fliesenböden für Wohn- und Gewerberäume.' },
@@ -11,12 +12,6 @@ const services = [
 	{ title: 'Beratung', desc: 'Materialwahl und Planung direkt in unserer Werkstatt.' }
 ];
 
-const galleryCategories = [
-	{ label: 'Bäder', height: 'md:h-[620px]', tone: 'bg-[#c9c9c4]' },
-	{ label: 'Mosaik', height: 'md:h-[460px]', tone: 'bg-[#2f3b4c]' },
-	{ label: 'Terrassen', height: 'md:h-[560px]', tone: 'bg-[#6f95b8]' },
-	{ label: 'Innenausbau', height: 'md:h-[500px]', tone: 'bg-[#171512]' }
-];
 ---
 
 <Layout title="Startseite" description="Mosaik-, Platten- & Fliesenleger">
@@ -29,7 +24,11 @@ const galleryCategories = [
 				{
 					services.map((s) => (
 						<div class="bg-white p-6">
-							<div class="mb-6 aspect-square w-full bg-light-gray" />
+							<img
+							src={`https://placehold.co/400x400?text=${encodeURIComponent(s.title)}`}
+							alt=""
+							class="mb-6 aspect-square w-full bg-light-gray object-cover"
+						/>
 							<h4 class="mb-2 font-serif text-lg">{s.title}</h4>
 							<p class="text-sm leading-normal text-black/60">{s.desc}</p>
 						</div>
@@ -44,16 +43,7 @@ const galleryCategories = [
 			<span class="text-xs font-semibold tracking-widest text-accent uppercase">Referenzen</span>
 			<h2 class="my-3 font-serif text-3xl font-semibold tracking-[-0.02em]">Ausgewählte Projekte</h2>
 		</Container>
-		<div class="flex w-full flex-col items-stretch gap-1 md:flex-row md:items-end">
-			{
-				galleryCategories.map((cat) => (
-					<a href="#" class:list={['relative block h-64 flex-1 text-white', cat.height, cat.tone]}>
-						<span class="absolute bottom-5 left-5 font-serif text-xl font-semibold tracking-[-0.01em] [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]">
-							{cat.label}
-						</span>
-					</a>
-				))
-			}
-		</div>
+		
 	</Section>
+	<GalleryCategories />
 </Layout>
