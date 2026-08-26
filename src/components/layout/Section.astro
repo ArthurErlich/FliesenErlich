@@ -1,0 +1,26 @@
+---
+// Outer <section> wrapper: background tone + vertical rhythm only. Width is
+// not its job — nest a Container inside for boxed content, or leave content
+// unconstrained for full-bleed (e.g. the Referenzen gallery strip).
+interface Props {
+	tone?: 'base' | 'inset' | 'elevated';
+	id?: string;
+	class?: string;
+}
+
+const { tone = 'base', id, class: className } = Astro.props;
+
+// ponytail: py-16/md:py-24 is the one vertical-rhythm default for now, carried
+// over from the existing per-page pattern. Exact values are being prototyped
+// (wayfinder ticket "Prototype Section vertical rhythm & Paragraph sizes") —
+// revisit once that lands.
+const toneClasses = {
+	base: 'bg-erlich-white',
+	inset: 'bg-light-gray',
+	elevated: 'bg-white'
+};
+---
+
+<section id={id} class:list={['py-16 md:py-24', toneClasses[tone], className]}>
+	<slot />
+</section>

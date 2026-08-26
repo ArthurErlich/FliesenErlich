@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Section from '../components/layout/Section.astro';
 import Link from '../components/Link.astro';
 import CapWidget from '../components/CapWidget.astro';
 import TextField from '../components/form/TextField.astro';
@@ -10,7 +11,7 @@ import { contact } from '../consts';
 ---
 
 <Layout title="Kontakt" description="Kontaktieren Sie Erlich Fliesen">
-	<section class="px-8 py-16 md:px-16">
+	<Section class="px-8 md:px-16">
 		<div class="grid gap-10 md:grid-cols-12">
 			<div class="md:col-span-5">
 				<span class="text-xs font-semibold tracking-widest text-accent uppercase">Kontakt</span>
@@ -61,7 +62,7 @@ import { contact } from '../consts';
 				</div>
 			</div>
 		</div>
-	</section>
+	</Section>
 </Layout>
 
 <script>

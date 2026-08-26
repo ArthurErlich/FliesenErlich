@@ -1,0 +1,13 @@
+---
+// Caps content to the site's standard boxed width and centers it. Nest inside
+// a Section for boxed content; omit it for full-bleed content.
+interface Props {
+	class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class:list={['mx-auto max-w-7xl px-8 md:px-16', className]}>
+	<slot />
+</div>
