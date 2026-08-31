@@ -2,165 +2,129 @@
 import Layout from '../layouts/Layout.astro';
 import Section from '../components/layout/Section.astro';
 import Container from '../components/layout/Container.astro';
+import Headline from '../components/Headline.astro';
+import Paragraph from '../components/Paragraph.astro';
 import { contact } from '../consts';
 ---
 
 <Layout title="Impressum" description="Impressum von Erlich Fliesen">
-	<Section>
-		<Container>
-			<span
-				class="text-xs font-semibold tracking-widest text-accent uppercase"
-				>Impressum</span
+	<Container>
+		<span
+			class="text-xs font-semibold tracking-widest text-accent uppercase"
+			>Impressum</span
+		>
+		<Headline level={1}>Impressum</Headline>
+
+		<div class="space-y-8 text-sm leading-relaxed text-black/70">
+			<Headline level={2}>Angaben gemäß § 5 DDG</Headline>
+			<address class="not-italic">
+				{contact.owner}<br />
+				{contact.line}<br />
+				{contact.street}<br />
+				{contact.city}
+			</address>
+
+			<Headline level={2}>Kontakt</Headline>
+			<Paragraph>
+				Telefon: <a
+					class="underline"
+					href={`tel:${contact.phone.replace(/\s+/g, '')}`}
+					>{contact.phone}</a
+				><br />
+				Mobil: <a
+					class="underline"
+					href={`tel:${contact.mobile.replace(/\s+/g, '')}`}
+					>{contact.mobile}</a
+				><br />
+				Telefax: {contact.fax}<br />
+				E-Mail: <a class="underline" href={`mailto:${contact.email}`}
+					>{contact.email}</a
+				>
+			</Paragraph>
+
+			<Headline level={2}
+				>Berufsbezeichnung und berufsrechtliche Regelungen</Headline
 			>
-			<h1
-				class="my-5 font-display text-4xl leading-[1.05] tracking-[-0.02em] text-default md:text-5xl">
-				Impressum
-			</h1>
+			<Paragraph>
+				Berufsbezeichnung: Fliesen-, Platten- und Mosaikleger/in<br />
+				Zuständige Kammer: Handwerkskammer (HWK)<br />
+				Verliehen in: Deutschland
+			</Paragraph>
 
-			<div class="space-y-8 text-sm leading-relaxed text-black/70">
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Angaben gemäß § 5 DDG
-					</h2>
-					<p>
-						{contact.owner}<br />
-						{contact.line}<br />
-						{contact.street}<br />
-						{contact.city}
-					</p>
-				</div>
+			<Headline level={2}
+				>Verbraucherstreitbeilegung/Universalschlichtungsstelle</Headline
+			>
+			<Paragraph>
+				Wir sind nicht bereit oder verpflichtet, an
+				Streitbeilegungsverfahren vor einer
+				Verbraucherschlichtungsstelle teilzunehmen.
+			</Paragraph>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Kontakt
-					</h2>
-					<p>
-						Telefon: <a
-							class="underline"
-							href={`tel:${contact.phone.replace(/\s+/g, '')}`}
-							>{contact.phone}</a
-						><br />
-						Mobil: <a
-							class="underline"
-							href={`tel:${contact.mobile.replace(/\s+/g, '')}`}
-							>{contact.mobile}</a
-						><br />
-						Telefax: {contact.fax}<br />
-						E-Mail: <a
-							class="underline"
-							href={`mailto:${contact.email}`}>{contact.email}</a
-						>
-					</p>
-				</div>
+			<Headline level={2}>Haftung für Inhalte</Headline>
+			<Paragraph>
+				Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene
+				Inhalte auf diesen Seiten nach den allgemeinen Gesetzen
+				verantwortlich. Nach §§ 8 bis 10 DDG sind wir als
+				Diensteanbieter jedoch nicht verpflichtet, übermittelte oder
+				gespeicherte fremde Informationen zu überwachen oder nach
+				Umständen zu forschen, die auf eine rechtswidrige Tätigkeit
+				hinweisen.
+			</Paragraph>
+			<Paragraph class="mt-2">
+				Verpflichtungen zur Entfernung oder Sperrung der Nutzung von
+				Informationen nach den allgemeinen Gesetzen bleiben hiervon
+				unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem
+				Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich.
+				Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden
+				wir diese Inhalte umgehend entfernen.
+			</Paragraph>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Berufsbezeichnung und berufsrechtliche Regelungen
-					</h2>
-					<p>
-						Berufsbezeichnung: Fliesen-, Platten- und Mosaikleger/in<br
-						/>
-						Zuständige Kammer: Handwerkskammer (HWK)<br />
-						Verliehen in: Deutschland
-					</p>
-				</div>
+			<Headline level={2}>Haftung für Links</Headline>
+			<Paragraph>
+				Unser Angebot enthält Links zu externen Websites Dritter, auf
+				deren Inhalte wir keinen Einfluss haben. Deshalb können wir für
+				diese fremden Inhalte auch keine Gewähr übernehmen. Für die
+				Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter
+				oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten
+				wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße
+				überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der
+				Verlinkung nicht erkennbar.
+			</Paragraph>
+			<Paragraph class="mt-2">
+				Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist
+				jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht
+				zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir
+				derartige Links umgehend entfernen.
+			</Paragraph>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Verbraucherstreitbeilegung/Universalschlichtungsstelle
-					</h2>
-					<p>
-						Wir sind nicht bereit oder verpflichtet, an
-						Streitbeilegungsverfahren vor einer
-						Verbraucherschlichtungsstelle teilzunehmen.
-					</p>
-				</div>
+			<Headline level={2}>Urheberrecht</Headline>
+			<Paragraph>
+				Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
+				diesen Seiten unterliegen dem deutschen Urheberrecht. Die
+				Vervielfältigung, Bearbeitung, Verbreitung und jede Art der
+				Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der
+				schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+				Downloads und Kopien dieser Seite sind nur für den privaten,
+				nicht kommerziellen Gebrauch gestattet.
+			</Paragraph>
+			<Paragraph class="mt-2">
+				Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt
+				wurden, werden die Urheberrechte Dritter beachtet. Insbesondere
+				werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie
+				trotzdem auf eine Urheberrechtsverletzung aufmerksam werden,
+				bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden
+				von Rechtsverletzungen werden wir derartige Inhalte umgehend
+				entfernen.
+			</Paragraph>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Haftung für Inhalte
-					</h2>
-					<p>
-						Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für
-						eigene Inhalte auf diesen Seiten nach den allgemeinen
-						Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir
-						als Diensteanbieter jedoch nicht verpflichtet,
-						übermittelte oder gespeicherte fremde Informationen zu
-						überwachen oder nach Umständen zu forschen, die auf eine
-						rechtswidrige Tätigkeit hinweisen.
-					</p>
-					<p class="mt-2">
-						Verpflichtungen zur Entfernung oder Sperrung der Nutzung
-						von Informationen nach den allgemeinen Gesetzen bleiben
-						hiervon unberührt. Eine diesbezügliche Haftung ist
-						jedoch erst ab dem Zeitpunkt der Kenntnis einer
-						konkreten Rechtsverletzung möglich. Bei Bekanntwerden
-						von entsprechenden Rechtsverletzungen werden wir diese
-						Inhalte umgehend entfernen.
-					</p>
-				</div>
-
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Haftung für Links
-					</h2>
-					<p>
-						Unser Angebot enthält Links zu externen Websites
-						Dritter, auf deren Inhalte wir keinen Einfluss haben.
-						Deshalb können wir für diese fremden Inhalte auch keine
-						Gewähr übernehmen. Für die Inhalte der verlinkten Seiten
-						ist stets der jeweilige Anbieter oder Betreiber der
-						Seiten verantwortlich. Die verlinkten Seiten wurden zum
-						Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße
-						überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der
-						Verlinkung nicht erkennbar.
-					</p>
-					<p class="mt-2">
-						Eine permanente inhaltliche Kontrolle der verlinkten
-						Seiten ist jedoch ohne konkrete Anhaltspunkte einer
-						Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von
-						Rechtsverletzungen werden wir derartige Links umgehend
-						entfernen.
-					</p>
-				</div>
-
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Urheberrecht
-					</h2>
-					<p>
-						Die durch die Seitenbetreiber erstellten Inhalte und
-						Werke auf diesen Seiten unterliegen dem deutschen
-						Urheberrecht. Die Vervielfältigung, Bearbeitung,
-						Verbreitung und jede Art der Verwertung außerhalb der
-						Grenzen des Urheberrechtes bedürfen der schriftlichen
-						Zustimmung des jeweiligen Autors bzw. Erstellers.
-						Downloads und Kopien dieser Seite sind nur für den
-						privaten, nicht kommerziellen Gebrauch gestattet.
-					</p>
-					<p class="mt-2">
-						Soweit die Inhalte auf dieser Seite nicht vom Betreiber
-						erstellt wurden, werden die Urheberrechte Dritter
-						beachtet. Insbesondere werden Inhalte Dritter als solche
-						gekennzeichnet. Sollten Sie trotzdem auf eine
-						Urheberrechtsverletzung aufmerksam werden, bitten wir um
-						einen entsprechenden Hinweis. Bei Bekanntwerden von
-						Rechtsverletzungen werden wir derartige Inhalte umgehend
-						entfernen.
-					</p>
-				</div>
-
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">Quelle</h2>
-					<p>
-						Textbausteine erstellt mit dem <a
-							class="underline"
-							href="https://www.e-recht24.de"
-							>Impressum-Generator von eRecht24</a
-						>.
-					</p>
-				</div>
-			</div>
-		</Container>
-	</Section>
+			<Headline level={2}>Quelle</Headline>
+			<Paragraph>
+				Textbausteine erstellt mit dem <a
+					class="underline"
+					href="https://www.e-recht24.de"
+					>Impressum-Generator von eRecht24</a
+				>.
+			</Paragraph>
+		</div>
+	</Container>
 </Layout>

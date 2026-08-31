@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Section from '../components/layout/Section.astro';
 import Container from '../components/layout/Container.astro';
+import Headline from '../components/Headline.astro';
+import Paragraph from '../components/Paragraph.astro';
 import { contact } from '../consts';
 ---
 
@@ -14,17 +16,12 @@ import { contact } from '../consts';
 				class="text-xs font-semibold tracking-widest text-accent uppercase"
 				>Datenschutz</span
 			>
-			<h1
-				class="my-5 font-display text-4xl leading-[1.05] tracking-[-0.02em] text-default md:text-5xl">
-				Datenschutzerklärung
-			</h1>
+			<Headline level={1}>Datenschutzerklärung</Headline>
 
 			<div class="space-y-8 text-sm leading-relaxed text-black/70">
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Verantwortlicher
-					</h2>
-					<p>
+				<section>
+					<Headline level={2}>Verantwortlicher</Headline>
+					<address class="not-italic">
 						{contact.owner}<br />
 						{contact.street}<br />
 						{contact.city}<br />
@@ -37,14 +34,12 @@ import { contact } from '../consts';
 							href={`tel:${contact.phone.replace(/\s+/g, '')}`}
 							>{contact.phone}</a
 						>
-					</p>
-				</div>
+					</address>
+				</section>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Hosting
-					</h2>
-					<p>
+				<section>
+					<Headline level={2}>Hosting</Headline>
+					<Paragraph>
 						Wir hosten die Inhalte unserer Website bei folgendem
 						Anbieter: netcup GmbH, Emmy-Noether-Straße 10, D-76131
 						Karlsruhe. Das externe Hosting erfolgt zum Zwecke der
@@ -53,8 +48,8 @@ import { contact } from '../consts';
 						Interesse einer sicheren, schnellen und effizienten
 						Bereitstellung unseres Online-Angebots (Art. 6 Abs. 1
 						lit. f DSGVO).
-					</p>
-					<p class="mt-2">
+					</Paragraph>
+					<Paragraph class="mt-2">
 						Zusätzlich nutzen wir Cloudflare (Cloudflare Germany
 						GmbH, Rosental 7, c/o Mindspace, 80331 München) als
 						Content-Delivery-Network mit DNS, das den Datenverkehr
@@ -63,14 +58,12 @@ import { contact } from '../consts';
 						Abs. 1 lit. f DSGVO). Eine etwaige Datenübertragung in
 						die USA wird auf die Standardvertragsklauseln der
 						EU-Kommission gestützt.
-					</p>
-				</div>
+					</Paragraph>
+				</section>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Server-Log-Dateien
-					</h2>
-					<p>
+				<section>
+					<Headline level={2}>Server-Log-Dateien</Headline>
+					<Paragraph>
 						Der Provider der Seiten erhebt und speichert automatisch
 						Informationen in Server-Log-Dateien, die Ihr Browser
 						automatisch übermittelt: Browsertyp und -version,
@@ -82,14 +75,14 @@ import { contact } from '../consts';
 						Interesses an der technisch fehlerfreien Darstellung und
 						Optimierung unserer Website (Art. 6 Abs. 1 lit. f
 						DSGVO).
-					</p>
-				</div>
+					</Paragraph>
+				</section>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Webanalyse mit Plausible Analytics
-					</h2>
-					<p>
+				<section>
+					<Headline level={2}
+						>Webanalyse mit Plausible Analytics</Headline
+					>
+					<Paragraph>
 						Diese Website nutzt den Webanalysedienst Plausible
 						Analytics, den wir selbst gehostet betreiben
 						(plausible.arthurerlich.de) – es werden dabei keine
@@ -103,8 +96,8 @@ import { contact } from '../consts';
 						IP-Adresse wird nicht gespeichert. Eine Identifizierung
 						einzelner Websitebesucher ist anhand dieser Daten nicht
 						möglich.
-					</p>
-					<p class="mt-2">
+					</Paragraph>
+					<Paragraph class="mt-2">
 						Die Nutzung erfolgt auf Grundlage unseres berechtigten
 						Interesses an der statistischen Analyse des
 						Nutzerverhaltens zu Optimierungszwecken (Art. 6 Abs. 1
@@ -112,14 +105,12 @@ import { contact } from '../consts';
 						personenbezogenen Kennungen gespeichert werden, ist
 						hierfür keine Einwilligung nach § 25 Abs. 1 TDDDG
 						erforderlich.
-					</p>
-				</div>
+					</Paragraph>
+				</section>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Fehlerüberwachung mit Sentry
-					</h2>
-					<p>
+				<section>
+					<Headline level={2}>Fehlerüberwachung mit Sentry</Headline>
+					<Paragraph>
 						Zur automatisierten Erkennung und Behebung technischer
 						Fehler setzen wir Sentry ein, eine selbst gehostete
 						Instanz unter <code>sentry.arthurerlich.de</code>. Die
@@ -127,8 +118,8 @@ import { contact } from '../consts';
 						Infrastruktur; es findet keine Übermittlung an Sentry
 						(die Anbieterin der Software) oder sonstige Dritte
 						statt.
-					</p>
-					<p class="mt-2">
+					</Paragraph>
+					<Paragraph class="mt-2">
 						Sentry erfasst bei technischen Fehlern u. a. die
 						aufgerufene URL, Browser- und Geräteinformationen sowie
 						den Zeitpunkt des Fehlers, ausschließlich zum Zweck der
@@ -138,14 +129,12 @@ import { contact } from '../consts';
 						DSGVO). IP-Adressen werden dabei nicht gespeichert. Die
 						erfassten Fehlerdaten werden nach 90 Tagen automatisch
 						gelöscht.
-					</p>
-				</div>
+					</Paragraph>
+				</section>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Instagram
-					</h2>
-					<p>
+				<section>
+					<Headline level={2}>Instagram</Headline>
+					<Paragraph>
 						Auf dieser Website sind Funktionen des Dienstes
 						Instagram eingebunden, angeboten durch die Meta
 						Platforms Ireland Limited, Merrion Road, Dublin 4, D04
@@ -156,21 +145,19 @@ import { contact } from '../consts';
 						Die Nutzung erfolgt auf Grundlage Ihrer Einwilligung
 						(Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG), die
 						jederzeit widerrufbar ist.
-					</p>
-					<p class="mt-2">
+					</Paragraph>
+					<Paragraph class="mt-2">
 						Weitere Informationen finden Sie in der <a
 							class="underline"
 							href="https://privacycenter.instagram.com/policy/"
 							>Datenschutzerklärung von Instagram</a
 						>.
-					</p>
-				</div>
+					</Paragraph>
+				</section>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Kontaktaufnahme
-					</h2>
-					<p>
+				<section>
+					<Headline level={2}>Kontaktaufnahme</Headline>
+					<Paragraph>
 						Wenn Sie per E-Mail, Telefon oder über das
 						Kontaktformular mit uns Kontakt aufnehmen, verarbeiten
 						wir die von Ihnen mitgeteilten Daten (z. B. Name,
@@ -179,41 +166,39 @@ import { contact } from '../consts';
 						DSGVO. Diese Daten werden gelöscht, sobald sie für die
 						Bearbeitung nicht mehr erforderlich sind und keine
 						gesetzlichen Aufbewahrungspflichten entgegenstehen.
-					</p>
-				</div>
+					</Paragraph>
+				</section>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Ihre Rechte
-					</h2>
-					<p>
+				<section>
+					<Headline level={2}>Ihre Rechte</Headline>
+					<Paragraph>
 						Sie haben das Recht auf Auskunft über die zu Ihrer
 						Person gespeicherten Daten sowie auf Berichtigung,
 						Löschung, Einschränkung der Verarbeitung,
 						Datenübertragbarkeit und Widerspruch gegen die
 						Verarbeitung. Zudem können Sie sich bei einer
 						Datenschutz-Aufsichtsbehörde beschweren.
-					</p>
-				</div>
+					</Paragraph>
+				</section>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">Stand</h2>
-					<p>
-						Diese Datenschutzerklärung wurde zuletzt am 20.08.2026
-						aktualisiert.
-					</p>
-				</div>
+				<section>
+					<Headline level={2}>Stand</Headline>
+					<Paragraph
+						>Diese Datenschutzerklärung wurde zuletzt am 20.08.2026
+						aktualisiert.</Paragraph
+					>
+				</section>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">Quelle</h2>
-					<p>
+				<section>
+					<Headline level={2}>Quelle</Headline>
+					<Paragraph>
 						Textbausteine erstellt mit dem <a
 							class="underline"
 							href="https://www.e-recht24.de"
 							>Datenschutz-Generator von eRecht24</a
 						>.
-					</p>
-				</div>
+					</Paragraph>
+				</section>
 			</div>
 		</Container>
 	</Section>

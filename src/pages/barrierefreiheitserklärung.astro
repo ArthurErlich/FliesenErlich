@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Section from '../components/layout/Section.astro';
 import Container from '../components/layout/Container.astro';
 import { contact } from '../consts';
+import Headline from '../components/Headline.astro';
+import Paragraph from '../components/Paragraph.astro';
 ---
 
 <Layout
@@ -14,60 +16,51 @@ import { contact } from '../consts';
 				class="text-xs font-semibold tracking-widest text-accent uppercase"
 				>Barrierefreiheit</span
 			>
-			<h1
-				class="my-5 font-display text-4xl leading-[1.05] tracking-[-0.02em] text-default md:text-5xl">
-				Erklärung zur Barrierefreiheit
-			</h1>
+			<Headline level={1}>Erklärung zur Barrierefreiheit</Headline>
 
 			<div class="space-y-8 text-sm leading-relaxed text-black/70">
-				<p>
+				<Paragraph>
 					Erlich Fliesen ist bemüht, diese Website im Einklang mit dem
 					Barrierefreiheitsstärkungsgesetz (BFSG) barrierefrei
 					zugänglich zu machen.
-				</p>
+				</Paragraph>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Stand der Vereinbarkeit
-					</h2>
-					<p>
+				<section>
+					<Headline level={2}>Stand der Vereinbarkeit</Headline>
+					<Paragraph>
 						Diese Website wurde bisher noch keiner formellen Prüfung
 						auf Barrierefreiheit unterzogen. Der Stand der
 						Konformität mit den Anforderungen (angelehnt an WCAG
 						2.2, Stufe AA) kann daher aktuell noch nicht
 						abschließend eingeschätzt werden.
-					</p>
-				</div>
+					</Paragraph>
+				</section>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Nicht barrierefreie Inhalte
-					</h2>
-					<p>
+				<section>
+					<Headline level={2}>Nicht barrierefreie Inhalte</Headline>
+					<Paragraph>
 						Da noch keine vollständige Prüfung stattgefunden hat,
 						können einzelne Inhalte oder Funktionen bestehen, die
 						nicht vollständig barrierefrei sind. Diese Erklärung
 						wird nach Durchführung einer Prüfung entsprechend
 						aktualisiert.
-					</p>
-				</div>
+					</Paragraph>
+				</section>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Erstellung dieser Erklärung
-					</h2>
-					<p>Diese Erklärung wurde am 14.07.2026 erstellt.</p>
-				</div>
+				<section>
+					<Headline level={2}>Erstellung dieser Erklärung</Headline>
+					<Paragraph
+						>Diese Erklärung wurde am 14.07.2026 erstellt.</Paragraph
+					>
+				</section>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Feedback und Kontaktangaben
-					</h2>
-					<p>
+				<section>
+					<Headline level={2}>Feedback und Kontaktangaben</Headline>
+					<Paragraph>
 						Sollten Ihnen Mängel bei der barrierefreien Gestaltung
 						dieser Website auffallen, teilen Sie uns dies bitte mit:
-					</p>
-					<p class="mt-2">
+					</Paragraph>
+					<address class="mt-2 not-italic">
 						{contact.owner}<br />
 						{contact.street}, {contact.city}<br />
 						E-Mail: <a
@@ -75,19 +68,17 @@ import { contact } from '../consts';
 							href={`mailto:${contact.email}`}>{contact.email}</a
 						><br />
 						Telefon: {contact.phone}
-					</p>
-				</div>
+					</address>
+				</section>
 
-				<div>
-					<h2 class="mb-2 font-display text-xl text-black">
-						Durchsetzungsverfahren
-					</h2>
-					<p>
+				<section>
+					<Headline level={2}>Durchsetzungsverfahren</Headline>
+					<Paragraph>
 						Führt eine Rückmeldung an uns zu keinem
 						zufriedenstellenden Ergebnis, kann die zuständige
 						Marktüberwachungsbehörde kontaktiert werden.
-					</p>
-				</div>
+					</Paragraph>
+				</section>
 			</div>
 		</Container>
 	</Section>
