@@ -3,3 +3,13 @@
 <FilesMatch "^\.">
     Require all denied
 </FilesMatch>
+
+# Site convention is trailing-slash URLs (astro.config.mjs: trailingSlash:
+# 'always'). Redirect any request missing one to the trailing-slash version,
+# except real files (assets, favicon, etc.) and the PHP API, which isn't
+# page-routed.
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/$
+RewriteCond %{REQUEST_URI} !^/api
+RewriteRule ^(.*)$ $1/ [L,R=301]
