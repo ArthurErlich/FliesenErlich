@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Section from '../components/layout/Section.astro';
 import Container from '../components/layout/Container.astro';
+import Headline from '../components/Headline.astro';
+import Paragraph from '../components/Paragraph.astro';
 
 const groups = [
 	{
@@ -28,23 +30,18 @@ const groups = [
 				class="text-xs font-semibold tracking-widest text-accent uppercase"
 				>Referenzen</span
 			>
-			<h1
-				class="my-5 font-display text-5xl leading-[1.05] tracking-[-0.02em] text-default md:text-6xl">
-				Ausgewählte Projekte
-			</h1>
-			<p class="max-w-md text-sm leading-relaxed text-black/60">
+			<Headline level={1}>Ausgewählte Projekte</Headline>
+			<Paragraph class="max-w-md">
 				Fliesenlegen ist mehr als Verlegen: Beratung, Raumplanung und
 				die richtige Untergrundvorbereitung entscheiden über das
 				Ergebnis.
-			</p>
+			</Paragraph>
 			<div class="mt-12 grid gap-6 sm:grid-cols-3">
 				{
 					groups.map((g) => (
 						<div class="bg-white p-6">
-							<h2 class="mb-2 font-serif text-lg">{g.title}</h2>
-							<p class="text-sm leading-normal text-black/60">
-								{g.desc}
-							</p>
+							<Headline level={2}>{g.title}</Headline>
+							<Paragraph>{g.desc}</Paragraph>
 						</div>
 					))
 				}

@@ -2,6 +2,8 @@
 // Homepage hero: owns its own near-viewport height, outside the Section
 // system (Section's height is always content-sized).
 // ponytail: placehold.co stands in for real project photos until those are picked.
+import Headline from './Headline.astro';
+import Paragraph from './Paragraph.astro';
 ---
 
 <section
@@ -15,15 +17,12 @@
 			class="text-xs font-semibold tracking-widest text-accent uppercase">
 			Aktiver Gestalter für Wohnräume
 		</span>
-		<h1
-			class="my-5 font-display text-5xl leading-[1.05] tracking-[-0.02em] text-default md:text-6xl">
-			Erlich<br />ist Qualität
-		</h1>
-		<p class="max-w-md text-sm leading-relaxed text-black/60">
+		<Headline level={1}>Erlich<br />ist Qualität</Headline>
+		<Paragraph class="max-w-md">
 			Als Fliesen- und Natursteinleger sind wir seit Jahren erste Adresse
 			für die Gestaltung von Wänden und Böden – von der Beratung bis zur
 			letzten Fuge.
-		</p>
+		</Paragraph>
 		<div class="mt-10 flex items-center gap-6">
 			<a
 				href="/kontakt/"

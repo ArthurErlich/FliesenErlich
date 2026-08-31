@@ -4,6 +4,8 @@ import Hero from '../components/Hero.astro';
 import Section from '../components/layout/Section.astro';
 import Container from '../components/layout/Container.astro';
 import GalleryCategories from '../components/GalleryCategories.astro';
+import Headline from '../components/Headline.astro';
+import Paragraph from '../components/Paragraph.astro';
 
 const services = [
 	{
@@ -30,10 +32,7 @@ const services = [
 
 	<Section id="leistungen" tone="inset">
 		<Container>
-			<h2
-				class="mb-12 font-serif text-3xl font-semibold tracking-[-0.02em]">
-				Leistungen
-			</h2>
+			<Headline level={2} class="mb-12">Leistungen</Headline>
 			<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 				{
 					services.map((s) => (
@@ -43,10 +42,8 @@ const services = [
 								alt=""
 								class="mb-6 aspect-square w-full bg-light-gray object-cover"
 							/>
-							<h4 class="mb-2 font-serif text-lg">{s.title}</h4>
-							<p class="text-sm leading-normal text-black/60">
-								{s.desc}
-							</p>
+							<Headline level={3}>{s.title}</Headline>
+							<Paragraph>{s.desc}</Paragraph>
 						</div>
 					))
 				}
@@ -60,10 +57,7 @@ const services = [
 				class="text-xs font-semibold tracking-widest text-accent uppercase"
 				>Referenzen</span
 			>
-			<h2
-				class="my-3 font-serif text-3xl font-semibold tracking-[-0.02em]">
-				Ausgewählte Projekte
-			</h2>
+			<Headline level={2} class="my-3">Ausgewählte Projekte</Headline>
 		</Container>
 	</Section>
 	<GalleryCategories />

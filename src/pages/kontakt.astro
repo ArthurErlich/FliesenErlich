@@ -8,6 +8,8 @@ import TextArea from '../components/form/TextArea.astro';
 import Checkbox from '../components/form/Checkbox.astro';
 import Button from '../components/form/Button.astro';
 import { contact } from '../consts';
+import Headline from '../components/Headline.astro';
+import Paragraph from '../components/Paragraph.astro';
 ---
 
 <Layout title="Kontakt" description="Kontaktieren Sie Erlich Fliesen">
@@ -18,16 +20,13 @@ import { contact } from '../consts';
 					class="text-xs font-semibold tracking-widest text-accent uppercase"
 					>Kontakt</span
 				>
-				<h1
-					class="my-5 font-display text-4xl leading-[1.05] tracking-[-0.02em] text-default">
-					Sprechen Sie<br />mit uns
-				</h1>
-				<p class="max-w-xs text-sm leading-relaxed text-black/60">
+				<Headline level={1}>Sprechen Sie<br />mit uns</Headline>
+				<Paragraph class="max-w-xs">
 					Rufen Sie uns an oder schreiben Sie uns eine E-Mail – wir
 					melden uns zeitnah zurück.
-				</p>
-				<div
-					class="mt-10 space-y-2 text-sm leading-relaxed text-black/70">
+				</Paragraph>
+				<address
+					class="mt-10 space-y-2 text-sm leading-relaxed text-black/70 not-italic">
 					<div>{contact.owner}</div>
 					<div>{contact.street}, {contact.city}</div>
 					<div>
@@ -44,7 +43,7 @@ import { contact } from '../consts';
 						>
 					</div>
 					<div>Erreichbarkeit: {contact.hours}</div>
-				</div>
+				</address>
 			</div>
 
 			<div class="border-accent/30 md:col-span-7 md:border-l md:pl-10">
@@ -105,14 +104,14 @@ import { contact } from '../consts';
 					id="kontakt-form-success"
 					class="hidden space-y-2"
 					role="status">
-					<h2 class="font-serif text-xl font-semibold text-default">
-						Vielen Dank für Ihre Anfrage!
-					</h2>
-					<p class="text-sm leading-relaxed text-black/70">
+					<Headline level={2} color="red"
+						>Vielen Dank für Ihre Anfrage!</Headline
+					>
+					<Paragraph>
 						Wir haben Ihre Nachricht erhalten und melden uns {
 							contact.hours
 						} bei Ihnen zurück.
-					</p>
+					</Paragraph>
 				</div>
 			</div>
 		</div>
