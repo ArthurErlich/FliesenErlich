@@ -1,0 +1,274 @@
+---
+// PROTOTYPE — throwaway, ticket #58. Not linked from nav, not built in prod
+// (guarded below). Delete this file once a variant wins and the real
+// Headline.astro / Paragraph.astro / Section rhythm values are picked.
+//
+// Three variants of the same content, switchable via ?variant=a|b|c:
+// A — Compact editorial (tight tracking, smaller sizes, minimal rhythm)
+// B — Current baseline (today's actual per-page values, as the control)
+// C — Generous heritage (larger sizes, more air, leans into .design/style.md's
+//     "headline-lg" editorial-magazine direction)
+import Layout from '../../layouts/Layout.astro';
+import Section from '../../components/layout/Section.astro';
+import Container from '../../components/layout/Container.astro';
+
+if (import.meta.env.PROD) {
+	return Astro.redirect('/');
+}
+
+const sampleParagraph =
+	'Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.';
+---
+
+<Layout title="Prototype: Typography" description="Throwaway prototype, not for production">
+	<div data-variant="a">
+		<Section tone="base">
+			<Container>
+				<span
+					class="mb-8 block text-xs font-semibold tracking-widest text-accent uppercase"
+					>Variante A — Kompakt</span
+				>
+				<h1 class="a-h1">Angebot &amp; Beratung</h1>
+				<h2 class="a-h2">Sektionstitel (h2)</h2>
+				<h3 class="a-h3">Unterabschnitt (h3)</h3>
+				<h4 class="a-h4">Kartentitel (h4)</h4>
+				<p class="a-p-lead">{sampleParagraph}</p>
+				<p class="a-p-body">{sampleParagraph}</p>
+				<p class="a-p-small">{sampleParagraph}</p>
+			</Container>
+		</Section>
+		<Section tone="inset"><Container><p class="a-p-body">tone=inset, py-10 md:py-14</p></Container></Section>
+		<Section tone="elevated"><Container><p class="a-p-body">tone=elevated, py-10 md:py-14</p></Container
+		></Section>
+	</div>
+
+	<div data-variant="b">
+		<Section tone="base">
+			<Container>
+				<span
+					class="mb-5 block text-xs font-semibold tracking-widest text-accent uppercase"
+					>Variante B — Heutiger Stand (Kontrolle)</span
+				>
+				<h1 class="b-h1">Angebot &amp; Beratung</h1>
+				<h2 class="b-h2">Sektionstitel (h2)</h2>
+				<h3 class="b-h3">Unterabschnitt (h3)</h3>
+				<h4 class="b-h4">Kartentitel (h4)</h4>
+				<p class="b-p-lead">{sampleParagraph}</p>
+				<p class="b-p-body">{sampleParagraph}</p>
+				<p class="b-p-small">{sampleParagraph}</p>
+			</Container>
+		</Section>
+		<Section tone="inset"><Container><p class="b-p-body">tone=inset, py-16 md:py-24 (unchanged today)</p></Container
+		></Section>
+		<Section tone="elevated"
+			><Container><p class="b-p-body">tone=elevated, py-16 md:py-24 (unchanged today)</p></Container
+		></Section>
+	</div>
+
+	<div data-variant="c">
+		<Section tone="base">
+			<Container>
+				<span
+					class="mb-10 block text-xs font-semibold tracking-widest text-accent uppercase"
+					>Variante C — Großzügig</span
+				>
+				<h1 class="c-h1">Angebot &amp; Beratung</h1>
+				<h2 class="c-h2">Sektionstitel (h2)</h2>
+				<h3 class="c-h3">Unterabschnitt (h3)</h3>
+				<h4 class="c-h4">Kartentitel (h4)</h4>
+				<p class="c-p-lead">{sampleParagraph}</p>
+				<p class="c-p-body">{sampleParagraph}</p>
+				<p class="c-p-small">{sampleParagraph}</p>
+			</Container>
+		</Section>
+		<Section tone="inset"><Container><p class="c-p-body">tone=inset, py-20 md:py-32</p></Container></Section>
+		<Section tone="elevated"><Container><p class="c-p-body">tone=elevated, py-20 md:py-32</p></Container
+		></Section>
+	</div>
+
+	<div
+		id="switcher"
+		class="fixed bottom-6 left-1/2 z-50 flex -translate-x-1/2 items-center gap-4 bg-black px-5 py-3 text-white shadow-lg"
+	>
+		<button id="prev" aria-label="Vorherige Variante" class="text-lg">←</button>
+		<span id="label" class="min-w-[14rem] text-center text-sm font-semibold"></span>
+		<button id="next" aria-label="Nächste Variante" class="text-lg">→</button>
+	</div>
+</Layout>
+
+<style>
+	/* Variant A — compact */
+	.a-h1 {
+		font-family: var(--font-serif);
+		font-size: 2.25rem;
+		line-height: 1.05;
+		letter-spacing: -0.02em;
+		color: var(--color-black);
+		margin: 0.5rem 0;
+	}
+	.a-h2 {
+		font-family: var(--font-serif);
+		font-size: 1.25rem;
+		letter-spacing: -0.02em;
+		color: var(--color-black);
+		margin: 0.5rem 0;
+	}
+	.a-h3 {
+		font-family: var(--font-serif);
+		font-size: 1.05rem;
+		color: var(--color-black);
+		margin: 0.4rem 0;
+	}
+	.a-h4 {
+		font-family: var(--font-serif);
+		font-size: 0.95rem;
+		color: var(--color-black);
+		margin: 0.3rem 0;
+	}
+	.a-p-lead {
+		font-size: 1rem;
+		line-height: 1.5;
+		color: rgb(0 0 0 / 70%);
+		margin-top: 0.5rem;
+	}
+	.a-p-body {
+		font-size: 0.875rem;
+		line-height: 1.5;
+		color: rgb(0 0 0 / 70%);
+		margin-top: 0.5rem;
+	}
+	.a-p-small {
+		font-size: 0.75rem;
+		line-height: 1.4;
+		color: rgb(0 0 0 / 70%);
+		margin-top: 0.5rem;
+	}
+
+	/* Variant B — today's actual values (control) */
+	.b-h1 {
+		font-family: var(--font-display);
+		font-size: 3rem;
+		line-height: 1.05;
+		letter-spacing: -0.02em;
+		color: var(--color-default);
+		margin: 1.25rem 0;
+	}
+	.b-h2 {
+		font-family: var(--font-display);
+		font-size: 1.25rem;
+		color: var(--color-black);
+		margin: 0.5rem 0;
+	}
+	.b-h3 {
+		font-family: var(--font-serif);
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: var(--color-black);
+		margin: 0.5rem 0;
+	}
+	.b-h4 {
+		font-family: var(--font-serif);
+		font-size: 1.125rem;
+		color: var(--color-black);
+		margin: 0.5rem 0;
+	}
+	.b-p-lead,
+	.b-p-body,
+	.b-p-small {
+		font-size: 0.875rem;
+		line-height: 1.6;
+		color: rgb(0 0 0 / 70%);
+		margin-top: 0.5rem;
+	}
+
+	/* Variant C — generous, .design/style.md "headline-lg" direction */
+	.c-h1 {
+		font-family: var(--font-serif);
+		font-size: 3.75rem;
+		line-height: 1.02;
+		letter-spacing: -0.02em;
+		color: var(--color-default);
+		margin: 1.5rem 0;
+	}
+	.c-h2 {
+		font-family: var(--font-serif);
+		font-size: 2rem; /* .design/style.md headline-lg */
+		letter-spacing: -0.02em;
+		color: var(--color-black);
+		margin: 1rem 0;
+	}
+	.c-h3 {
+		font-family: var(--font-serif);
+		font-size: 1.5rem;
+		letter-spacing: -0.02em;
+		color: var(--color-black);
+		margin: 0.75rem 0;
+	}
+	.c-h4 {
+		font-family: var(--font-serif);
+		font-size: 1.25rem;
+		color: var(--color-black);
+		margin: 0.5rem 0;
+	}
+	.c-p-lead {
+		font-size: 1.125rem;
+		line-height: 1.65;
+		color: rgb(0 0 0 / 70%);
+		margin-top: 0.75rem;
+	}
+	.c-p-body {
+		font-size: 1rem;
+		line-height: 1.65;
+		color: rgb(0 0 0 / 70%);
+		margin-top: 0.75rem;
+	}
+	.c-p-small {
+		font-size: 0.875rem;
+		line-height: 1.5;
+		color: rgb(0 0 0 / 70%);
+		margin-top: 0.75rem;
+	}
+</style>
+
+<script>
+	const variants = [
+		{ key: 'a', label: 'A — Kompakt' },
+		{ key: 'b', label: 'B — Heutiger Stand' },
+		{ key: 'c', label: 'C — Großzügig' }
+	];
+
+	function current() {
+		const v = new URLSearchParams(location.search).get('variant') ?? 'b';
+		const idx = variants.findIndex((x) => x.key === v);
+		return idx === -1 ? 1 : idx;
+	}
+
+	function show(idx: number) {
+		const key = variants[idx].key;
+		document.querySelectorAll('[data-variant]').forEach((el) => {
+			(el as HTMLElement).style.display = el.getAttribute('data-variant') === key ? '' : 'none';
+		});
+		document.getElementById('label')!.textContent = variants[idx].label;
+		const url = new URL(location.href);
+		url.searchParams.set('variant', key);
+		history.replaceState(null, '', url);
+	}
+
+	let idx = current();
+	show(idx);
+
+	document.getElementById('prev')!.addEventListener('click', () => {
+		idx = (idx - 1 + variants.length) % variants.length;
+		show(idx);
+	});
+	document.getElementById('next')!.addEventListener('click', () => {
+		idx = (idx + 1) % variants.length;
+		show(idx);
+	});
+	document.addEventListener('keydown', (e) => {
+		const tag = (e.target as HTMLElement)?.tagName;
+		if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target as HTMLElement)?.isContentEditable) return;
+		if (e.key === 'ArrowLeft') document.getElementById('prev')!.click();
+		if (e.key === 'ArrowRight') document.getElementById('next')!.click();
+	});
+</script>

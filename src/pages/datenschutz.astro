@@ -1,10 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Section from '../components/layout/Section.astro';
+import Container from '../components/layout/Container.astro';
 import { contact } from '../consts';
 ---
 
 <Layout title="Datenschutzerklärung" description="Datenschutzerklärung von Erlich Fliesen">
-	<section class="mx-auto max-w-2xl px-8 py-24 md:px-16 md:py-32">
+	<Section>
+	<Container>
 		<span class="text-xs font-semibold tracking-widest text-accent uppercase">Datenschutz</span>
 		<h1
 			class="my-5 font-display text-4xl leading-[1.05] tracking-[-0.02em] text-default md:text-5xl"
@@ -149,5 +152,6 @@ import { contact } from '../consts';
 				</p>
 			</div>
 		</div>
-	</section>
+	</Container>
+	</Section>
 </Layout>

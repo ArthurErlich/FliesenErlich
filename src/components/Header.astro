@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import Container from './layout/Container.astro';
 import logo from '../assets/coperated/logo-erlich-dunkel.png';
 
 const navLinks = [
@@ -9,15 +10,17 @@ const navLinks = [
 ---
 
 <div class="bg-white shadow-md md:sticky md:top-0 md:left-0 z-10">
-	<section class="flex gap-10">
-		<a class="block cursor-pointer py-1 pl-2" href="/" title="Fliesen Erlich Logo">
-			<Image src={logo} alt="Fliesen Erlich Logo" class="h-15 object-contain" />
-		</a>
-		<address class="hidden grow flex-wrap items-center justify-around pr-10 not-italic md:flex">
-			<a href="tel:01634310646">Mobil: +49 (0) 1634 3106 46</a>
-			<a href="mailto:fliesenerlich@hotmail.com">E-Mail: fliesenerlich@hotmail.com</a>
-		</address>
-	</section>
+		<section class="flex justify-start gap-10">
+			<a class="cursor-pointer py-1 block" href="/" title="Fliesen Erlich Logo">
+				<Image src={logo} alt="Fliesen Erlich Logo" class="h-15 w-auto object-contain pl-5" />
+			</a>
+			<address class="hidden grow flex-wrap items-center justify-end not-italic md:flex pr-5">
+				<div>
+					<a href="tel:01634310646">Mobil: +49 (0) 1634 3106 46</a><br>
+				    <a href="mailto:fliesenerlich@hotmail.com">E-Mail: fliesenerlich@hotmail.com</a>
+				</div>
+			</address>
+		</section>
 	<nav aria-label="Navigation" class="hidden md:block">
 		<ul class="grow flex items-stretch justify-center gap-10 bg-default">
 			{

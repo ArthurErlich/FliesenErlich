@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Section from '../components/layout/Section.astro';
+import Container from '../components/layout/Container.astro';
 import { contact } from '../consts';
 ---
 
@@ -7,7 +9,8 @@ import { contact } from '../consts';
 	title="Erklärung zur Barrierefreiheit"
 	description="Erklärung zur Barrierefreiheit von erlich-fliesen.de"
 >
-	<section class="mx-auto max-w-2xl px-8 py-24 md:px-16 md:py-32">
+	<Section>
+	<Container>
 		<span class="text-xs font-semibold tracking-widest text-accent uppercase"
 			>Barrierefreiheit</span
 		>
@@ -66,5 +69,6 @@ import { contact } from '../consts';
 				</p>
 			</div>
 		</div>
-	</section>
+	</Container>
+	</Section>
 </Layout>

@@ -1,0 +1,66 @@
+---
+// Homepage hero: owns its own near-viewport height, outside the Section
+// system (Section's height is always content-sized).
+// ponytail: placehold.co stands in for real project photos until those are picked.
+
+---
+<section
+	class="relative grid items-center gap-8 px-8 py-16 md:min-h-[calc(100vh-3rem)] md:grid-cols-2 md:gap-0 md:px-16"
+>
+	<div
+		class="hidden md:block absolute inset-y-8 left-1/2 w-px -translate-x-1/2 bg-accent"
+		aria-hidden="true"
+	></div>
+	<div class="md:pr-16">
+		<span class="text-xs font-semibold tracking-widest text-accent uppercase">
+			Aktiver Gestalter für Wohnräume
+		</span>
+		<h1 class="my-5 font-display text-5xl leading-[1.05] tracking-[-0.02em] text-default md:text-6xl">
+			Erlich<br />ist Qualität
+		</h1>
+		<p class="max-w-md text-sm leading-relaxed text-black/60">
+			Als Fliesen- und Natursteinleger sind wir seit Jahren erste Adresse für die Gestaltung
+			von Wänden und Böden – von der Beratung bis zur letzten Fuge.
+		</p>
+		<div class="mt-10 flex items-center gap-6">
+			<a
+				href="/kontakt/"
+				class="bg-default px-7 py-3.5 text-sm font-semibold text-white hover:bg-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light"
+			>
+				Angebot anfordern
+			</a>
+			<a
+				href="#referenzen"
+				class="text-xs font-semibold tracking-widest text-accent uppercase hover:text-accent-hover"
+			>
+				Referenzen ansehen
+			</a>
+		</div>
+	</div>
+	<div class="grid aspect-4/5 grid-cols-2 grid-rows-2 gap-2 md:aspect-auto md:h-[calc(100vh-3rem-8rem)] md:pl-16">
+		<div class="row-span-2 overflow-hidden bg-light-gray">
+			<img
+				src="https://placehold.co/800x1000"
+				alt="Fliesen Erlich"
+				class="h-full w-full object-cover"
+				loading="eager"
+			/>
+		</div>
+		<div class="overflow-hidden bg-light-gray">
+			<img
+				src="https://placehold.co/800x480"
+				alt="Fliesen Erlich"
+				class="h-full w-full object-cover object-top"
+				loading="eager"
+			/>
+		</div>
+		<div class="overflow-hidden bg-light-gray">
+			<img
+				src="https://placehold.co/800x480"
+				alt="Fliesen Erlich"
+				class="h-full w-full object-cover object-bottom"
+				loading="eager"
+			/>
+		</div>
+	</div>
+</section>
