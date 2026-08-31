@@ -7,16 +7,16 @@ import Paragraph from '../components/Paragraph.astro';
 
 const groups = [
 	{
-		title: 'Für Privatpersonen',
-		desc: 'Vom kleinen Küchen-Update bis zur kompletten Badsanierung – in allen erdenklichen Farben und Oberflächen.',
+		title: 'Für Privatleute',
+		desc: 'Der Mensch strebt nach Veränderung und überlegt in gewissen Zeiträumen, was er in seinem Wohnumfeld verändern kann – oft Kleinigkeiten wie die Wand in der Küche, oder komplexe Räume wie ein Badezimmer. Mit fachmännischer Erfahrung zeigen wir Ihnen, wie Sie mit Fliesen in kürzester Zeit eine neue Raumgestaltung vornehmen können, und stellen Ihnen vorab eine Auswahl möglicher Kombinationen zusammen, angepasst auf Ihre persönlichen Wünsche.',
 	},
 	{
 		title: 'Für Individualisten',
-		desc: 'Auch ausgefallene Projekte wie der Umbau von Hallen oder ungenutzten Gebäuden zu Wohnraum – mit Fliesen als gestalterisches Mittel für Atmosphäre und Funktion.',
+		desc: 'So verschieden der Mensch, so unterschiedlich ist der Wunsch nach Wohndesign. Industriehallen und komplexe Fabrikgebäude wandeln sich zum Wohnraum, leerstehende und verfallende Häuser erhalten eine neue Wohnraumfunktion – Fliesen unterstützen mit ihrer Form und Farbe den Wohnzweck und sorgen für das gewünschte Ambiente. Ob Mosaik, Platten oder angepasste Oberfläche: Wer individuell wohnen möchte, hat ein Recht auf individuelles Design. Vorzunehmende Untergrundvorbereitungen besprechen wir selbstverständlich vorher mit Ihnen.',
 	},
 	{
 		title: 'Für Architekten',
-		desc: 'Zuverlässiger Ausführungspartner für Fliesenarbeiten, inklusive Estrichlieferung und Untergrundvorbereitung.',
+		desc: 'Als Architekt sind Sie auf zuverlässige Handwerksunternehmen angewiesen. Wir empfehlen unseren Betrieb für die fachgerechte Verlegung von Fliesen, sind auf Wunsch gerne bei Besprechungen mit dem Bauherrn anwesend und legen eine geeignete Fliesenauswahl vor. Neben der reinen Verfliesung übernehmen wir auch Estrichlieferung und -einbau sowie Untergrundvorbereitungen. Bitte berücksichtigen Sie uns bei Ihren Ausschreibungen.',
 	},
 ];
 ---
@@ -31,10 +31,16 @@ const groups = [
 				>Referenzen</span
 			>
 			<Headline level={1}>Ausgewählte Projekte</Headline>
-			<Paragraph class="max-w-md">
-				Fliesenlegen ist mehr als Verlegen: Beratung, Raumplanung und
-				die richtige Untergrundvorbereitung entscheiden über das
-				Ergebnis.
+			<Paragraph class="max-w-2xl">
+				Was macht eigentlich ein Fliesenleger? Wir verlegen Fliesen –
+				aber wir sind mehr: Berater für Raumdesign und Sanierung (zum
+				Beispiel Badezimmersanierung), Raumplaner und Farbgestalter.
+				Die eigentliche Fliesenverlegung ist dabei nicht der
+				wesentlichste Teil eines Auftrages – ausschlaggebend sind die
+				Vorplanung, die Begutachtung der Flächen und, ganz wichtig,
+				die Untergrundvorbereitung. Schauen Sie sich gerne unsere
+				Referenzbilder an: Sie spiegeln unsere Begeisterung für dieses
+				Handwerk wieder.
 			</Paragraph>
 			<div class="mt-12 grid gap-6 sm:grid-cols-3">
 				{

@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/layout/Section.astro';
+import Container from '../components/layout/Container.astro';
+import Headline from '../components/Headline.astro';
+import Paragraph from '../components/Paragraph.astro';
+
+const team = [
+	{
+		name: 'Waldemar Erlich',
+		role: 'Inhaber',
+		bio: 'Ich übernehme nicht nur die Verlegung der Fliesen, sondern sorge für gerade Wände und Böden sowie das fachgerechte Vorbereiten der Untergründe. Gerne unterstütze ich meine Kunden bei der Suche nach den richtigen Wunschfliesen.',
+	},
+	{
+		name: 'Benjamin Erlich',
+		role: 'Geselle Fliesenleger',
+	},
+	{
+		name: 'Thomas Erlich',
+		role: 'Auszubildender Fliesenleger',
+	},
+	{
+		name: 'Arthur Erlich',
+		role: 'Büro und IT',
+	},
+];
+---
+
+<Layout title="Team" description="Das Team von Erlich Fliesen">
+	<Section>
+		<Container>
+			<span
+				class="text-xs font-semibold tracking-widest text-accent uppercase"
+				>Team</span
+			>
+			<Headline level={1}>Unser Team</Headline>
+			<div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				{
+					team.map((member) => (
+						<div class="bg-white p-6">
+							<Headline level={2}>{member.name}</Headline>
+							<span class="text-xs font-semibold tracking-widest text-accent uppercase">
+								{member.role}
+							</span>
+							{member.bio && (
+								<Paragraph class="mt-3">{member.bio}</Paragraph>
+							)}
+						</div>
+					))
+				}
+			</div>
+		</Container>
+	</Section>
+</Layout>
