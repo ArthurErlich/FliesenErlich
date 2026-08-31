@@ -1,77 +1,50 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [
-        "config:best-practices",
-        ":dependencyDashboard"
-    ],
-    "packageRules": [
-        {
-            "matchUpdateTypes": [
-                "major"
-            ],
-            "groupName": "major updates",
-            "groupSlug": "major-updates",
-            "reviewers": [
-                "haylan"
-            ]
-        },
-        {
-            "matchPackageNames": [
-                "astro",
-                "@astrojs/*",
-                "@tailwindcss/vite",
-                "tailwindcss",
-                "astro-icon",
-                "astro-seo",
-                "prettier-plugin-tailwindcss"
-            ],
-            "groupName": "astro ecosystem",
-            "groupSlug": "astro-ecosystem"
-        },
-        {
-            "matchUpdateTypes": [
-                "patch",
-                "minor"
-            ],
-            "automerge": true
-        }
-    ],
-    "platformAutomerge": true,
-    "automergeStrategy": "squash",
-    "ignorePresets": [
-        "helpers:pinGitHubActionDigests"
-    ],
-    "enabledManagers": [
-        "npm",
-        "bun"
-    ],
-    "baseBranchPatterns": [
-        "staging"
-    ],
-    "minimumReleaseAge": "7 days",
-    "lockFileMaintenance": {
-        "enabled": true,
-        "schedule": [
-            "before 4am on monday"
-        ],
-        "reviewers": [
-            "haylan"
-        ]
-    },
-    "vulnerabilityAlerts": {
-        "labels": [
-            "security"
-        ],
-        "schedule": [
-            "at any time"
-        ],
-        "prPriority": 10,
-        "minimumReleaseAge": "2 days"
-    },
-    "postUpgradeTasks": {
-        "fileFilters": [
-            "package.json"
-        ],
-        "executionMode": "update"
-    }
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["config:best-practices", ":dependencyDashboard"],
+	"packageRules": [
+		{
+			"matchUpdateTypes": ["major"],
+			"groupName": "major updates",
+			"groupSlug": "major-updates",
+			"reviewers": ["haylan"]
+		},
+		{
+			"matchPackageNames": [
+				"astro",
+				"@astrojs/*",
+				"@tailwindcss/vite",
+				"tailwindcss",
+				"astro-icon",
+				"astro-seo",
+				"prettier-plugin-tailwindcss"
+			],
+			"groupName": "astro ecosystem",
+			"groupSlug": "astro-ecosystem"
+		},
+		{
+			"matchUpdateTypes": ["patch", "minor"],
+			"automerge": true
+		}
+	],
+	"platformAutomerge": true,
+	"automergeStrategy": "squash",
+	"ignorePresets": ["helpers:pinGitHubActionDigests"],
+	"enabledManagers": ["npm", "bun"],
+	"baseBranchPatterns": ["staging"],
+	"minimumReleaseAge": "7 days",
+	"lockFileMaintenance": {
+		"enabled": true,
+		"schedule": ["before 4am on monday"],
+		"reviewers": ["haylan"]
+	},
+	"vulnerabilityAlerts": {
+		"labels": ["security"],
+		"schedule": ["at any time"],
+		"prPriority": 10,
+		"minimumReleaseAge": "2 days"
+	},
+	"postUpgradeTasks": {
+		"fileFilters": ["package.json"],
+		"executionMode": "update"
+	}
 }

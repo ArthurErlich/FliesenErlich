@@ -6,36 +6,45 @@ import Container from '../components/layout/Container.astro';
 const groups = [
 	{
 		title: 'Für Privatpersonen',
-		desc: 'Vom kleinen Küchen-Update bis zur kompletten Badsanierung – in allen erdenklichen Farben und Oberflächen.'
+		desc: 'Vom kleinen Küchen-Update bis zur kompletten Badsanierung – in allen erdenklichen Farben und Oberflächen.',
 	},
 	{
 		title: 'Für Individualisten',
-		desc: 'Auch ausgefallene Projekte wie der Umbau von Hallen oder ungenutzten Gebäuden zu Wohnraum – mit Fliesen als gestalterisches Mittel für Atmosphäre und Funktion.'
+		desc: 'Auch ausgefallene Projekte wie der Umbau von Hallen oder ungenutzten Gebäuden zu Wohnraum – mit Fliesen als gestalterisches Mittel für Atmosphäre und Funktion.',
 	},
 	{
 		title: 'Für Architekten',
-		desc: 'Zuverlässiger Ausführungspartner für Fliesenarbeiten, inklusive Estrichlieferung und Untergrundvorbereitung.'
-	}
+		desc: 'Zuverlässiger Ausführungspartner für Fliesenarbeiten, inklusive Estrichlieferung und Untergrundvorbereitung.',
+	},
 ];
 ---
 
-<Layout title="Referenzen" description="Ausgewählte Projekte von Erlich Fliesen">
+<Layout
+	title="Referenzen"
+	description="Ausgewählte Projekte von Erlich Fliesen">
 	<Section>
 		<Container>
-			<span class="text-xs font-semibold tracking-widest text-accent uppercase">Referenzen</span>
-			<h1 class="my-5 font-display text-5xl leading-[1.05] tracking-[-0.02em] text-default md:text-6xl">
+			<span
+				class="text-xs font-semibold tracking-widest text-accent uppercase"
+				>Referenzen</span
+			>
+			<h1
+				class="my-5 font-display text-5xl leading-[1.05] tracking-[-0.02em] text-default md:text-6xl">
 				Ausgewählte Projekte
 			</h1>
 			<p class="max-w-md text-sm leading-relaxed text-black/60">
-				Fliesenlegen ist mehr als Verlegen: Beratung, Raumplanung und die richtige
-				Untergrundvorbereitung entscheiden über das Ergebnis.
+				Fliesenlegen ist mehr als Verlegen: Beratung, Raumplanung und
+				die richtige Untergrundvorbereitung entscheiden über das
+				Ergebnis.
 			</p>
 			<div class="mt-12 grid gap-6 sm:grid-cols-3">
 				{
 					groups.map((g) => (
 						<div class="bg-white p-6">
 							<h2 class="mb-2 font-serif text-lg">{g.title}</h2>
-							<p class="text-sm leading-normal text-black/60">{g.desc}</p>
+							<p class="text-sm leading-normal text-black/60">
+								{g.desc}
+							</p>
 						</div>
 					))
 				}

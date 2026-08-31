@@ -6,11 +6,11 @@ compliance (Impressum, Datenschutzerklärung) for this site.
 
 ## (a) WCAG 2.2 AA accessibility
 
-| Option | Source | WCAG version | License | Trust signal | Verdict |
-|---|---|---|---|---|---|
-| `accessibility-review` | `anthropics/knowledge-work-plugins` (design plugin) | **WCAG 2.1 AA** — not 2.2 | Apache-2.0 | Official Anthropic repo, 23.4k★, active (599 commits) | Solid engine, wrong version target |
-| `accessibility` skill | [`addyosmani/web-quality-skills`](https://github.com/addyosmani/web-quality-skills) | **WCAG 2.2**, all 4 POUR categories, "40+ rules" | MIT | Author is a well-known, credible web-perf/DX engineer (ex-Google Chrome team); 2.6k★, 238 forks, 31 commits | **Best fit** |
-| Various `mcpmarket.com` / `claudemarketplaces.com` listings ("WCAG 2.2 Accessibility Compliance", "WCAG Audit Patterns", etc.) | third-party skill marketplaces | claim WCAG 2.2 | unverified | No verifiable authorship, no repo history checked, marketplace listings not primary sources | Not recommended — unvetted |
+| Option                                                                                                                         | Source                                                                              | WCAG version                                     | License    | Trust signal                                                                                                | Verdict                            |
+| ------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- | ------------------------------------------------ | ---------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| `accessibility-review`                                                                                                         | `anthropics/knowledge-work-plugins` (design plugin)                                 | **WCAG 2.1 AA** — not 2.2                        | Apache-2.0 | Official Anthropic repo, 23.4k★, active (599 commits)                                                       | Solid engine, wrong version target |
+| `accessibility` skill                                                                                                          | [`addyosmani/web-quality-skills`](https://github.com/addyosmani/web-quality-skills) | **WCAG 2.2**, all 4 POUR categories, "40+ rules" | MIT        | Author is a well-known, credible web-perf/DX engineer (ex-Google Chrome team); 2.6k★, 238 forks, 31 commits | **Best fit**                       |
+| Various `mcpmarket.com` / `claudemarketplaces.com` listings ("WCAG 2.2 Accessibility Compliance", "WCAG Audit Patterns", etc.) | third-party skill marketplaces                                                      | claim WCAG 2.2                                   | unverified | No verifiable authorship, no repo history checked, marketplace listings not primary sources                 | Not recommended — unvetted         |
 
 **Recommendation:** install/vendor `addyosmani/web-quality-skills`'s `accessibility`
 skill — it's the only option found that (1) explicitly targets WCAG 2.2 (matching
@@ -40,14 +40,14 @@ skill-assisted or not.
   ~3 weeks before this research). 17 stars, 2 forks, 0 watchers, 0 open issues,
   0 PRs — very low external engagement/scrutiny for a "legal" resource.
 - **Self-disclosed reliability limits (from its own README/verification log):**
-  - *"This is not legal advice."* Output is explicitly framed as a draft requiring
-    review by a licensed Rechtsanwalt under **§ 43a BRAO / § 2 BORA**.
-  - *"AI-generated content ... may contain errors."* Users are told to verify
-    case-law citations independently via Beck-Online/juris/openjur.net.
-  - Case-law verification is only complete for **12 of 58 areas**, with a
-    self-reported **~10% measured error rate** on what has been checked.
-  - Explicit liability disclaimer: *"The author accepts no liability. Use at your
-    own risk."*
+    - _"This is not legal advice."_ Output is explicitly framed as a draft requiring
+      review by a licensed Rechtsanwalt under **§ 43a BRAO / § 2 BORA**.
+    - _"AI-generated content ... may contain errors."_ Users are told to verify
+      case-law citations independently via Beck-Online/juris/openjur.net.
+    - Case-law verification is only complete for **12 of 58 areas**, with a
+      self-reported **~10% measured error rate** on what has been checked.
+    - Explicit liability disclaimer: _"The author accepts no liability. Use at your
+      own risk."_
 - **Verdict:** This is a hobby/solo project, openly honest about its own
   unreliability, not a vetted legal resource. It should **not** be used to generate
   or wordsmith the actual Impressum or Datenschutzerklärung text that ships on the

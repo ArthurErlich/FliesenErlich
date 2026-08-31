@@ -5,47 +5,53 @@
 // Server-side verification happens in public/api/index.php (App\Api\Security\CapVerifier).
 
 interface Props {
-  /** Override when a page can render more than one widget instance at once. */
-  id?: string;
+	/** Override when a page can render more than one widget instance at once. */
+	id?: string;
 }
 
-const { id = "cap" } = Astro.props;
+const { id = 'cap' } = Astro.props;
 
-const CAP_API_ENDPOINT = "https://captcha.arthurerlich.de/cd95f97050/";
+const CAP_API_ENDPOINT = 'https://captcha.arthurerlich.de/cd95f97050/';
 ---
 
-<cap-widget id={id} required data-cap-api-endpoint={CAP_API_ENDPOINT}></cap-widget>
+<cap-widget id={id} required data-cap-api-endpoint={CAP_API_ENDPOINT}
+></cap-widget>
 
 <script type="module">
-  import "https://cdn.jsdelivr.net/npm/cap-widget";
+	import 'https://cdn.jsdelivr.net/npm/cap-widget';
 </script>
 
 <style>
-  /* Overrides the widget's own defaults (rounded, --cap-font: system-ui) to
+	/* Overrides the widget's own defaults (rounded, --cap-font: system-ui) to
      match the site's sharp-corner design language and Inter body font.
      Token reference: https://trycap.dev/guide/widget.html#styling */
-  cap-widget {
-    --cap-background: #ffffff;
-    --cap-border-color: color-mix(in srgb, var(--color-light-gray) 15%, transparent);
-    --cap-border-radius: 0px;
-    --cap-widget-padding: 14px;
-    --cap-gap: 15px;
-    --cap-color: var(--color-black);
-    --cap-checkbox-size: 20px;
-    --cap-checkbox-border: 1px solid color-mix(in srgb, var(--color-black) 20%, transparent);
-    --cap-checkbox-border-radius: 0px;
-    --cap-checkbox-background: #ffffff;
-    --cap-checkbox-margin: 2px;
-    --cap-font: var(--font-sans);
-    --cap-spinner-color: var(--color-accent);
-    --cap-spinner-background-color: var(--color-light-gray);
-    --cap-spinner-thickness: 3px;
-  }
+	cap-widget {
+		--cap-background: #ffffff;
+		--cap-border-color: color-mix(
+			in srgb,
+			var(--color-light-gray) 15%,
+			transparent
+		);
+		--cap-border-radius: 0px;
+		--cap-widget-padding: 14px;
+		--cap-gap: 15px;
+		--cap-color: var(--color-black);
+		--cap-checkbox-size: 20px;
+		--cap-checkbox-border: 1px solid
+			color-mix(in srgb, var(--color-black) 20%, transparent);
+		--cap-checkbox-border-radius: 0px;
+		--cap-checkbox-background: #ffffff;
+		--cap-checkbox-margin: 2px;
+		--cap-font: var(--font-sans);
+		--cap-spinner-color: var(--color-accent);
+		--cap-spinner-background-color: var(--color-light-gray);
+		--cap-spinner-thickness: 3px;
+	}
 
-  /* The widget's label text is hardcoded to font-weight:500 in its shadow
+	/* The widget's label text is hardcoded to font-weight:500 in its shadow
      DOM (no --cap-* variable exposes it) — reachable only via the "label"
      shadow part it does expose. */
-  cap-widget::part(label) {
-    font-weight: 400;
-  }
+	cap-widget::part(label) {
+		font-weight: 400;
+	}
 </style>

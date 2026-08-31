@@ -45,6 +45,7 @@ Page title (browser tab): "Erlich Fliesen - Verlegung von Fliesen und Mosaik"
 ### Hero / slider
 
 Two slider images referenced via the CMS's dynamic image endpoint (no descriptive alt text captured by the fetch):
+
 - `/image.php?id=2781`
 - `/image.php?id=2798`
 
@@ -61,6 +62,7 @@ Two slider images referenced via the CMS's dynamic image endpoint (no descriptiv
 > Hierbei übernehme ich nicht nur die Verlegung der Fliesen, sondern sorge für gerade Wände und Böden, sowie das fachgerechte Vorbereiten der Untergründe. Gerne unterstütze ich meine Kunden bei der Suche nach den richtigen Wunschfliesen.
 
 **Media in this section:**
+
 - Image `/images/2792/beratung-1.png`, alt text "Waldemar Erlich" — a portrait/consultation photo of the proprietor, positioned alongside the About text.
 
 ### Section: Portfolio

@@ -5,21 +5,29 @@
 // flag it — that reads as a stuck/broken focus indicator, not a real error.
 export function wireFormValidation(form: HTMLFormElement) {
 	let submitted = false;
-	const fields = form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>(
-		'input[required]:not([type="checkbox"]), textarea[required], input[type="email"]'
+	const fields = form.querySelectorAll<
+		HTMLInputElement | HTMLTextAreaElement
+	>(
+		'input[required]:not([type="checkbox"]), textarea[required], input[type="email"]',
 	);
 
-	function setInvalid(el: HTMLInputElement | HTMLTextAreaElement, invalid: boolean) {
+	function setInvalid(
+		el: HTMLInputElement | HTMLTextAreaElement,
+		invalid: boolean,
+	) {
 		el.style.borderBottomColor = invalid ? 'var(--color-default)' : '';
 		el.style.borderBottomWidth = invalid ? '2px' : '';
 		el.setAttribute('aria-invalid', invalid ? 'true' : 'false');
-		const err = document.getElementById(el.getAttribute('aria-describedby')?.split(' ').pop() ?? '');
+		const err = document.getElementById(
+			el.getAttribute('aria-describedby')?.split(' ').pop() ?? '',
+		);
 		err?.classList.toggle('hidden', !invalid);
 	}
 
 	fields.forEach((el) => {
 		el.addEventListener('blur', () => {
-			if (el.value.length > 0 || submitted) setInvalid(el, !el.checkValidity());
+			if (el.value.length > 0 || submitted)
+				setInvalid(el, !el.checkValidity());
 		});
 		el.addEventListener('input', () => setInvalid(el, !el.checkValidity()));
 	});
@@ -30,6 +38,6 @@ export function wireFormValidation(form: HTMLFormElement) {
 			submitted = true;
 			fields.forEach((el) => setInvalid(el, !el.checkValidity()));
 			return form.checkValidity();
-		}
+		},
 	};
 }

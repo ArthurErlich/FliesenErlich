@@ -18,11 +18,22 @@ const fullTitle = `${title} – Erlich Fliesen`;
 <html lang="de" class="m-0 p-0">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
 		<meta name="author" content="Agentur Erlich" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" href="/media/favicon/erlich-fliesen-favicon.svg" type="image/svg+xml" />
-		<link rel="apple-touch-icon" href="/media/favicon/erlich-fliesen-favicon.svg" type="image/svg+xml" />
+		<link
+			rel="icon"
+			href="/media/favicon/erlich-fliesen-favicon.svg"
+			type="image/svg+xml"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="/media/favicon/erlich-fliesen-favicon.svg"
+			type="image/svg+xml"
+		/>
 		<Font cssVariable="--font-yeseva-one" preload />
 		<Font cssVariable="--font-noto-serif" preload />
 		<Font cssVariable="--font-inter" preload />
@@ -33,21 +44,22 @@ const fullTitle = `${title} – Erlich Fliesen`;
 				basic: {
 					title: fullTitle,
 					type: 'website',
-					image: '/media/favicon/erlich-fliesen-favicon.svg'
+					image: '/media/favicon/erlich-fliesen-favicon.svg',
 				},
-				image: { alt: 'Erlich Fliesen Logo' }
+				image: { alt: 'Erlich Fliesen Logo' },
 			}}
 			twitter={{
 				card: 'summary',
 				title: fullTitle,
 				description,
-				image: '/media/favicon/erlich-fliesen-favicon.svg'
+				image: '/media/favicon/erlich-fliesen-favicon.svg',
 			}}
 		/>
 		<Plausible />
 		<Plausible />
 	</head>
-	<body class="flex min-h-screen flex-col bg-erlich-white font-sans text-black">
+	<body
+		class="flex min-h-screen flex-col bg-erlich-white font-sans text-black">
 		<Header />
 		<main class="grow">
 			<slot />

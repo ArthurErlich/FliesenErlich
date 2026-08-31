@@ -20,7 +20,7 @@ const {
 	hint,
 	maxlength = 2500,
 	rows = 6,
-	errorMessage = 'Bitte füllen Sie dieses Feld aus.'
+	errorMessage = 'Bitte füllen Sie dieses Feld aus.',
 } = Astro.props;
 
 const hintId = hint ? `${id}-hint` : undefined;
@@ -29,7 +29,9 @@ const describedBy = [hintId, errorId].filter(Boolean).join(' ');
 ---
 
 <div class="space-y-1.5">
-	<label for={id} class="block text-sm font-semibold tracking-wide text-black/80">
+	<label
+		for={id}
+		class="block text-sm font-semibold tracking-wide text-black/80">
 		{label}{required && ' *'}
 	</label>
 	<textarea
@@ -41,8 +43,14 @@ const describedBy = [hintId, errorId].filter(Boolean).join(' ');
 		aria-describedby={describedBy}
 		class="w-full resize-none overflow-y-auto border-b border-light-gray bg-white px-3.5 py-2.5 text-sm text-black outline-none focus:border-b-2 focus:border-accent"
 	></textarea>
-	{hint && (
-		<p id={hintId} class="text-xs text-black/50">{hint}</p>
-	)}
-	<p id={errorId} class="hidden text-sm text-default" role="alert">{errorMessage}</p>
+	{
+		hint && (
+			<p id={hintId} class="text-xs text-black/50">
+				{hint}
+			</p>
+		)
+	}
+	<p id={errorId} class="hidden text-sm text-default" role="alert">
+		{errorMessage}
+	</p>
 </div>

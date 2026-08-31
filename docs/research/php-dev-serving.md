@@ -36,15 +36,15 @@ manually running a second `php -S` process?
 ## 1. Astro's own capabilities
 
 - Astro's `vite` top-level config option passes its value straight to Vite:
-  > "Pass additional configuration options to Vite. Useful when Astro
-  > doesn't support some advanced configuration that you may need."
-  ([Astro Configuration Reference — `vite`](https://docs.astro.build/en/reference/configuration-reference/#vite))
-  This repo already uses this key (`vite: { plugins: [tailwindcss()] }` in
-  `astro.config.mjs`), so adding `vite: { server: { proxy: {...} } }` is
-  additive, not a new pattern.
+    > "Pass additional configuration options to Vite. Useful when Astro
+    > doesn't support some advanced configuration that you may need."
+    > ([Astro Configuration Reference — `vite`](https://docs.astro.build/en/reference/configuration-reference/#vite))
+    > This repo already uses this key (`vite: { plugins: [tailwindcss()] }` in
+    > `astro.config.mjs`), so adding `vite: { server: { proxy: {...} } }` is
+    > additive, not a new pattern.
 - Astro's own `server` config option (`server.port`, `server.host`, etc.)
   explicitly states it configures "the Astro dev server, **used by both**
-  `astro dev` and `astro preview`" — but this is Astro's *own* thin
+  `astro dev` and `astro preview`" — but this is Astro's _own_ thin
   wrapper options (port/host/headers/allowedHosts), not Vite's proxy
   machinery. There is no Astro-native `server.proxy` option; proxying is a
   Vite concern reached only via the `vite:` passthrough.
@@ -58,12 +58,12 @@ manually running a second `php -S` process?
   ([Vite — Server Options](https://vite.dev/config/server-options.html))
 - Astro's `astro dev` runs on top of Vite's dev server, so `vite.server.proxy` set via `astro.config.mjs`'s `vite:` key works for `astro dev`.
 - Astro's `astro preview` for a project with **no SSR adapter** (this repo: static output, no adapter configured) is described as:
-  > "Starts a local server to serve the contents of your static directory (`dist/` by default) created by running `astro build`."
-  ([Astro CLI Reference — `astro preview`](https://docs.astro.build/en/reference/cli-reference/#astro-preview))
-  And from the programmatic API docs:
-  > "If no adapter is set in the configuration, the preview server will only serve the built static files. If an adapter is set in the configuration, the preview server is provided by the adapter."
-  ([Astro Programmatic API — `preview()`](https://docs.astro.build/en/reference/programmatic-reference/#preview))
-  This confirms: no adapter → no Vite involvement in `astro preview` at all → `server.proxy` is silently ignored.
+    > "Starts a local server to serve the contents of your static directory (`dist/` by default) created by running `astro build`."
+    > ([Astro CLI Reference — `astro preview`](https://docs.astro.build/en/reference/cli-reference/#astro-preview))
+    > And from the programmatic API docs:
+    > "If no adapter is set in the configuration, the preview server will only serve the built static files. If an adapter is set in the configuration, the preview server is provided by the adapter."
+    > ([Astro Programmatic API — `preview()`](https://docs.astro.build/en/reference/programmatic-reference/#preview))
+    > This confirms: no adapter → no Vite involvement in `astro preview` at all → `server.proxy` is silently ignored.
 
 ## 3. Vite's own built-in PHP support
 
@@ -72,29 +72,29 @@ None. Vite is a JS/TS/ESM bundler and dev server; nothing in its docs, config re
 ## 4. Third-party Vite plugins for PHP
 
 - **`vite-plugin-php`** (npm, `donnikitos/vite-plugin-php`) — real, active, not abandoned:
-  - Latest version `3.0.0`, published ~1 month before this research (per `npm view vite-plugin-php time.modified` → `2026-07-10`); package created 2023.
-  - GitHub: 78 stars, 3 forks, 3 open issues, MIT license — small but maintained.
-  - **What it actually does**: it is a PHP-as-templating preprocessor integrated into Vite's transform pipeline — it treats `.php` files as Vite *entry points* (like `.html` files), runs them through the system `php` binary, writes output to a temp dir (`.php-tmp` by default), and lets Vite process the surrounding HTML/JS/CSS. Config includes `entry` (glob of PHP page files), `rewriteUrl`, `binary` (path to a PHP binary), and `php.host`.
-  - Its own docs list explicit limitations: PHP variables aren't available inside inline `<script type="module">` blocks (Vite extracts these to separate files), Vite can't process asset paths computed by PHP, and PHP-wrapped `<script>`/`<link>` tags can get relocated by Vite's processing.
-  - **Verdict for this use case**: wrong shape of tool. It's built for PHP-templated *pages* rendered through Vite's asset pipeline (each `.php` file is a page/entry with its own build output), not for standing up a persistent backend process that answers arbitrary `POST /api` JSON requests. Routing this repo's single dispatcher-style `index.php` (all form submissions POST to one endpoint, dispatched by a `key` field — see `public/api/index.php`) through it would fight the plugin's page-oriented model for no benefit over plain `server.proxy`.
-  - It is generic Vite, not Astro-specific — nothing indicates Astro compatibility has been tested, and Astro's own file-based routing/build pipeline would likely conflict with the plugin also wanting to treat `.php` files as entries.
+    - Latest version `3.0.0`, published ~1 month before this research (per `npm view vite-plugin-php time.modified` → `2026-07-10`); package created 2023.
+    - GitHub: 78 stars, 3 forks, 3 open issues, MIT license — small but maintained.
+    - **What it actually does**: it is a PHP-as-templating preprocessor integrated into Vite's transform pipeline — it treats `.php` files as Vite _entry points_ (like `.html` files), runs them through the system `php` binary, writes output to a temp dir (`.php-tmp` by default), and lets Vite process the surrounding HTML/JS/CSS. Config includes `entry` (glob of PHP page files), `rewriteUrl`, `binary` (path to a PHP binary), and `php.host`.
+    - Its own docs list explicit limitations: PHP variables aren't available inside inline `<script type="module">` blocks (Vite extracts these to separate files), Vite can't process asset paths computed by PHP, and PHP-wrapped `<script>`/`<link>` tags can get relocated by Vite's processing.
+    - **Verdict for this use case**: wrong shape of tool. It's built for PHP-templated _pages_ rendered through Vite's asset pipeline (each `.php` file is a page/entry with its own build output), not for standing up a persistent backend process that answers arbitrary `POST /api` JSON requests. Routing this repo's single dispatcher-style `index.php` (all form submissions POST to one endpoint, dispatched by a `key` field — see `public/api/index.php`) through it would fight the plugin's page-oriented model for no benefit over plain `server.proxy`.
+    - It is generic Vite, not Astro-specific — nothing indicates Astro compatibility has been tested, and Astro's own file-based routing/build pipeline would likely conflict with the plugin also wanting to treat `.php` files as entries.
 - Other Vite "proxy" plugins found (`vite-plugin-proxy`, `vite-plugin-proxy-middleware`, `pearofducks/vite-proxy`) are thin convenience wrappers that either replicate `server.proxy` or work around specific proxy/HTTP2 edge cases — none add PHP-process-spawning behavior beyond what `server.proxy` already does for free. No `@vituum/vite-plugin-php` package exists on the npm registry (checked directly — 404).
 - **Conclusion**: no third-party plugin does "spawn `php -S` + proxy to it as a generic backend" better than hand-rolling `server.proxy` + a manually- or script-started `php -S`. Any plugin adds a dependency and (for `vite-plugin-php` specifically) a mismatched execution model.
 
 ## 5. `astro:server:setup` integration hook
 
 - Astro's Integration API `astro:server:setup` hook:
-  > **When:** "Just after the Vite server is created in 'dev' mode, but before the `listen()` event is fired."
-  > **Why:** "To update Vite server options and middleware, or enable support for refreshing the content layer."
-  It hands you `{ server: ViteDevServer, logger, toolbar, refreshContent }`, and the docs' own example is Astro's Partytown integration calling `server.middlewares.use(...)` to inject a Connect middleware.
-  ([Astro Integration API — `astro:server:setup`](https://docs.astro.build/en/reference/integrations-reference/#astroserversetup))
+    > **When:** "Just after the Vite server is created in 'dev' mode, but before the `listen()` event is fired."
+    > **Why:** "To update Vite server options and middleware, or enable support for refreshing the content layer."
+    > It hands you `{ server: ViteDevServer, logger, toolbar, refreshContent }`, and the docs' own example is Astro's Partytown integration calling `server.middlewares.use(...)` to inject a Connect middleware.
+    > ([Astro Integration API — `astro:server:setup`](https://docs.astro.build/en/reference/integrations-reference/#astroserversetup))
 - This confirms the hook **only fires for `astro dev`** ("just after the Vite server is created in dev mode") — there is no equivalent hook for `astro preview` in the Integration API hook list (`astro:build:*` hooks cover the build; nothing fires during `astro preview`'s static server startup for a non-adapter project).
 - A hand-written integration using this hook (spawn `php -S` on `astro:server:setup`, wire `server.middlewares.use()` to proxy to it, tear it down on `astro:server:done`) is **possible** and gives programmatic control (e.g. auto-picking a free port, streaming PHP's stderr into Astro's logger). But it buys nothing over `vite.server.proxy` for `astro dev` specifically, since `server.proxy` already does the proxying declaratively — the only gain would be scripting the `php -S` process lifecycle instead of running it in a second terminal, which a one-line concurrently-style script achieves more simply (see §7).
 
 ## 6. How `astro preview` actually works, and its ceiling
 
 - Confirmed above (§2): for a project with no adapter (this repo — static output, no `output`/adapter configured in `astro.config.mjs`), `astro preview` serves only the contents of `dist/` as static files. It is not Vite-based.
-- Adapters *can* supply their own preview server (e.g. the Cloudflare adapter's `astro preview` runs under `workerd` to mirror the Workers runtime — see [`@astrojs/cloudflare` docs](https://docs.astro.build/en/guides/integrations-guide/cloudflare/#new-astro-preview-support)), via the Adapter API's `previewEntrypoint`/`CreatePreviewServer` mechanism ([Astro Adapter API — Building a preview entrypoint](https://docs.astro.build/en/reference/adapter-reference/#building-a-preview-entrypoint)). That's adapter-authored Node code with full control over the server — theoretically a custom adapter could add PHP proxying to its preview server. That is far more machinery than this problem justifies for a static site with no adapter.
+- Adapters _can_ supply their own preview server (e.g. the Cloudflare adapter's `astro preview` runs under `workerd` to mirror the Workers runtime — see [`@astrojs/cloudflare` docs](https://docs.astro.build/en/guides/integrations-guide/cloudflare/#new-astro-preview-support)), via the Adapter API's `previewEntrypoint`/`CreatePreviewServer` mechanism ([Astro Adapter API — Building a preview entrypoint](https://docs.astro.build/en/reference/adapter-reference/#building-a-preview-entrypoint)). That's adapter-authored Node code with full control over the server — theoretically a custom adapter could add PHP proxying to its preview server. That is far more machinery than this problem justifies for a static site with no adapter.
 - **Conclusion**: for this repo (static output, no adapter), `astro preview` cannot be made to run or proxy to PHP through any first-party Astro mechanism. The only way to get PHP behind `astro preview` is an external wrapper: run `php -S` and `astro preview` as two processes and put something in front of them (a tiny Node/Caddy/nginx reverse proxy), since `astro preview`'s own process exposes no hook to attach middleware to.
 
 ## 7. Fallback pattern: two processes + a proxy in front (or none)
@@ -106,12 +106,12 @@ None. Vite is a JS/TS/ESM bundler and dev server; nothing in its docs, config re
 
 ## Comparison table
 
-| Option | Works in `astro dev`? | Works in `astro preview`? | New deps? | Setup complexity | Maintenance risk |
-|---|---|---|---|---|---|
-| `vite.server.proxy` in `astro.config.mjs` (stock Vite config, run `php -S` manually or via a `bun run` script alongside) | Yes | No (Vite config, ignored by static preview server) | None | Very low — few lines of config + one CLI command | Very low — it's Vite/Astro core config |
-| Third-party Vite PHP plugin (`vite-plugin-php`) | Partially — wrong execution model (page-templating, not backend proxy); would need reshaping the API to fit its entry-point model | No (preview doesn't run Vite) | 1 (small, maintained, but niche — 78★, 1 maintainer) | Medium-high — fighting its page/entry model for a single dispatcher endpoint | Medium — small single-maintainer package |
-| Custom `astro:server:setup` integration (spawn `php -S`, wire `server.middlewares`) | Yes | No (`astro:server:setup` is dev-only per docs) | None (uses Node child_process + Astro's own API) | Medium — bespoke integration code to write and keep working across Astro major versions | Medium — you own this code; Astro Integration API changes across majors (v6 changed several hook signatures) |
-| External process manager + reverse proxy in front of both `astro preview` and `php -S` | N/A (not needed for dev) | Yes, but via a third proxy process, not Astro/Vite itself | 0–1 (a proxy tool, or a ~15-line Node script) | Medium — a real (if small) piece of infra to write/maintain | Low-medium — simple once written, but is genuinely new surface area |
+| Option                                                                                                                   | Works in `astro dev`?                                                                                                             | Works in `astro preview`?                                 | New deps?                                            | Setup complexity                                                                        | Maintenance risk                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `vite.server.proxy` in `astro.config.mjs` (stock Vite config, run `php -S` manually or via a `bun run` script alongside) | Yes                                                                                                                               | No (Vite config, ignored by static preview server)        | None                                                 | Very low — few lines of config + one CLI command                                        | Very low — it's Vite/Astro core config                                                                       |
+| Third-party Vite PHP plugin (`vite-plugin-php`)                                                                          | Partially — wrong execution model (page-templating, not backend proxy); would need reshaping the API to fit its entry-point model | No (preview doesn't run Vite)                             | 1 (small, maintained, but niche — 78★, 1 maintainer) | Medium-high — fighting its page/entry model for a single dispatcher endpoint            | Medium — small single-maintainer package                                                                     |
+| Custom `astro:server:setup` integration (spawn `php -S`, wire `server.middlewares`)                                      | Yes                                                                                                                               | No (`astro:server:setup` is dev-only per docs)            | None (uses Node child_process + Astro's own API)     | Medium — bespoke integration code to write and keep working across Astro major versions | Medium — you own this code; Astro Integration API changes across majors (v6 changed several hook signatures) |
+| External process manager + reverse proxy in front of both `astro preview` and `php -S`                                   | N/A (not needed for dev)                                                                                                          | Yes, but via a third proxy process, not Astro/Vite itself | 0–1 (a proxy tool, or a ~15-line Node script)        | Medium — a real (if small) piece of infra to write/maintain                             | Low-medium — simple once written, but is genuinely new surface area                                          |
 
 ## Recommendation for this repo
 

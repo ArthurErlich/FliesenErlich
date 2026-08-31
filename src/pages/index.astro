@@ -6,12 +6,23 @@ import Container from '../components/layout/Container.astro';
 import GalleryCategories from '../components/GalleryCategories.astro';
 
 const services = [
-	{ title: 'Bodenbeläge', desc: 'Naturstein- und Fliesenböden für Wohn- und Gewerberäume.' },
-	{ title: 'Mosaik', desc: 'Bespoke Mosaikflächen für Bäder, Pools und Fassaden.' },
-	{ title: 'Fassaden', desc: 'Wetterfeste Steinfassaden mit präziser Fugenführung.' },
-	{ title: 'Beratung', desc: 'Materialwahl und Planung direkt in unserer Werkstatt.' }
+	{
+		title: 'Bodenbeläge',
+		desc: 'Naturstein- und Fliesenböden für Wohn- und Gewerberäume.',
+	},
+	{
+		title: 'Mosaik',
+		desc: 'Bespoke Mosaikflächen für Bäder, Pools und Fassaden.',
+	},
+	{
+		title: 'Fassaden',
+		desc: 'Wetterfeste Steinfassaden mit präziser Fugenführung.',
+	},
+	{
+		title: 'Beratung',
+		desc: 'Materialwahl und Planung direkt in unserer Werkstatt.',
+	},
 ];
-
 ---
 
 <Layout title="Startseite" description="Mosaik-, Platten- & Fliesenleger">
@@ -19,18 +30,23 @@ const services = [
 
 	<Section id="leistungen" tone="inset">
 		<Container>
-			<h2 class="mb-12 font-serif text-3xl font-semibold tracking-[-0.02em]">Leistungen</h2>
+			<h2
+				class="mb-12 font-serif text-3xl font-semibold tracking-[-0.02em]">
+				Leistungen
+			</h2>
 			<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 				{
 					services.map((s) => (
 						<div class="bg-white p-6">
 							<img
-							src={`https://placehold.co/400x400?text=${encodeURIComponent(s.title)}`}
-							alt=""
-							class="mb-6 aspect-square w-full bg-light-gray object-cover"
-						/>
+								src={`https://placehold.co/400x400?text=${encodeURIComponent(s.title)}`}
+								alt=""
+								class="mb-6 aspect-square w-full bg-light-gray object-cover"
+							/>
 							<h4 class="mb-2 font-serif text-lg">{s.title}</h4>
-							<p class="text-sm leading-normal text-black/60">{s.desc}</p>
+							<p class="text-sm leading-normal text-black/60">
+								{s.desc}
+							</p>
 						</div>
 					))
 				}
@@ -40,10 +56,15 @@ const services = [
 
 	<Section id="referenzen" tone="base">
 		<Container class="mb-12">
-			<span class="text-xs font-semibold tracking-widest text-accent uppercase">Referenzen</span>
-			<h2 class="my-3 font-serif text-3xl font-semibold tracking-[-0.02em]">Ausgewählte Projekte</h2>
+			<span
+				class="text-xs font-semibold tracking-widest text-accent uppercase"
+				>Referenzen</span
+			>
+			<h2
+				class="my-3 font-serif text-3xl font-semibold tracking-[-0.02em]">
+				Ausgewählte Projekte
+			</h2>
 		</Container>
-		
 	</Section>
 	<GalleryCategories />
 </Layout>

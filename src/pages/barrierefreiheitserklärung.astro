@@ -7,68 +7,88 @@ import { contact } from '../consts';
 
 <Layout
 	title="Erklärung zur Barrierefreiheit"
-	description="Erklärung zur Barrierefreiheit von erlich-fliesen.de"
->
+	description="Erklärung zur Barrierefreiheit von erlich-fliesen.de">
 	<Section>
-	<Container>
-		<span class="text-xs font-semibold tracking-widest text-accent uppercase"
-			>Barrierefreiheit</span
-		>
-		<h1 class="my-5 font-display text-4xl leading-[1.05] tracking-[-0.02em] text-default md:text-5xl">
-			Erklärung zur Barrierefreiheit
-		</h1>
+		<Container>
+			<span
+				class="text-xs font-semibold tracking-widest text-accent uppercase"
+				>Barrierefreiheit</span
+			>
+			<h1
+				class="my-5 font-display text-4xl leading-[1.05] tracking-[-0.02em] text-default md:text-5xl">
+				Erklärung zur Barrierefreiheit
+			</h1>
 
-		<div class="space-y-8 text-sm leading-relaxed text-black/70">
-			<p>
-				Erlich Fliesen ist bemüht, diese Website im Einklang mit dem
-				Barrierefreiheitsstärkungsgesetz (BFSG) barrierefrei zugänglich zu machen.
-			</p>
-
-			<div>
-				<h2 class="mb-2 font-display text-xl text-black">Stand der Vereinbarkeit</h2>
+			<div class="space-y-8 text-sm leading-relaxed text-black/70">
 				<p>
-					Diese Website wurde bisher noch keiner formellen Prüfung auf Barrierefreiheit
-					unterzogen. Der Stand der Konformität mit den Anforderungen (angelehnt an WCAG 2.2,
-					Stufe AA) kann daher aktuell noch nicht abschließend eingeschätzt werden.
+					Erlich Fliesen ist bemüht, diese Website im Einklang mit dem
+					Barrierefreiheitsstärkungsgesetz (BFSG) barrierefrei
+					zugänglich zu machen.
 				</p>
-			</div>
 
-			<div>
-				<h2 class="mb-2 font-display text-xl text-black">Nicht barrierefreie Inhalte</h2>
-				<p>
-					Da noch keine vollständige Prüfung stattgefunden hat, können einzelne Inhalte oder
-					Funktionen bestehen, die nicht vollständig barrierefrei sind. Diese Erklärung wird nach
-					Durchführung einer Prüfung entsprechend aktualisiert.
-				</p>
-			</div>
+				<div>
+					<h2 class="mb-2 font-display text-xl text-black">
+						Stand der Vereinbarkeit
+					</h2>
+					<p>
+						Diese Website wurde bisher noch keiner formellen Prüfung
+						auf Barrierefreiheit unterzogen. Der Stand der
+						Konformität mit den Anforderungen (angelehnt an WCAG
+						2.2, Stufe AA) kann daher aktuell noch nicht
+						abschließend eingeschätzt werden.
+					</p>
+				</div>
 
-			<div>
-				<h2 class="mb-2 font-display text-xl text-black">Erstellung dieser Erklärung</h2>
-				<p>Diese Erklärung wurde am 14.07.2026 erstellt.</p>
-			</div>
+				<div>
+					<h2 class="mb-2 font-display text-xl text-black">
+						Nicht barrierefreie Inhalte
+					</h2>
+					<p>
+						Da noch keine vollständige Prüfung stattgefunden hat,
+						können einzelne Inhalte oder Funktionen bestehen, die
+						nicht vollständig barrierefrei sind. Diese Erklärung
+						wird nach Durchführung einer Prüfung entsprechend
+						aktualisiert.
+					</p>
+				</div>
 
-			<div>
-				<h2 class="mb-2 font-display text-xl text-black">Feedback und Kontaktangaben</h2>
-				<p>
-					Sollten Ihnen Mängel bei der barrierefreien Gestaltung dieser Website auffallen, teilen
-					Sie uns dies bitte mit:
-				</p>
-				<p class="mt-2">
-					{contact.owner}<br />
-					{contact.street}, {contact.city}<br />
-					E-Mail: <a class="underline" href={`mailto:${contact.email}`}>{contact.email}</a><br />
-					Telefon: {contact.phone}
-				</p>
-			</div>
+				<div>
+					<h2 class="mb-2 font-display text-xl text-black">
+						Erstellung dieser Erklärung
+					</h2>
+					<p>Diese Erklärung wurde am 14.07.2026 erstellt.</p>
+				</div>
 
-			<div>
-				<h2 class="mb-2 font-display text-xl text-black">Durchsetzungsverfahren</h2>
-				<p>
-					Führt eine Rückmeldung an uns zu keinem zufriedenstellenden Ergebnis, kann die zuständige
-					Marktüberwachungsbehörde kontaktiert werden.
-				</p>
+				<div>
+					<h2 class="mb-2 font-display text-xl text-black">
+						Feedback und Kontaktangaben
+					</h2>
+					<p>
+						Sollten Ihnen Mängel bei der barrierefreien Gestaltung
+						dieser Website auffallen, teilen Sie uns dies bitte mit:
+					</p>
+					<p class="mt-2">
+						{contact.owner}<br />
+						{contact.street}, {contact.city}<br />
+						E-Mail: <a
+							class="underline"
+							href={`mailto:${contact.email}`}>{contact.email}</a
+						><br />
+						Telefon: {contact.phone}
+					</p>
+				</div>
+
+				<div>
+					<h2 class="mb-2 font-display text-xl text-black">
+						Durchsetzungsverfahren
+					</h2>
+					<p>
+						Führt eine Rückmeldung an uns zu keinem
+						zufriedenstellenden Ergebnis, kann die zuständige
+						Marktüberwachungsbehörde kontaktiert werden.
+					</p>
+				</div>
 			</div>
-		</div>
-	</Container>
+		</Container>
 	</Section>
 </Layout>
