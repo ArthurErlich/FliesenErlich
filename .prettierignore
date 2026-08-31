@@ -1,0 +1,10 @@
+# build output
+dist/
+.astro/
+
+# reference-only, not active code (see CLAUDE.md)
+.old/
+
+# vendored/generated
+public/api/vendor/
+bun.lock
