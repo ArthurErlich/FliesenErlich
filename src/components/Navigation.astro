@@ -9,15 +9,15 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 	<ul class="flex gap-8">
 		{
 			navLinks.map(({ href, text }) => {
-				const isActive = (href.replace(/\/$/, '') || '/') === currentPath;
+				const isActive =
+					(href.replace(/\/$/, '') || '/') === currentPath;
 				return (
 					<li>
 						<Link
 							nav
 							href={href}
 							aria-current={isActive ? 'page' : undefined}
-							class={`text text-black hover:text-default ${isActive ? 'underline decoration-2 underline-offset-4 decoration-default' : ''}`}
-						>
+							class={`text text-black hover:text-default ${isActive ? 'underline decoration-default decoration-2 underline-offset-4' : ''}`}>
 							{text}
 						</Link>
 					</li>

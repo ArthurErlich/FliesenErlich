@@ -15,7 +15,8 @@ const { id, name, required = false } = Astro.props;
 ---
 
 <label for={id} class="flex items-start gap-2 text-sm text-black/70">
-	<span class="relative mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center">
+	<span
+		class="relative mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center">
 		<input
 			id={id}
 			name={name}

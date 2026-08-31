@@ -1,13 +1,16 @@
 export const navLinks = [
 	{ href: '/', text: 'Home' },
 	{ href: '/referenzen/', text: 'Referenzen' },
-	{ href: '/kontakt/', text: 'Kontakt' }
+	{ href: '/kontakt/', text: 'Kontakt' },
 ];
 
 export const legalLinks = [
 	{ href: '/impressum/', text: 'Impressum' },
 	{ href: '/datenschutz/', text: 'Datenschutz' },
-	{ href: '/barrierefreiheitserklärung/', text: 'Erklärung zur Barrierefreiheit' }
+	{
+		href: '/barrierefreiheitserklärung/',
+		text: 'Erklärung zur Barrierefreiheit',
+	},
 ];
 
 export const contact = {
@@ -19,5 +22,5 @@ export const contact = {
 	mobile: '0163 43 10 64 6',
 	fax: '07774 93 94 448',
 	email: 'fliesenerlich@hotmail.com',
-	hours: 'Mo-Sa, 8-18 Uhr'
+	hours: 'Mo-Sa, 8-18 Uhr',
 };

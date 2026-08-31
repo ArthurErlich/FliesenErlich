@@ -1,129 +1,129 @@
 name: Deploy
 
 on:
-  push:
-    branches:
-      - main
-      - staging
-  pull_request:
-    branches:
-      - main
-      - staging
+    push:
+        branches:
+            - main
+            - staging
+    pull_request:
+        branches:
+            - main
+            - staging
 
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          lfs: true
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  lfs: true
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: "package.json"
+            - uses: actions/setup-node@v4
+              with:
+                  node-version-file: 'package.json'
 
-      - uses: oven-sh/setup-bun@v2
+            - uses: oven-sh/setup-bun@v2
 
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+            - name: Install dependencies
+              run: bun install --frozen-lockfile
 
-      - name: Install API dependencies
-        uses: sillyguodong/composer@gitea
-        with:
-          php_version: "8.3"
-          working_dir: ${{ github.workspace }}/public/api
-          dev: no
-          args: "--optimize-autoloader"
+            - name: Install API dependencies
+              uses: sillyguodong/composer@gitea
+              with:
+                  php_version: '8.3'
+                  working_dir: ${{ github.workspace }}/public/api
+                  dev: no
+                  args: '--optimize-autoloader'
 
-      - name: Set SITE_URL (main)
-        if: github.ref == 'refs/heads/main' || github.base_ref == 'main'
-        run: echo "SITE_URL=${{ vars.PROD_URL }}" >> $GITHUB_ENV
+            - name: Set SITE_URL (main)
+              if: github.ref == 'refs/heads/main' || github.base_ref == 'main'
+              run: echo "SITE_URL=${{ vars.PROD_URL }}" >> $GITHUB_ENV
 
-      - name: Set SITE_URL (staging)
-        if: github.ref == 'refs/heads/staging' || github.base_ref == 'staging'
-        run: echo "SITE_URL=${{ vars.STAGING_URL }}" >> $GITHUB_ENV
+            - name: Set SITE_URL (staging)
+              if: github.ref == 'refs/heads/staging' || github.base_ref == 'staging'
+              run: echo "SITE_URL=${{ vars.STAGING_URL }}" >> $GITHUB_ENV
 
-      - name: Build
-        run: bun run build
-        env:
-          SITE_URL: ${{ env.SITE_URL }}
+            - name: Build
+              run: bun run build
+              env:
+                  SITE_URL: ${{ env.SITE_URL }}
 
-      - name: Archive dist
-        run: tar -czf dist.tar.gz dist/
+            - name: Archive dist
+              run: tar -czf dist.tar.gz dist/
 
-      - name: Upload dist
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist
-          path: dist.tar.gz
+            - name: Upload dist
+              uses: actions/upload-artifact@v3
+              with:
+                  name: dist
+                  path: dist.tar.gz
 
-  deploy-main:
-    name: Deploy to Main
-    needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download dist
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
+    deploy-main:
+        name: Deploy to Main
+        needs: build
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Download dist
+              uses: actions/download-artifact@v3
+              with:
+                  name: dist
 
-      - name: Setup SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+            - name: Setup SSH
+              run: |
+                  mkdir -p ~/.ssh
+                  echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+                  chmod 600 ~/.ssh/id_rsa
+                  ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Deploy via SCP + SSH
-        env:
-          DEPLOY_PATH: ${{ vars.PROD_DEPLOY_PATH }}
-        run: |
-          if [ -z "$DEPLOY_PATH" ]; then
-            echo "::error::PROD_DEPLOY_PATH is not set - refusing to deploy" >&2
-            exit 1
-          fi
-          scp -i ~/.ssh/id_rsa dist.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/tmp/dist.tar.gz
-          ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
-            set -e
-            [ -n '$DEPLOY_PATH' ]
-            rm -rf '$DEPLOY_PATH'/* &&
-            tar -xzf /tmp/dist.tar.gz -C '$DEPLOY_PATH' --strip-components=1 &&
-            rm /tmp/dist.tar.gz
-          "
+            - name: Deploy via SCP + SSH
+              env:
+                  DEPLOY_PATH: ${{ vars.PROD_DEPLOY_PATH }}
+              run: |
+                  if [ -z "$DEPLOY_PATH" ]; then
+                    echo "::error::PROD_DEPLOY_PATH is not set - refusing to deploy" >&2
+                    exit 1
+                  fi
+                  scp -i ~/.ssh/id_rsa dist.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/tmp/dist.tar.gz
+                  ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+                    set -e
+                    [ -n '$DEPLOY_PATH' ]
+                    rm -rf '$DEPLOY_PATH'/* &&
+                    tar -xzf /tmp/dist.tar.gz -C '$DEPLOY_PATH' --strip-components=1 &&
+                    rm /tmp/dist.tar.gz
+                  "
 
-  deploy-staging:
-    name: Deploy to Staging
-    needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/staging'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download dist
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
+    deploy-staging:
+        name: Deploy to Staging
+        needs: build
+        if: github.event_name == 'push' && github.ref == 'refs/heads/staging'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Download dist
+              uses: actions/download-artifact@v3
+              with:
+                  name: dist
 
-      - name: Setup SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+            - name: Setup SSH
+              run: |
+                  mkdir -p ~/.ssh
+                  echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+                  chmod 600 ~/.ssh/id_rsa
+                  ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Deploy via SCP + SSH
-        env:
-          DEPLOY_PATH: ${{ vars.STAGING_DEPLOY_PATH }}
-        run: |
-          if [ -z "$DEPLOY_PATH" ]; then
-            echo "::error::STAGING_DEPLOY_PATH is not set - refusing to deploy" >&2
-            exit 1
-          fi
-          scp -i ~/.ssh/id_rsa dist.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/tmp/dist.tar.gz
-          ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
-            set -e
-            [ -n '$DEPLOY_PATH' ]
-            rm -rf '$DEPLOY_PATH'/* &&
-            tar -xzf /tmp/dist.tar.gz -C '$DEPLOY_PATH' --strip-components=1 &&
-            rm /tmp/dist.tar.gz
-          "
+            - name: Deploy via SCP + SSH
+              env:
+                  DEPLOY_PATH: ${{ vars.STAGING_DEPLOY_PATH }}
+              run: |
+                  if [ -z "$DEPLOY_PATH" ]; then
+                    echo "::error::STAGING_DEPLOY_PATH is not set - refusing to deploy" >&2
+                    exit 1
+                  fi
+                  scp -i ~/.ssh/id_rsa dist.tar.gz ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/tmp/dist.tar.gz
+                  ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+                    set -e
+                    [ -n '$DEPLOY_PATH' ]
+                    rm -rf '$DEPLOY_PATH'/* &&
+                    tar -xzf /tmp/dist.tar.gz -C '$DEPLOY_PATH' --strip-components=1 &&
+                    rm /tmp/dist.tar.gz
+                  "

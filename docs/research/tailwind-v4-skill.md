@@ -20,7 +20,7 @@ pdf, pptx, skill-creator, slack-gif-creator, theme-factory,
 web-artifacts-builder, webapp-testing, xlsx
 ```
 
-None of these is a Tailwind or CSS-tooling skill. Two skills merely *use*
+None of these is a Tailwind or CSS-tooling skill. Two skills merely _use_
 Tailwind as an implementation detail:
 
 - `web-artifacts-builder` — builds React/Tailwind/shadcn artifacts for
@@ -44,7 +44,7 @@ independently vetted for quality/trust):
 
 These are unofficial, third-party repos of unknown provenance/maintenance —
 installing one means trusting arbitrary instructions pulled into every future
-session. None is scoped to *this repo's* actual tokens (`--color-default`,
+session. None is scoped to _this repo's_ actual tokens (`--color-default`,
 `--color-accent`, etc.) or its specific stack (Astro + `@tailwindcss/vite`).
 A minimal, repo-authored skill is both safer and more precisely useful than
 adopting a generic third-party one.
@@ -73,7 +73,7 @@ PostCSS plugin.**
 
 ### 3.2 `@theme` directive syntax (tailwindcss.com/docs/theme)
 
-- `@theme { --color-x: … }` both defines a CSS var *and* generates matching
+- `@theme { --color-x: … }` both defines a CSS var _and_ generates matching
   utility classes (`bg-x`, `text-x`, `border-x`, …) — this is why it differs
   from a plain `:root` block.
 - Namespaces map to utility groups: `--color-*`, `--font-*`, `--text-*`,
@@ -82,7 +82,7 @@ PostCSS plugin.**
 - Extend defaults: just add a new var. Override a default: redefine the same
   var name (e.g. `--breakpoint-sm: 30rem;`).
 - Reset a whole namespace: `--color-*: initial;` then redefine only the
-  colors you want (relevant here since the repo *is* effectively doing a
+  colors you want (relevant here since the repo _is_ effectively doing a
   partial-custom palette, though it's currently additive, not a reset).
 - `@theme inline { --font-sans: var(--font-inter); }` when a theme var must
   reference another variable, so utilities resolve correctly.
@@ -94,9 +94,10 @@ Source: https://tailwindcss.com/docs/theme
 ### 3.3 Concrete v3 → v4 breaking changes (tailwindcss.com/docs/upgrade-guide)
 
 The most relevant ones for a repo with no legacy v3 code, but still worth the
-skill knowing so it never *writes* v3-era patterns:
+skill knowing so it never _writes_ v3-era patterns:
 
 **Import / build**
+
 - `@tailwind base/components/utilities` directives are gone → single
   `@import "tailwindcss";`.
 - PostCSS setups now need `@tailwindcss/postcss` (not needed here — this
@@ -107,18 +108,18 @@ skill knowing so it never *writes* v3-era patterns:
 
 **Renamed scale utilities** (verified list):
 
-| v3 | v4 |
-|----|----|
-| `shadow-sm` | `shadow-xs` |
-| `shadow` | `shadow-sm` |
-| `drop-shadow-sm` | `drop-shadow-xs` |
-| `drop-shadow` | `drop-shadow-sm` |
-| `blur-sm` | `blur-xs` |
-| `blur` | `blur-sm` |
+| v3                 | v4                 |
+| ------------------ | ------------------ |
+| `shadow-sm`        | `shadow-xs`        |
+| `shadow`           | `shadow-sm`        |
+| `drop-shadow-sm`   | `drop-shadow-xs`   |
+| `drop-shadow`      | `drop-shadow-sm`   |
+| `blur-sm`          | `blur-xs`          |
+| `blur`             | `blur-sm`          |
 | `backdrop-blur-sm` | `backdrop-blur-xs` |
-| `backdrop-blur` | `backdrop-blur-sm` |
-| `rounded-sm` | `rounded-xs` |
-| `rounded` | `rounded-sm` |
+| `backdrop-blur`    | `backdrop-blur-sm` |
+| `rounded-sm`       | `rounded-xs`       |
+| `rounded`          | `rounded-sm`       |
 
 **Removed deprecated utilities** — opacity-suffix utilities are gone in
 favor of the slash-opacity modifier: `bg-opacity-*` → `bg-black/50` (same
@@ -128,6 +129,7 @@ Also `flex-shrink-*` → `shrink-*`, `flex-grow-*` → `grow-*`,
 → `box-decoration-slice`/`box-decoration-clone`.
 
 **Default-value changes to watch for**
+
 - `border` no longer defaults to `gray-200`, now `currentColor` — must add
   an explicit color class.
 - `ring` (bare) no longer 3px `blue-500` — now `ring-3 ring-blue-500` needed
@@ -140,6 +142,7 @@ Also `flex-shrink-*` → `shrink-*`, `flex-grow-*` → `grow-*`,
   tap on touch devices.
 
 **Syntax changes**
+
 - Arbitrary CSS-var values: `bg-[--brand]` → `bg-(--brand)`.
 - Custom utilities: `@layer utilities { .x {} }` → `@utility x { }`.
 - `!important` modifier moves to the end of the class: `flex!` not `!flex`.
@@ -147,6 +150,7 @@ Also `flex-shrink-*` → `shrink-*`, `flex-grow-*` → `grow-*`,
   `grid-cols-[max-content_auto]`.
 
 **Removed**
+
 - `tailwind.config.js` auto-detection (must load explicitly via `@config` if
   keeping one at all — not relevant here, no JS config exists in this repo).
 - `corePlugins`, `safelist`, `separator` options.
@@ -160,7 +164,7 @@ Source: https://tailwindcss.com/docs/upgrade-guide
 Official blog confirms the pattern this repo already uses:
 
 ```js
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({ plugins: [tailwindcss()] });
 ```
 
@@ -191,6 +195,7 @@ code sample is the citation for the setup snippet).
    where the real theme tokens live (`src/styles/global.css`).
 
 **What the skill should contain (minimal):**
+
 - One line stating the setup: `@tailwindcss/vite` in `astro.config.mjs`, all
   theme tokens live in `src/styles/global.css`'s `@theme` block, no
   `tailwind.config.js` / no PostCSS config exists or is needed.

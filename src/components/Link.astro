@@ -9,9 +9,16 @@ interface Props {
 	'aria-current'?: 'page';
 }
 
-const { href, class: className, nav = false, 'aria-current': ariaCurrent } = Astro.props;
+const {
+	href,
+	class: className,
+	nav = false,
+	'aria-current': ariaCurrent,
+} = Astro.props;
 
-const isExternal = /^https?:\/\//.test(href) && new URL(href).hostname !== Astro.site?.hostname;
+const isExternal =
+	/^https?:\/\//.test(href) &&
+	new URL(href).hostname !== Astro.site?.hostname;
 
 const focusRing =
 	'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-light)]';
@@ -27,17 +34,28 @@ const underlineSpan =
 			class={`inline-flex items-center gap-1 ${focusRing} ${className ?? ''}`}
 			target="_blank"
 			rel="noopener noreferrer"
-			aria-current={ariaCurrent}
-		>
-			{nav ? <slot /> : <span class={underlineSpan}><slot /></span>}
+			aria-current={ariaCurrent}>
+			{nav ? (
+				<slot />
+			) : (
+				<span class={underlineSpan}>
+					<slot />
+				</span>
+			)}
 			<Icon name="external-link" class="size-3.5 shrink-0" />
 		</a>
 	) : nav ? (
-		<a href={href} class={`${focusRing} ${className ?? ''}`} aria-current={ariaCurrent}>
+		<a
+			href={href}
+			class={`${focusRing} ${className ?? ''}`}
+			aria-current={ariaCurrent}>
 			<slot />
 		</a>
 	) : (
-		<a href={href} class={`${focusRing} ${className ?? ''}`} aria-current={ariaCurrent}>
+		<a
+			href={href}
+			class={`${focusRing} ${className ?? ''}`}
+			aria-current={ariaCurrent}>
 			<span class={underlineSpan}>
 				<slot />
 			</span>

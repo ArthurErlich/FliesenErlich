@@ -8,7 +8,7 @@ values using the WCAG relative-luminance/contrast formula (method shown below), 
 guessed or pulled from a tool whose working can't be shown here.
 
 This is a content/requirements reference, distinct from
-`docs/research/wcag-german-law-skill.md` (which evaluates third-party *Claude Skills*
+`docs/research/wcag-german-law-skill.md` (which evaluates third-party _Claude Skills_
 for accessibility/legal tooling, not the actual WCAG/BFSG requirements).
 
 ## 1. New in WCAG 2.2 (vs 2.1)
@@ -17,17 +17,17 @@ Per the W3C spec's own "New Features in WCAG 2.2" section, exactly **9 success
 criteria** were added in 2.2 — none existed in 2.1:
 <https://www.w3.org/TR/WCAG22/#new-features-in-wcag-2-2>
 
-| SC | Name | Level |
-|---|---|---|
-| 2.4.11 | Focus Not Obscured (Minimum) | AA |
-| 2.4.12 | Focus Not Obscured (Enhanced) | AAA |
-| 2.4.13 | Focus Appearance | AAA |
-| 2.5.7 | Dragging Movements | AA |
-| 2.5.8 | Target Size (Minimum) | AA |
-| 3.2.6 | Consistent Help | A |
-| 3.3.7 | Redundant Entry | A |
-| 3.3.8 | Accessible Authentication (Minimum) | AA |
-| 3.3.9 | Accessible Authentication (Enhanced) | AAA |
+| SC     | Name                                 | Level |
+| ------ | ------------------------------------ | ----- |
+| 2.4.11 | Focus Not Obscured (Minimum)         | AA    |
+| 2.4.12 | Focus Not Obscured (Enhanced)        | AAA   |
+| 2.4.13 | Focus Appearance                     | AAA   |
+| 2.5.7  | Dragging Movements                   | AA    |
+| 2.5.8  | Target Size (Minimum)                | AA    |
+| 3.2.6  | Consistent Help                      | A     |
+| 3.3.7  | Redundant Entry                      | A     |
+| 3.3.8  | Accessible Authentication (Minimum)  | AA    |
+| 3.3.9  | Accessible Authentication (Enhanced) | AAA   |
 
 Normative text, quickref: <https://www.w3.org/WAI/WCAG22/quickref/?versions=2.2&levels=aa>
 
@@ -96,12 +96,12 @@ All quotes: W3C WCAG 2.2 quickref, filtered to AA:
 - **3.3.3 Error Suggestion — AA**: "If an input error is detected and suggestions for
   correction are known, then the suggestions are provided to the user, unless it
   would jeopardize the security or purpose of the content" (the security exception is
-  relevant to honeypot/anti-spam fields — don't reveal *why* a submission was
+  relevant to honeypot/anti-spam fields — don't reveal _why_ a submission was
   rejected if it would help a bot/spammer probe the honeypot).
 - **1.3.1 Info and Relationships — A**: "Information, structure, and relationships
   conveyed through presentation can be programmatically determined or are available
   in text" — governs using real `<label>`, `<fieldset>/<legend>`, heading tags, and
-  landmark elements rather than styled `<div>`s that only *look* structured.
+  landmark elements rather than styled `<div>`s that only _look_ structured.
 - **2.4.6 Headings and Labels — A**: "Headings and labels describe topic or purpose."
 
 ## 3. Semantic HTML / structure checklist (APG + MDN)
@@ -166,13 +166,13 @@ proof-of-work CAPTCHA. Concrete implications:
 - **Labels (1.3.1, MDN)**: every field (name, email, message, whatever fields it
   collects) needs a real associated `<label>`, not placeholder-only text.
 - **Errors (3.3.1 Error Identification, A)**: client-side validation failures (e.g.
-  invalid email) must identify *which* field failed and describe the problem in text
+  invalid email) must identify _which_ field failed and describe the problem in text
   — not just a color change or an icon with no text alternative.
 - **Error suggestions (3.3.3, AA)**: where a correction is knowable (e.g. "email must
   contain @"), say so in text — but per the SC's own security carve-out, don't do
   this for the honeypot field or in a way that tells a bot/spam script why its
   submission was rejected.
-- **Honeypot field**: must be hidden from sighted *and* assistive-tech users without
+- **Honeypot field**: must be hidden from sighted _and_ assistive-tech users without
   being reachable by keyboard tab order (typically `aria-hidden="true"` plus
   `tabindex="-1"` and either `display:none`/`visibility:hidden`, or off-screen
   positioning — a bare CSS `display:none` on the field itself is standard and safe
@@ -206,18 +206,18 @@ not fetched from an external contrast checker, so treat them as a first-pass
 calculation to be spot-checked with a tool (e.g. browser devtools contrast checker)
 before relying on them for a compliance claim.**
 
-| Foreground | Background | Computed ratio | vs 4.5:1 (normal text) | vs 3:1 (large text / 1.4.11 UI) |
-|---|---|---|---|---|
-| `--color-default` `#822c2a` | white `#ffffff` | **≈ 8.97:1** | Pass (AA & AAA) | Pass |
-| `--color-default` `#822c2a` | `--color-light-gray` `#e6e6e6` | **≈ 7.19:1** | Pass | Pass |
-| `--color-default` `#822c2a` | `--color-erlich-white` `#f2f2f2` | **≈ 8.01:1** | Pass | Pass |
-| `--color-light` `#a13a35` | white `#ffffff` | **≈ 6.62:1** | Pass | Pass |
-| `--color-light` `#a13a35` | `--color-light-gray` `#e6e6e6` | **≈ 5.31:1** | Pass | Pass |
-| `--color-light` `#a13a35` | `--color-erlich-white` `#f2f2f2` | **≈ 5.92:1** | Pass | Pass |
-| `--color-accent` `#8b6e55` | white `#ffffff` | **≈ 4.71:1** | Pass (barely — 0.2 margin) | Pass |
-| `--color-accent` `#8b6e55` | `--color-light-gray` `#e6e6e6` | **≈ 3.77:1** | **Fail** for normal text | Pass |
-| `--color-accent` `#8b6e55` | `--color-erlich-white` `#f2f2f2` | **≈ 4.20:1** | **Fail** for normal text | Pass |
-| `--color-accent-hover` `#c7a481` | white `#ffffff` | **≈ 2.32:1** | Fail | Fail |
+| Foreground                       | Background                       | Computed ratio | vs 4.5:1 (normal text)     | vs 3:1 (large text / 1.4.11 UI) |
+| -------------------------------- | -------------------------------- | -------------- | -------------------------- | ------------------------------- |
+| `--color-default` `#822c2a`      | white `#ffffff`                  | **≈ 8.97:1**   | Pass (AA & AAA)            | Pass                            |
+| `--color-default` `#822c2a`      | `--color-light-gray` `#e6e6e6`   | **≈ 7.19:1**   | Pass                       | Pass                            |
+| `--color-default` `#822c2a`      | `--color-erlich-white` `#f2f2f2` | **≈ 8.01:1**   | Pass                       | Pass                            |
+| `--color-light` `#a13a35`        | white `#ffffff`                  | **≈ 6.62:1**   | Pass                       | Pass                            |
+| `--color-light` `#a13a35`        | `--color-light-gray` `#e6e6e6`   | **≈ 5.31:1**   | Pass                       | Pass                            |
+| `--color-light` `#a13a35`        | `--color-erlich-white` `#f2f2f2` | **≈ 5.92:1**   | Pass                       | Pass                            |
+| `--color-accent` `#8b6e55`       | white `#ffffff`                  | **≈ 4.71:1**   | Pass (barely — 0.2 margin) | Pass                            |
+| `--color-accent` `#8b6e55`       | `--color-light-gray` `#e6e6e6`   | **≈ 3.77:1**   | **Fail** for normal text   | Pass                            |
+| `--color-accent` `#8b6e55`       | `--color-erlich-white` `#f2f2f2` | **≈ 4.20:1**   | **Fail** for normal text   | Pass                            |
+| `--color-accent-hover` `#c7a481` | white `#ffffff`                  | **≈ 2.32:1**   | Fail                       | Fail                            |
 
 Implications:
 

@@ -1,0 +1,21 @@
+---
+// Size-only (not width/measure) — see wayfinder ticket #58. Default ('body')
+// matches today's actual site-wide value (text-sm); 'lead'/'small' are
+// opt-in for future use, not yet used anywhere.
+interface Props {
+	size?: 'lead' | 'body' | 'small';
+	class?: string;
+}
+
+const { size = 'body', class: className } = Astro.props;
+
+const sizeClasses = {
+	lead: 'text-base',
+	body: 'text-sm',
+	small: 'text-xs',
+};
+---
+
+<p class:list={[sizeClasses[size], 'leading-relaxed text-black/70', className]}>
+	<slot />
+</p>

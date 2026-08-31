@@ -23,7 +23,7 @@ send SMTP mail from PHP, and (3) is the existing request pipeline
   stop concatenating user input into raw header strings — see §1.
 - **Validate server-side regardless of the client and regardless of
   CAPTCHA.** `SameOriginGuard` (Origin-header check) and `CapVerifier` (Cap
-  CAPTCHA) in `public/api/index.php` run *before* `ContactHandler::handle()`
+  CAPTCHA) in `public/api/index.php` run _before_ `ContactHandler::handle()`
   and are good, real defenses — but they answer "is this a legitimate
   same-origin, non-bot POST?", not "is this specific field a valid email
   address / free of control characters?". `ContactHandler` must still run
@@ -53,7 +53,7 @@ review of an existing mail-sending implementation.
 
 **[Gap noticed in CI]:** `.gitea/workflows/deploy.yml` already has a
 `composer install --no-dev --no-interaction --optimize-autoloader` step
-(`working-directory: public/api`), running *before* `bun run build`. Astro
+(`working-directory: public/api`), running _before_ `bun run build`. Astro
 copies `public/` into `dist/` verbatim during build, so `vendor/` installed
 at that point is already included in `dist.tar.gz` by the time it's
 archived. **Adding a first real Composer dependency requires no new CI
@@ -72,7 +72,7 @@ PHP's own `mail()` manual page documents the exact failure mode in the
 > "Multiple extra headers should be separated with a CRLF (`\r\n`). If
 > outside data are used to compose this header, the data should be sanitized
 > so that no unwanted headers could be injected."
-([PHP Manual — `mail()`](https://www.php.net/manual/en/function.mail.php))
+> ([PHP Manual — `mail()`](https://www.php.net/manual/en/function.mail.php))
 
 A well-known user-contributed note on the same page adds the mechanically
 important detail: `mail()` itself scrubs `\r`/`\n` out of the `$to` and
@@ -99,7 +99,7 @@ content.
 **Mitigations, in order of how much they buy you:**
 
 1. **Strict format validation on the email field**: `filter_var($email,
-   FILTER_VALIDATE_EMAIL)` ([PHP Manual —
+FILTER_VALIDATE_EMAIL)` ([PHP Manual —
    `filter_var()`](https://www.php.net/manual/en/function.filter-var.php),
    [PHP Manual — Validate
    filters](https://www.php.net/manual/en/filter.filters.validate.php)). A
@@ -325,11 +325,11 @@ of lines PHPMailer gives you natively.
 
 ### Decision table
 
-| | Maintenance status | Composer install | TLS/auth support | Minimal-code fit for one contact form | Verdict |
-|---|---|---|---|---|---|
-| **PHPMailer** | Active — v7.1.1, 2026-05-18 ([releases](https://github.com/PHPMailer/PHPMailer/releases)) | `composer require phpmailer/phpmailer` | Native `SMTPSecure` (STARTTLS/SMTPS) + `SMTPAuth`/`Username`/`Password` | Excellent — ~10 lines, no config framework needed | **Recommended** |
-| **Symfony Mailer** | Active — core Symfony component, same release cadence as Symfony itself | `composer require symfony/mailer` | Native via DSN scheme (`smtp://`), auth embedded in DSN | Good, but idiom assumes framework config + Twig for HTML bodies; standalone use fights the grain | Solid alternative if this repo later adopts more Symfony components |
-| **Raw `mail()`** | N/A (PHP core) | None | None at the language level — `SMTP`/`smtp_port` ini directives are **Windows-only**; Linux path requires a configured local MTA | Trivial code, but wrong deploy fit (no local MTA in this deploy model) and requires hand-rolled CRLF-safe header building | **Not recommended** for this deploy target |
+|                    | Maintenance status                                                                        | Composer install                       | TLS/auth support                                                                                                                | Minimal-code fit for one contact form                                                                                     | Verdict                                                             |
+| ------------------ | ----------------------------------------------------------------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| **PHPMailer**      | Active — v7.1.1, 2026-05-18 ([releases](https://github.com/PHPMailer/PHPMailer/releases)) | `composer require phpmailer/phpmailer` | Native `SMTPSecure` (STARTTLS/SMTPS) + `SMTPAuth`/`Username`/`Password`                                                         | Excellent — ~10 lines, no config framework needed                                                                         | **Recommended**                                                     |
+| **Symfony Mailer** | Active — core Symfony component, same release cadence as Symfony itself                   | `composer require symfony/mailer`      | Native via DSN scheme (`smtp://`), auth embedded in DSN                                                                         | Good, but idiom assumes framework config + Twig for HTML bodies; standalone use fights the grain                          | Solid alternative if this repo later adopts more Symfony components |
+| **Raw `mail()`**   | N/A (PHP core)                                                                            | None                                   | None at the language level — `SMTP`/`smtp_port` ini directives are **Windows-only**; Linux path requires a configured local MTA | Trivial code, but wrong deploy fit (no local MTA in this deploy model) and requires hand-rolled CRLF-safe header building | **Not recommended** for this deploy target                          |
 
 ### Credential storage
 
@@ -346,7 +346,7 @@ line, but its own pitch is explicitly about **local development
 convenience** — "NO editing virtual hosts in Apache or Nginx; NO adding
 `php_value` flags to `.htaccess` files; EASY portability and sharing of
 required ENV values" — i.e., it exists to avoid needing real server-level
-env var configuration *during development*, which only makes sense as a
+env var configuration _during development_, which only makes sense as a
 statement if real env vars are the assumed production mechanism.
 ([`vlucas/phpdotenv` README](https://github.com/vlucas/phpdotenv))
 
@@ -429,7 +429,7 @@ resolves it in the strict direction: it rejects a request with **no**
 carries one (per the Fetch spec), so a missing header means "not a browser
 fetch from this site" rather than a legitimate edge case to allow through.
 That's a defensible, deliberately strict reading — the cheat sheet's
-"`Origin` can legitimately be null" caveat is about *some* cross-origin or
+"`Origin` can legitimately be null" caveat is about _some_ cross-origin or
 privacy-mode requests still needing to be let through for other kinds of
 apps; a same-origin-only JSON API with no legitimate cross-origin caller has
 no reason to accept a missing `Origin`.

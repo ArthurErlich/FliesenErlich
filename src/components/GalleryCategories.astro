@@ -4,15 +4,21 @@ const galleryCategories = [
 	{ label: 'Bäder', height: 'md:h-[620px]' },
 	{ label: 'Mosaik', height: 'md:h-[460px]' },
 	{ label: 'Terrassen', height: 'md:h-[560px]' },
-	{ label: 'Innenausbau', height: 'md:h-[500px]' }
+	{ label: 'Innenausbau', height: 'md:h-[500px]' },
 ];
 ---
 
 <section>
-	<div class="flex w-full flex-col items-stretch gap-1 md:flex-row md:items-end">
+	<div
+		class="flex w-full flex-col items-stretch gap-1 md:flex-row md:items-end">
 		{
 			galleryCategories.map((cat) => (
-				<a href="#" class:list={['relative block h-64 flex-1 text-white', cat.height]}>
+				<a
+					href="#"
+					class:list={[
+						'relative block h-64 flex-1 text-white',
+						cat.height,
+					]}>
 					<img
 						src={`https://placehold.co/600x800?text=${encodeURIComponent(cat.label)}`}
 						alt=""

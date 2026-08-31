@@ -1,0 +1,32 @@
+---
+// One fixed visual style per heading level (h1-h6) — no separate variant
+// prop. Scale settled via live prototype comparison, see wayfinder ticket
+// #58 (winning variant: B, today's actual values, kept as the baseline).
+interface Props {
+	level: 1 | 2 | 3 | 4 | 5 | 6;
+	color?: 'red' | 'black';
+	class?: string;
+}
+
+const {
+	level,
+	color = level === 1 ? 'red' : 'black',
+	class: className,
+} = Astro.props;
+const Tag = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
+const levelClasses = {
+	1: 'font-display text-5xl leading-[1.05] tracking-[-0.02em] my-5',
+	2: 'font-display text-xl mb-2',
+	3: 'font-serif text-lg font-semibold mb-2',
+	4: 'font-serif text-lg mb-2',
+	5: 'font-serif text-base font-semibold mb-1',
+	6: 'font-serif text-base mb-1',
+};
+
+const colorClasses = { red: 'text-default', black: 'text-black' };
+---
+
+<Tag class:list={[levelClasses[level], colorClasses[color], className]}
+	><slot /></Tag
+>

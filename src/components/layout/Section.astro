@@ -10,14 +10,13 @@ interface Props {
 
 const { tone = 'base', id, class: className } = Astro.props;
 
-// ponytail: py-16/md:py-24 is the one vertical-rhythm default for now, carried
-// over from the existing per-page pattern. Exact values are being prototyped
-// (wayfinder ticket "Prototype Section vertical rhythm & Paragraph sizes") —
-// revisit once that lands.
+// py-16/md:py-24 is the one vertical-rhythm default across all tones —
+// confirmed via live prototype comparison against tighter/looser alternatives
+// (wayfinder ticket #58); today's per-page pattern was already correct.
 const toneClasses = {
 	base: 'bg-erlich-white',
 	inset: 'bg-light-gray',
-	elevated: 'bg-white'
+	elevated: 'bg-white',
 };
 ---
 
