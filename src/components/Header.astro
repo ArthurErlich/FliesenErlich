@@ -1,12 +1,8 @@
 ---
 import { Image } from 'astro:assets';
-import Container from './layout/Container.astro';
 import logo from '../assets/coperated/logo-erlich-dunkel.png';
-
-const navLinks = [
-	{ href: '/', text: 'Fliesen Erlich' },
-	{ href: '/impressum', text: 'Impressum' },
-];
+import { navLinks } from '../consts';
+import Link from './Link.astro';
 ---
 
 <div class="z-10 bg-white shadow-md md:sticky md:top-0 md:left-0">
@@ -36,9 +32,9 @@ const navLinks = [
 			{
 				navLinks.map(({ href, text }) => (
 					<li class="text-white">
-						<a href={href}>
-							<div class="px-2 py-1">{text}</div>
-						</a>
+						<Link href={href} nav class="block px-2 py-1">
+							{text}
+						</Link>
 					</li>
 				))
 			}
