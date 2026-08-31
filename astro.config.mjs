@@ -19,7 +19,15 @@ import sentry from '@sentry/astro';
 export default defineConfig({
 	site: process.env.SITE_URL ?? 'http://localhost.de',
 	trailingSlash: 'always',
-	integrations: [sitemap(), icon(), markdoc(), mdx(), llms(), sentry()],
+	integrations: [
+		sitemap(),
+		icon(),
+		markdoc(),
+		mdx(),
+		llms(),
+		// ponytail: SITE_URL is only set in CI (see .gitea/workflows/deploy.yml) — skip Sentry on local builds/dev
+		...(process.env.SITE_URL ? [sentry()] : []),
+	],
 
 	vite: {
 		plugins: [tailwindcss()],
