@@ -36,7 +36,7 @@
 		"codebase-memory-mcp"
 	],
 	"devDependencies": {
-		"@astrojs/check": "0.9.10",
+		"@astrojs/check": "0.9.12",
 		"@iconify-json/iconamoon": "1.2.2",
 		"codebase-memory-mcp": "0.10.8",
 		"prettier": "3.9.6",
